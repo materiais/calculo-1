@@ -1,0 +1,313 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\dom[1]{\operatorname{Dom}\left(#1\right)}
+
+\newcommand*\R{\mathbb{R}}
+
+\newcommand*\prova{Prova III}
+\newcommand*\turma{TADS121-01C}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{04/11/2016}
+
+\author{\eu}
+\title{\prova - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (\turma)}
+& \textbf{\prova}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item (4,0) Escolha \textbf{dois} dos limites a seguir, e calcule-os (use a regra de L'Hôpital se necessário).
+\begin{multicols}{3}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to 1} \frac{5}{(x-1)^2}-\frac{3}{x-1}$
+\item $\displaystyle\lim_{x\to 0^+} \frac{x^3-3x}{\arctan(6x)}$
+\item $\displaystyle\lim_{x\to 0^+} x^{(2x)}$
+\end{enumerate}
+\end{multicols}
+
+
+\item (3,0) Escolha \textbf{uma} das funções $\displaystyle f(x) =\dfrac{x^2 + x + 2}{x-1}$ ou $\displaystyle g(x) = \frac{x+1}{e^x}$ e utilize as ferramentas do cálculo diferencial para responder aos seguintes itens:
+\begin{enumerate}
+\item (0,2) Obter as derivadas de primeira e segunda ordem da função escolhida.
+\item (1,0) Obter todos os intervalos $(a,b)$ em que a função:
+\begin{enumerate}
+\item É \textbf{crescente} e \textbf{decrescente}, respectivamente.
+\item Tem \textbf{concavidade para cima} e \textbf{para baixo}, respectivamente.
+\end{enumerate}
+\item (0,6) Obter todas as \textbf{assíntotas} do gráfico (verticais, oblíquas, horizontais, em $\pm \infty$).
+\item (0,6) Identificar no domínio da função, se existirem, todos os pontos \textbf{críticos}, de \textbf{máximo} e de \textbf{mínimo} (locais e globais) e de \textbf{inflexão}. Justifique suas conclusões com base nas informações que obteve nos itens (a), (b) e (c).
+\item (0,6) Esboçar o \textbf{gráfico} da função, usando (corretamente) os dados anteriores.
+\end{enumerate}
+
+\item (2,0) Dentre todos os retângulos de perímetro $36 cm$, há algum com área mínima? E com área máxima? Explique como chegar nesta conclusão usando os cálculos apropriados.
+
+\item (1,0) Faça um esboço do gráfico de $f$, assumindo que $f: [0, 5] \to \R$ seja uma função derivável tal que $f(0)=0$, e cuja derivada tem o seguinte gráfico:
+
+\includegraphics[width=7.5cm]{img/prova-3-tads-derivada-malha} $\quad$
+\includegraphics[width=7.5cm]{img/prova-3-tads-derivada}
+\end{enumerate}
+
+\begin{center}
+BOA PROVA!!!
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item
+\[
+\lim_{x\to 1} \frac{5}{(x-1)^2}-\frac{3}{x-1}
+= \lim_{x\to 1} \frac{5(x-1) -3(x-1)^2}{(x-1)^3}
+= \lim_{x\to 1} \frac{5 -6(x-1)}{3(x-1)^2}
+= +\infty
+\]
+\textbf{Solução alternativa}:
+\[
+\lim_{x\to 1} \frac{5}{(x-1)^2}-\frac{3}{x-1}
+= \lim_{x\to 1} \frac{5 -3(x-1)}{(x-1)^2}
+= \lim_{x\to 1} \frac{8 - 3x}{(x-1)^2}
+= +\infty
+\]
+
+\item
+\[
+  \lim_{x\to 0^+} \frac{x^3-3x}{\arctan(6x)}
+= \lim_{x\to 0^+} \frac{3x^2-3}{\frac{6}{x^2+1}}
+= \frac{-3}{6}
+= \frac{-1}{2}.
+\]
+\item Como $x^{(2x)} = (x^x)^2 = (e^{x \ln{x}})^2$ e
+\[
+\lim_{x \to 0^+} x \ln{x}
+= \lim_{x \to 0^+} \frac{\ln{x}}{\frac{1}{x}}
+= \lim_{x \to 0^+} \frac{\frac{1}{x}}{-\frac{1}{x^2}}
+= \lim_{x \to 0^+} -\frac{x^2}{x}
+= \lim_{x \to 0^+} -x
+= 0,
+\]
+segue que $\displaystyle\lim_{x\to 0^+} x^{(2x)}
+= \lim_{x\to 0^+} (e^{x \ln{x}})^2
+= \lim_{u\to 0^-} (e^u)^2
+= (e^0)^2 = 1$.
+\end{enumerate}
+
+\item
+\begin{itemize}
+\item Seja $\displaystyle f(x) =\dfrac{x^2 + x + 2}{x-1}$.
+\begin{enumerate}
+\item Pela regra do quociente, tem-se:
+\[
+f^\prime(x)
+= \dfrac{(2x+1)(x-1) - (x^2 + x + 2)}{(x-1)^2}
+= \dfrac{x^2 - 2x - 3}{(x-1)^2}
+= \dfrac{(x+1)(x-3)}{(x-1)^2}
+\]
+e
+\begin{align*}
+f^{\prime\prime}(x)
+& = \dfrac{(2x-2)(x-1)^2 - (x^2 - 2x - 3)(2(x-1))}{(x-1)^4} \\
+& = \dfrac{(2x-2)(x-1) - 2(x^2 - 2x - 3)}{(x-1)^3}
+  = \dfrac{8}{(x-1)^3}.
+\end{align*}
+
+\item
+\begin{enumerate}
+\item A função $f$ é crescente nos intervalos em que $f^\prime(x) > 0$. Considerando que $(x-1)^2$ nunca é negativo, resulta que $f^\prime(x) > 0$ quando $x+1$ e $x-3$ têm o mesmo sinal, isto é, quando $x \in (-\infty, -1) \cup (3, +\infty)$. Além disso, em $x \in (-1,1) \cup (1, 3)$ tem-se $f^\prime(x) < 0$ e portanto $f$ é decrescente.
+
+\item A concavidade de $f$ é para baixo quando $f^{\prime\prime}(x) < 0$, isto é, quando $\frac{8}{(x-1)^3} < 0$. Assim, $f$ tem concavidade para baixo em $(-\infty, 1)$ e para cima em $(1, +\infty)$.
+\end{enumerate}
+
+\item
+Como $f$ é contínua em todo $x \neq 1$, o único ponto em que ponde haver uma assíntota vertical é em $x=1$. Os limites a seguir mostram que realmente há uma assíntota neste ponto:
+\[
+\lim_{x \to 1^+} f(x)
+= \lim_{x \to 1^+} \dfrac{x^2 + x + 2}{x-1}
+= +\infty.
+\]
+e
+\[
+\lim_{x \to 1^-} f(x)
+= \lim_{x \to 1^-} \dfrac{x^2 + x + 2}{x-1}
+= -\infty.
+\]
+Além disso, caso exista alguma assíntota do tipo $y = ax + b$, deverá ocorrer que
+\[
+a = \lim_{x \to \pm\infty} \frac{f(x)}{x}
+= \lim_{x \to \pm\infty} \dfrac{x^2 + x + 2}{x^2-x}
+= \lim_{x \to \pm\infty} \dfrac{2x + 1}{2x-1}
+= \lim_{x \to \pm\infty} \dfrac{2}{2}
+= 1
+\]
+e
+\begin{align*}
+b
+& = \lim_{x \to \pm\infty} f(x) -ax
+  = \lim_{x \to \pm\infty} \dfrac{x^2 + x + 2}{x-1} - x
+  = \lim_{x \to \pm\infty} \dfrac{x^2 + x + 2 - x^2 + x}{x-1} \\
+& = \lim_{x \to \pm\infty} \dfrac{x^2 + x + 2 - x^2 + x}{x-1}
+  = \lim_{x \to \pm\infty} \dfrac{2x + 2}{x-1}
+  = \lim_{x \to \pm\infty} \dfrac{2}{1}
+  = 2.
+\end{align*}
+Deste modo, $y=x+2$ é uma assíntota oblíqua e não há assíntotas horizontais.
+
+\item
+Considerando que $\dom{f} = \R\setminus \{1\}$, os pontos críticos de $f$ são aqueles em que $f^\prime$ se anula ou não está definida.
+
+Como $f^\prime(-1) = 0$, e $f$ é crescente à esquerda de $x_1 = -1$ e decrescente em uma vizinhança à direita deste ponto (pelo item (b)), conclui-se que $x_1=-1$ é um ponto crítico de $f$, no qual ela assume um valor máximo local $f(-1) = -1$. No entanto, sendo $\lim_{x \to 1^+} f(x) = +\infty$ (pelo item (c)), o ponto de máximo em $x_1 = -1$ não é global.
+
+Analogamente, $f^\prime(3) = 0$, e $f$ é decrescente em uma vizinhança à esquerda de $x_1 = 3$ e crescente à direita deste ponto (pelo item (b)), conclui-se que $x_2=3$ é um ponto crítico de $f$, no qual ela assume um valor mínimo local $f(3) = 7$. No entanto, sendo $\lim_{x \to 1^-} f(x) = -\infty$ (pelo item (c)), o ponto de mínimo em $x_2 = 3$ não é global.
+
+Além disso, por existir $f^\prime(x)$ em todo $x \in \dom{f}$, e $x_1 = -1$ e $x_2 = 3$ serem os únicos pontos do domínio de $f$ em que a derivada se anula, pode-se concluir que não há outros pontos críticos.
+
+Uma vez que $f$ não muda de concavidade em nenhum ponto de seu domínio (só em $x_1 = 1$, que não pertence ao domínio), não há pontos de inflexão.
+
+\item \text{}\\
+\includegraphics[width=0.60\linewidth]{img/prova-3-tads-2a-racional}
+
+\end{enumerate}
+
+%\newpage
+\item Seja $\displaystyle g(x) = \frac{x+1}{e^x}$.
+
+\begin{enumerate}
+\item Pela regra do quociente, tem-se:
+\[
+g^\prime(x)
+= \frac{e^x - (x+1)e^x}{(e^x)^2}
+= \frac{-xe^x}{e^{2x}}
+= \frac{-x}{e^x}
+\]
+e
+\begin{align*}
+g^{\prime\prime}(x)
+= \frac{-e^x+xe^x}{(e^x)^2}
+= \frac{(-1+x)e^x}{e^{2x}}
+= \frac{x-1}{e^x}.
+\end{align*}
+
+\item
+\begin{enumerate}
+\item A função $g$ é crescente nos intervalos em que $g^\prime(x) > 0$. Considerando que $e^x$ é sempre positivo, resulta que $g^\prime(x) = \frac{-x}{e^x} > 0$ quando $-x > 0$, isto é, quando $x \in (-\infty, 0)$. Além disso, $g$ é decrescente em $(0, +\infty)$ pois $g^\prime(x) < 0$.
+
+\item A concavidade de $g$ é para baixo quando $g^{\prime\prime}(x) < 0$, isto é, quando $\frac{x-1}{e^x} < 0$. Assim, $g$ tem concavidade para baixo em $(-\infty, 1)$ e para cima em $(1, +\infty)$.
+\end{enumerate}
+\item
+Como $g$ é contínua em todo $x \in \R$, não há assíntotas verticais.
+
+Por outro lado, se uma reta $y = ax + b$ for uma assíntota de $g$ em $+\infty$, então
+\[
+a = \lim_{x \to +\infty} \frac{g(x)}{x}
+= \lim_{x \to +\infty} \frac{x+1}{xe^x}
+= \lim_{x \to +\infty} \dfrac{1}{e^x + xe^x}
+= 0
+\]
+e
+\begin{align*}
+b = \lim_{x \to -\infty} g(x) - ax
+& = \lim_{x \to -\infty} \frac{x+1}{e^x}
+= \lim_{x \to -\infty} \frac{1}{e^x}
+= 0.
+\end{align*}
+Deste modo, a reta $y=0$ é uma assíntota horizontal de $g$ em $+\infty$.
+
+Analogamente, se uma reta $y = ax + b$ for uma assíntota de $g$ em $-\infty$, então
+\[
+a = \lim_{x \to -\infty} \frac{g(x)}{x}
+= \lim_{x \to -\infty} \frac{\frac{x+1}{e^x}}{x}
+= 0
+\]
+e
+\begin{align*}
+b = \lim_{x \to -\infty} g(x) - ax
+& = \lim_{x \to -\infty} \frac{x+1}{e^x}
+= -\infty.
+\end{align*}
+Consequentemente, $g$ não possui uma assíntota oblíqua em $-\infty$.
+
+\item Levando em conta que $e^x > 0$, para todo $x \in \R$, conclui-se que $\dom{g} = \R$ e que $g^\prime(x)$ também está definida para todo $x \in \R$. Deste modo, se houver algum ponto crítico, será em algum $x \in \R$ tal que $g^\prime(x) = 0$. Mas esta igualdade só ocorre para$x = 0$, então não há outros pontos críticos.
+
+Como $g^{\prime\prime}(0) = -1 < 0$, conclui-se que $x=0$ é um ponto de máximo local de $g$. Além disso, $g$ é crescente em $(-\infty,0)$ e é decrescente em $(0, +\infty)$, então o ponto $x=0$ é um ponto de máximo global de $g$.
+
+Devido à mudança de concavidade de $g$ no ponto $x = 1$, este é um ponto de inflexão e, por ser o único ponto onde ocorre tal mudança, ele é o único ponto de inflexão de $g$.
+
+\item  \text{}\\
+\includegraphics[width=0.78\linewidth]{img/prova-3-tads-2b-quociente-lin-exp}
+\end{enumerate}
+\end{itemize}
+
+\item
+Se as medidas dos lados de um retângulo são $x$ e $y$, então o seu perímetro é $P = 2x + 2y$ e a sua área é $A = xy$. No caso dos retângulos cujo perímetro é $36$, tem-se $2x + 2y = 36$, ou seja, $y = 18-x$, e portanto $A = x(18 - x)$. Assim, para saber se há um retângulo com área mínima ou máxima, basta analisar os máximos e mínimos da função área, dada por $A(x) = -x^2 + 18x$.
+
+Note que neste problema só faz sentido considerar $x>0$ e $y>0$, e também $x<36$ e $y<36$, isto é, $\dom{A} = (0, 36)$. Como $A^\prime(x) = -2x+18$, só há um ponto crítico quando $A^\prime(x) = 0$, o que ocorre para $x = 9$. Neste caso, como $A^{\prime \prime}(x) = -2 < 0$, o ponto $x=9$ é um ponto de máximo, no qual a área correspondente é $A(9)=-9^2+18 \cdot 9 = 81 cm^2$. Além disso, como $A^\prime(x) > 0$ para $x \in (0,9)$ e $A^\prime(x) < 0$ para $x \in (9,18)$, resulta que $A$ é crescente em $(0,9)$ e decrescente em $(9,18)$. Portanto não há nenhum ponto de mínimo.
+
+
+\item Como $f^\prime(x) < 0$ para $x \in (0,1)$, a função $f$ deve ser decrescente até este ponto. Depois disso, para $x \in (1,3)$, tem-se $f^\prime(x) > 0$, o que significa que $f$ é crescente (e que $x=1$ é um ponto de mínimo de $f$). No intervalo $(3,5)$, $f^\prime$ volta a assumir valores negativos, então $f$ é decrescente (e $x=3$ é um ponto de máximo de $f$).
+
+Em relação à concavidade de $f$, pode-se perceber que será para cima em $(0,2)$ porque $f^\prime$ é crescente neste intervalo, para baixo em $(2,4)$ (pois $f^\prime$ é decrescente) e para cima em $(4,5)$ (pois $f^\prime$ volta a ser crescente). Como houve mudança de concavidade em $x=2$ e $x=4$, estes são pontos de inflexão de $f$.
+
+Este é um esboço para o gráfico de $f$, coerente com as observações acima:
+
+\centering
+\includegraphics[width=7.5cm]{img/prova-3-tads-derivada-malha-primitiva}
+\end{enumerate}
+\end{document}

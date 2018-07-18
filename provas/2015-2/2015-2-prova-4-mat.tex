@@ -1,0 +1,236 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\tg{\operatorname{tg}}
+\newcommand*\arctg{\operatorname{arctg}}
+\newcommand*\abs[1]{\left|#1\right|}
+
+\newcommand*\tipo{PROVA IV}
+\newcommand*\turma{MAT102-02U}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{07/12/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (\turma)}
+& \textbf{\tipo}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item Calcule apenas 5 das 6 integrais a seguir:
+\begin{enumerate}
+\item (2,0) $\displaystyle \int 5^x(\sen(5^x)-\cos(5^x)) \diff x$
+\item (2,0) $\displaystyle \int 4x^3 \cos(x^2+1) \diff x$
+\item (2,0) $\displaystyle \int \frac{8x+3}{x^2+3} \diff x$
+\item (2,0) $\displaystyle \int e^{2x} \cos(x) \diff x$
+\item (2,0) $\displaystyle \int \tg^3(x)\sec^3(x) \diff x$
+\item (2,0) $\displaystyle \int \frac{2 x+13}{x^2-5 x+4} \diff x$
+\end{enumerate}
+\end{enumerate}
+
+\begin{center}
+BOA PROVA!!!
+\end{center}
+\begin{center}
+(E BOAS FÉRIAS ;-)
+\end{center}
+
+\newpage
+\section*{Respostas e observações}
+
+\begin{enumerate}
+\item Seguem alguns possíveis caminhos para o cálculo das integrais propostas:
+\begin{enumerate}
+\item $\displaystyle \int 5^x(\sen(5^x)-\cos(5^x)) \diff x$
+
+Considerando $u = 5^x$, tem-se $\diff u = 5^x \ln(5) \diff x$ e
+\begin{align*}
+&   \int 5^x(\sen(5^x)-\cos(5^x)) \diff x
+  = \frac{1}{\ln(5)} \int 5^x(\sen(5^x)-\cos(5^x)) \ln(5) \diff x\\
+& = \frac{1}{\ln(5)} \int \sen(u) - \cos(u) \diff u
+  = \frac{1}{\ln(5)} (-\cos(u) - \sen(u)) + k \\
+& = \frac{-1}{\ln(5)} (\cos(5^x) + \sen(5^x)) + k.
+\end{align*}
+
+\item $\displaystyle \int 4x^3 \cos(x^2+1) \diff x$
+
+Fazendo a substituição $t = x^2 + 1$, tem-se $x^2 = t-1$, $\diff t = 2x \diff x$ e
+\begin{align*}
+    \int 4x^3 \cos(x^2+1) \diff x
+= 2 \int x^2 \cos(x^2+1) 2x \diff x
+= 2 \int (t-1) \cos(t) \diff t
+\end{align*}
+
+Tomando $u = t-1$ e $\diff v = \cos(t) \diff t$, tem-se $\diff u = \diff t$ e $v = \sen(t)$. Logo:
+\begin{align*}
+  \int (t-1) \cos(t) \diff t
+& = (t-1)\sen(t) - \int \sen(t) \diff t
+  = (t-1)\sen(t) + \cos(t) + k_1.
+\end{align*}
+
+Portanto, $\int 4x^3 \cos(x^2+1) \diff x = 2 x^2 \sen(x^2+1) + 2\cos(x^2+1) + k_2$.
+
+\item $\displaystyle \int \frac{8x+3}{x^2+3} \diff x$
+Observe inicialmente que
+\begin{align*}
+  \int \frac{8x+3}{x^2+3} \diff x
+= 4 \int \frac{2x}{x^2+3} \diff x + \int \frac{3}{x^2+3} \diff x.
+\end{align*}
+Para a primeira integral, é razoável escolher $u = x^2+3$, de modo que $\diff u = 2x \diff x$ e
+\begin{align*}
+  \int \frac{2x}{x^2+3} \diff x
+= \int \frac{1}{u} \diff u
+= \ln|u| + k_1
+= \ln|x^2 + 3| + k_1
+= \ln(x^2 + 3) + k_1
+\end{align*}
+Para a segunda, pode-se fazer a substituição trigonométrica $x = \sqrt{3} \tg(\theta)$ e obter $\diff x =\sqrt{3} \sec^2(\theta)\diff \theta$. Assim,
+\begin{align*}
+    \int \frac{3}{x^2+3} \diff x
+& = \int \frac{3}{(\sqrt{3} \tg(\theta))^2+3} \sqrt{3} \sec^2(\theta)\diff \theta
+  = \int \frac{3 \sqrt{3} \sec^2(\theta)}{3\tg^2(\theta)+3} \diff \theta \\
+& = \sqrt{3} \int \frac{ \sec^2(\theta) }{ \tg^2(\theta) + 1 } \diff \theta
+  = \sqrt{3} \int \frac{ \sec^2(\theta) }{ \sec^2(\theta)    } \diff \theta
+  = \sqrt{3} \int 1 \diff \theta \\
+& = \sqrt{3} \cdot \theta + k_2
+  = \sqrt{3}\arctg\left(\frac{x}{\sqrt{3}}\right) + k_2
+\end{align*}
+Portanto, $\int \frac{8x+3}{x^2+3} \diff x
+= \ln(x^2 + 3) + \sqrt{3}\arctg\left(\frac{x}{\sqrt{3}}\right) + k$.
+
+\item $\displaystyle \int e^{2x} \cos(x) \diff x$
+
+Pode-se aplicar a integração por partes com $u = \cos(x)$ e $\diff v = e^{2x} \diff x$, obtendo $\diff u = -\sen(x) \diff x$, $v = \frac{1}{2} e^{2x}$ e
+\begin{align*}
+  \int e^{2x} \cos(x) \diff x
+= \frac{1}{2}\cos(x) e^{2x} + \frac{1}{2} \int e^{2x} \sen(x) \diff x.
+\end{align*}
+Novamente, é possível integrar por partes, considerando $u = \sen(x)$ e $\diff v = e^{2x} \diff x$, de modo que $\diff u = \cos(x) \diff x$, $v = \frac{1}{2} e^{2x}$ e
+\begin{align*}
+    \int e^{2x} \cos(x) \diff x
+& = \frac{1}{2}\cos(x) e^{2x} + \frac{1}{2} \left[
+\frac{1}{2}\sen(x) e^{2x} - \frac{1}{2} \int e^{2x} \cos(x) \diff x
+\right] \\
+& = \frac{1}{2}\cos(x) e^{2x}
+  + \frac{1}{4}\sen(x) e^{2x}
+  - \frac{1}{4}\int e^{2x} \cos(x) \diff x.
+\end{align*}
+Assim, somando $\frac{1}{4}\int e^{2x} \cos(x) \diff x$ a ambos os membros, resulta que
+\begin{align*}
+\frac{5}{4} \int e^{2x} \cos(x) \diff x
+= \frac{1}{2}\cos(x) e^{2x}
++ \frac{1}{4}\sen(x) e^{2x} + k_1.
+\end{align*}
+Portanto,
+\begin{align*}
+  \int e^{2x} \cos(x) \diff x
+= \frac{4}{5} \left[
+    \frac{1}{2}\cos(x) e^{2x}
+  + \frac{1}{4} \sen(x) e^{2x} + k_1
+\right]
+  = \frac{1}{5} e^{2x} (2 \cos(x) + \sen(x)) + k_2.
+\end{align*}
+
+\item $\displaystyle \int \tg^3(x)\sec^3(x) \diff x$
+
+Usando a identidade trigonométrica $\tg^2(x) = \sec^2(x)-1$, segue que:
+\begin{align*}
+  \int \tg^3(x)\sec^3(x) \diff x
+& = \int \tg^2(x)\tg(x)\sec^3(x) \diff x
+  = \int \left[\sec^2(x) - 1\right]\tg(x)\sec^3(x) \diff x \\
+& = \int \left[\sec^4(x) - \sec^2(x)\right]\tg(x)\sec(x) \diff x.
+\end{align*}
+Agora, basta substituir $u = \sec(x)$ para obter $\diff u = \tg(x)\sec(x) \diff x$ e
+\begin{align*}
+  \int \tg^3(x)\sec^3(x) \diff x
+= \int u^4 - u^2 \diff u
+= \frac{u^5}{5} - \frac{u^3}{3} + k
+= \frac{\sec^5(x)}{5} - \frac{\sec^3(x)}{3} + k.
+\end{align*}
+
+\item $\displaystyle \int \frac{2x + 13}{x^2-5 x+4} \diff x$
+
+Observando que $x^2 - 5x + 4 = (x-1)(x-4)$, a decomposição em frações parciais da função a ser integrada é obtida por
+\[
+\frac{2x + 13}{(x-1)(x-4)}
+= \frac{A}{x-1} + \frac{B}{x-4}
+= \frac{A(x-4) + B(x-1)}{(x-1)(x-4)}
+= \frac{(A+B)x +(-4A-B)}{(x-1)(x-4)}.
+\]
+
+Comparando os numeradores, resulta que $A$ e $B$ devem ser soluções do sistema
+\[
+\begin{cases}
+  A + B &= 2 \\
+-4A - B &= 13
+\end{cases}
+\]
+
+Somando termo a termo os dois membros das equações, resulta que $-3A = 15$, ou seja, $A=-5$. Consequentemente, $B = 2-(-5) = 7$. Então
+\begin{align*}
+\int \frac{2x + 13}{(x-1)(x-4)} \diff x
+& = \int \frac{-5}{x-1} + \frac{7}{x-4} \diff x
+  = -5 \int \frac{1}{x-1} \diff x + 7 \int \frac{1}{x-4} \diff x \\
+& = -5 \ln\abs{ x-1 } + 7 \ln\abs{x-4} + c
+  = \ln\abs{ (x-1)^{-5} (x-4)^7} + c.
+\end{align*}
+
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

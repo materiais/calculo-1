@@ -1,0 +1,367 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+% TODO: Consider using exsheets
+% http://linorg.usp.br/CTAN/macros/latex/contrib/exsheets/exsheets_en.pdf
+%
+% http://ctan.org/tex-archive/macros/latex/contrib/exercise/
+% Options: answerdelayed,lastexercise,noanswer
+\usepackage[answerdelayed,lastexercise]{exercise}
+
+\addto\captionsbrazil{%
+\def\listexercisename{Lista de exerc\'icios}%
+\def\ExerciseName{Exerc\'icio}%
+\def\AnswerName{Solu\c{c}\~ao do exerc\'icio}%
+\def\ExerciseListName{Ex.}%
+\def\AnswerListName{Solu\c{c}\~ao}%
+\def\ExePartName{Parte}%
+\def\ArticleOf{de\ }%
+}
+
+\renewcommand{\ExerciseHeaderTitle}{(\ExerciseTitle)\ }
+\renewcommand{\ExerciseListHeader}{%\ExerciseHeaderDifficulty%
+\textbf{%\ExerciseListName\
+\ExerciseHeaderNB.\ %
+%\ --- \
+\ExerciseHeaderTitle}%
+%\ExerciseHeaderOrigin
+\ignorespaces}
+\renewcommand{\AnswerListHeader}{\textbf{\ExerciseHeaderNB.\ (\AnswerListName)\ }}
+
+\newcommand*\dom[1]{\operatorname{Dom}\left(#1\right)}
+\newcommand*\im[1]{\operatorname{Im}\left(#1\right)}
+
+\newcommand*\R{\mathbb{R}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi) }
+
+\newcommand*\tipo{Prova I}
+\newcommand*\turma{TADS121-01C}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{17/03/2017}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca} \\
+\textbf{\tipo\ (\disciplina / \turma)} \\
+Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional}}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \underline{\hspace{9,7cm}} Data: \underline{\data}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Resolva (integralmente) apenas os itens de que precisar para somar 10,0 pontos.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+%\section*{Questões}
+\begin{ExerciseList}
+\Exercise[title={2,0}] Determine todos os valores de $x \in \R$ tais que $\dfrac{|x| + 10}{|5x-2|} > 1$.
+\Answer Primeiramente, como há uma divisão por $5x-2$, para que $x$ satisfaça a inequação não poderá ocorrer $5x-2 = 0$, ou seja, é preciso que $x \neq \frac{2}{5}$. Lembrando que $|5x-2| > 0$ para todo $x \neq \frac{2}{5}$, tem-se a seguinte equivalência:
+\[
+\dfrac{|x| + 10}{|5x-2|} > 1
+\Leftrightarrow
+|x| + 10 > |5x-2|.
+\]
+Como o valor absoluto de um número é definido separadamente dependendo do número ser positivo ou negativo, há os seguintes casos a considerar conforme o sinal de $x$ e o sinal de $5x-2$:
+\begin{enumerate}
+\item Se $x \geq 0$ e $5x-2 > 0$, isto é, $x \in \left(\frac{2}{5}, +\infty\right)$:
+\[
+|x| + 10 > |5x-2|
+\Leftrightarrow
+x + 10 > 5x-2
+\Leftrightarrow
+-4x > -12
+\Leftrightarrow
+x < 3.
+\]
+Então $x \in \left(\frac{2}{5}, +\infty\right) \cap (-\infty,3) = \left(\frac{2}{5}, 3\right)$.
+
+\item Se $x \geq 0$ e $5x-2 < 0$, isto é, $x \in \left[0, \frac{2}{5}\right)$:
+\[
+|x| + 10 > |5x-2|
+\Leftrightarrow
+x + 10 > -5x+2
+\Leftrightarrow
+6x > -8
+\Leftrightarrow
+x > -\frac{4}{3}.
+\]
+Neste caso, $x \in \left[0, \frac{2}{5}\right) \cap (-\frac{4}{3},+\infty) = \left[0, \frac{2}{5}\right)$.
+
+\item Se $x < 0$ e $5x-2 < 0$, isto é, $x \in (-\infty, 0)$:
+\[
+|x| + 10 > |5x-2|
+\Leftrightarrow
+-x + 10 > -5x+2
+\Leftrightarrow
+4x > -8
+\Leftrightarrow
+x > -2.
+\]
+Assim, $x \in (-\infty, 0) \cap (-2,+\infty) = (-2, 0)$.
+\item Note que não há como ocorrer um quarto caso em que $x < 0$ e $5x-2 > 0$, pois isso exigiria que $x > \frac{2}{5} > 0 > x$ (um absurdo!).
+\end{enumerate}
+
+Portanto, o conjunto $S$ formado por todas as soluções da inequação é dado pela união das soluções de cada caso, que pode ser expressa das seguintes formas:
+\[
+S = (-2, 0)
+\cup \left[0, \frac{2}{5}\right)
+\cup \left(\frac{2}{5}, 3\right)
+= \left(-2, \frac{2}{5}\right)
+\cup \left(\frac{2}{5}, 3\right)
+= \left(-2, 3\right) \setminus \left\{ \frac{2}{5} \right\}.
+\]
+
+\Exercise%[title={2,0}]
+Sejam $f: [0, +\infty) \to \R$, $g: \R: \to \R$ e $h: \R: \to \R$ as funções dadas pelas regras
+\[
+f(x) = \sqrt{x},
+\quad g(x) = |2x - 7| - 1
+\quad \text{e}\quad h(x) =  8 (x + 2).
+\]
+Determine domínios $A$ e $B$ nos quais possam ser definidas as funções:
+\begin{enumerate}
+\item \textbf{(1,0)} $f \circ g: A \to \R$, dada por $(f \circ g)(x) = f(g(x))$
+\item \textbf{(1,0)} $f \circ (g-h): B \to \R$, dada por $(f \circ (g-h))(x) = f(g(x)-h(x))$
+\end{enumerate}
+\Answer Para que a função $f$ possa ser composta com outras funções, estas devem produzir valores que estejam no domínio de $f$, que é $\dom{f} = [0, +\infty) = \R_+$.
+\begin{enumerate}
+\item No caso de $f \circ g$, será preciso que $g(x) \in [0, +\infty)$, para todo $x \in A$. Os valores de $x$ que satisfazem esta condição podem ser obtidos levando em conta que:
+\begin{align*}
+|2x - 7| - 1\geq 0
+& \Leftrightarrow
+|2x - 7| \geq 1
+ \Leftrightarrow
+(2x - 7)^2 \geq 1
+ \Leftrightarrow
+4x^2 - 28x + 49 \geq 1 \\
+& \Leftrightarrow
+4x^2 - 28x + 48 \geq 0
+ \Leftrightarrow
+x^2 - 7x + 12 \geq 0
+ \Leftrightarrow
+(x-3)(x-4) \geq 0.
+\end{align*}
+Mas para que $(x-3)(x-4) \geq 0$, basta que $x-3 \geq 0$ e $x-4 \geq 0$ ou então que $x-3 \leq 0$ e $x-4 \leq 0$. A primeira hipótese equivale a $x \leq 3$ e a segunda a $x \geq 4$. Consequentemente, $A = \dom{f \circ g} = (-\infty, 3] \cup [4, +\infty)$.
+
+\item No caso de $f \circ (g-h)$, será preciso que $(g-h)(x) \in [0, +\infty)$, para todo $x \in B$. Os valores de $x$ que satisfazem esta condição podem ser obtidos levando em conta que
+\[
+(g-h)(x) = |2x - 7| - 1 - 8 (x + 2) = |2x - 7| - 8x - 17,
+\]
+e além disso:
+\begin{enumerate}
+\item Para $x \geq \frac{7}{2}$, tem-se:
+\begin{align*}
+|2x - 7| - 8x - 17 \geq 0
+& \Leftrightarrow
+ 2x - 7  - 8x - 17 \geq 0
+  \Leftrightarrow
+-6x -24 \geq 0 \\
+& \Leftrightarrow
+-6x \geq 24
+  \Leftrightarrow
+x \leq \frac{24}{-6} = -4.
+\end{align*}
+Como $(-\infty, -4] \cap [\frac{7}{2}, +\infty) = \emptyset$, nenhum $x \geq \frac{7}{2}$ pode fazer parte do domínio $B$.
+\item Para $x < \frac{7}{2}$, tem-se:
+\begin{align*}
+|2x - 7| - 8x - 17 \geq 0
+& \Leftrightarrow
+-2x + 7  - 8x - 17 \geq 0
+  \Leftrightarrow
+-10x -10 \geq 0\\
+& \Leftrightarrow
+-10x \geq 10
+  \Leftrightarrow
+x \leq \frac{10}{-10} = -1.
+\end{align*}
+Neste caso, tem-se $x \in (-\infty, -1] \cap (-\infty, \frac{7}{2}) = (-\infty, -1]$.
+\end{enumerate}
+Portanto, $B = \dom{f \circ (g-h)} = (-\infty, -1]$.
+\end{enumerate}
+
+\Exercise[title={2,0}] Obtenha o conjunto imagem das funções $f$, $g$ e $h$ da questão anterior. Alguma delas é sobrejetora? E injetora? Justifique suas respostas.
+\Answer Sejam $f(x) = \sqrt{x}$, $g(x) = |2x - 7| - 1$ e $h(x) =  8 (x + 2)$:
+\begin{itemize}
+\item Em relação à sobrejetividade:
+\begin{enumerate}
+\item A função $f$ não é sobrejetora pois $\im{f} = [0, +\infty) = \R_+ \neq \R$.
+\item A função $g$ não é sobrejetora pois $\im{g} = [-1, +\infty) \neq \R$.
+\item A função $h$ é sobrejetora pois $\im{h} = \R$.
+\end{enumerate}
+\item Quanto à injetividade:
+\begin{enumerate}
+\item A função $f$ é injetora pois para $a, b \geq 0$ tem-se $\sqrt{a} = \sqrt{b}\Rightarrow a = b$.
+\item A função $g$ não é injetora pois, por exemplo, $g(3) = 0 = g(4)$, sendo que $3 \neq 4$.
+\item A função $h$ é injetora pois $h(a) = h(b) \Rightarrow 8(a+2) = 8(b+2) \Rightarrow a+2 = b+2 \Rightarrow a=b$.
+\end{enumerate}
+\end{itemize}
+
+\Exercise%[title={2,0}]
+Considere a função $f:
+(-\infty, -2) \cup (-1, +\infty)
+\to \R^*$ dada por
+\[
+y = f(x) = \log_{10}\left( \frac{x+1}{x+2} \right).
+\]
+\begin{enumerate}
+\item \textbf{(1,0)} Mostre que $f$ é injetora.
+\item \textbf{(1,0)} Obtenha a regra para $f^{-1}$, isto é, a função inversa de $f$
+\end{enumerate}
+\Answer
+\begin{enumerate}
+\item Supondo que $f(a) = f(b)$, tem-se:
+\begin{align*}
+& \log_{10}\left( \frac{a+1}{a+2} \right) = \log_{10}\left( \frac{b+1}{b+2} \right)
+\Rightarrow
+10^{\log_{10}\left( \frac{a+1}{a+2} \right)} = 10^{\log_{10}\left( \frac{b+1}{b+2} \right)}
+\Rightarrow
+\frac{a+1}{a+2} = \frac{b+1}{b+2}\\
+& \Rightarrow
+(a+1)(b+2) = (a+2)(b+1)
+\Rightarrow
+ab+2a+b+2 = ab+2b+a+2\\
+& \Rightarrow
+2a+b = 2b+a
+\Rightarrow
+a = b.
+\end{align*}
+Logo, $f$ é injetora.
+
+\item Tem-se
+\begin{align*}
+y = f(x) = \log_{10}\left( \frac{x+1}{x+2} \right)
+& \Leftrightarrow
+10^y = \frac{x+1}{x+2}
+\Leftrightarrow
+(x + 2) 10^y = x+1
+\Leftrightarrow
+x10^y + 2 \cdot 10^y = x+1 \\
+& \Leftrightarrow
+x 10^y - x = 1 - 2 \cdot 10^y
+ \Leftrightarrow
+x(10^y-1) = 1 - 2 \cdot 10^y\\
+& \Leftrightarrow
+x = \frac{1 - 2 \cdot 10^y}{10^y-1}.
+\end{align*}
+Logo, $f^{-1}: \R^* \to (-\infty, -2) \cup (-1, +\infty)$ é dada pela regra $f^{-1}(y) = \frac{1 - 2 \cdot 10^y}{10^y-1}$.
+\end{enumerate}
+
+\Exercise%[title={4,0}]
+Um estudante tirou as notas $P_1 = 8.0$ e $P_2 = 6.0$ em duas avaliações de uma disciplina de matemática, ambas valendo $10.0$. Sabendo que a média semestral será calculada por
+\[ M = \frac{P_1 + 3P_2 + 2P_3}{6}, \]
+responda e justifique suas respostas para as sequintes questões, fazendo uso dos seus conhecimentos sobre desigualdades e funções:
+\begin{enumerate}
+\item \textbf{(1,0)} Que notas o estudante deve tirar em sua terceira prova se quiser ter média $M \geq 7.0$?
+\item \textbf{(1,0)} O estudante ainda tem chance de ficar com média $M = 8.0$?
+\item \textbf{(1,0)} Se o estudante tirar uma nota $P_3 \in [5.0, 7.0 )$, sua média $M$ estará em que intervalo?
+\item \textbf{(1,0)} Obtenha a função que associa a cada média $M$ que o estudante poderia obter a nota $P_3$ que ele precisa tirar para ficar com a média $M$. Exiba o domínio e a imagem da função.
+\end{enumerate}
+\Answer Considerando as notas já obtidas, a média $M$ pode ser descrita em função da nota $P_3$ por
+\[
+M = \frac{8 + 3 \cdot 6 + 2P_3}{6}
+  = \frac{26 + 2P_3}{6}
+  = \frac{13 + P_3}{3}.
+\]
+\begin{enumerate}
+\item A condição $M \geq 7$ é equivalente às seguintes:
+\[
+\frac{13 + P_3}{3} \geq 7
+ \Leftrightarrow
+13 + P_3 \geq 21
+ \Leftrightarrow
+P_3 \geq 8.
+\]
+Como as notas vão de $0$ a $10.0$, o estudante deve tirar uma nota $P_3 \in [8.0, 10.0]$.
+\item Para que ocorresse $M = 8$, a nota $P_3$ deveria satisfazer:
+\[
+\frac{13 + P_3}{3} = 8
+ \Leftrightarrow
+13 + P_3 = 24
+ \Leftrightarrow
+P_3 = 11.
+\]
+Mas isto não será possível, pois $P_3 \in [0.0, 10.0]$.
+\item Seja $P_3 \in [5.0, 7.0 )$. Decorre das propriedades das desigualdades que
+\begin{align*}
+5 \leq P_3 < 7
+& \Rightarrow
+5 + 13 \leq P_3 + 13 < 7 + 13 \\
+& \Rightarrow
+\frac{18}{3} \leq \frac{P_3 + 13}{3} < \frac{20}{3} \\
+& \Rightarrow
+M \in \left[ 6, \frac{20}{3} \right) = [6, 6.\overline{6}).
+\end{align*}
+
+\item Seja $p: A \to B$ a função procurada. Observando que
+\[
+M = \frac{13 + P_3}{3}
+\Leftrightarrow
+3M = 13 + P_3
+\Leftrightarrow
+P_3 = 3M - 13,
+\]
+tem-se que $p(x) = 3x - 13$. Além disso, considerando que $0 \leq P_3 \leq 10$, conclui-se que $B = \im{p} = [0, 10]$ e consequentemente:
+\[
+0 \leq P_3 \leq 10
+\Rightarrow
+13 \leq P_3 + 13 \leq 23
+\Rightarrow
+\frac{13}{3} \leq \frac{P_3 + 13}{3} \leq \frac{23}{3}
+\Rightarrow
+M \in \left[ \frac{13}{3}, \frac{23}{3} \right].
+\]
+Em outras palavras, $A = \dom{p} = [4.\overline{3}, 7.\overline{6}]$.
+\end{enumerate}
+\end{ExerciseList}
+
+\begin{center}
+BOA PROVA!
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas}
+\shipoutAnswer
+\end{document}

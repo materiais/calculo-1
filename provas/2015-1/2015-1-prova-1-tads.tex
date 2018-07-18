@@ -1,0 +1,289 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand{\suchthat}{\;\ifnum\currentgrouptype=16 \middle\fi|\;}
+
+\newcommand*\tipo{PROVA I}
+\newcommand*\turma{TURMA B}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{09/04/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics{udesc_joinville_cabecalho.pdf}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina}
+& \textbf{\tipo}
+& \textbf{\data}
+& \textbf{\turma}
+\end{tabular}\vspace{-0.3cm}
+\noindent\rule{17cm}{0.01cm}
+\end{center}
+
+\noindent Nome do aluno: \rule{14cm}{0.01cm}
+
+\section*{Instruções}
+
+\begin{enumerate}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\end{enumerate}
+
+\section*{Questões}
+\begin{enumerate}
+
+\item (1,5 pontos) Encontre o domínio da função
+\[
+f(x)= \sqrt{\dfrac{\ln(x+1)}{|2x-3|}}
+\]
+
+\item Considere as funções $f(x)=\dfrac{3x^4+x^2-4}{x^2-1}$ e $g(x)=\text{sen}\left(\dfrac{1}{x-1}\right)$. Responda:
+
+\begin{enumerate}
+\item (1,0 ponto) Descreva o domínio de cada uma das funções.
+\item (2,0 pontos) Calcule $\lim\limits_{x\to 1}g(x)\cdot\left(3-\sqrt{f(x)+2}\right)$.
+\end{enumerate}
+
+
+
+\item (1,5 pontos) Estude a continuidade da função $f$, apresentada abaixo, no ponto $x=0$:
+\[f(x)=\left\{\begin{array}{ll}
+\dfrac{\tan(x)-\text{sen}(x)}{x}, & \text{se}\quad x<0\\
+0, & \text{se}\quad x=0 \\
+x\cos\left(\dfrac{1}{x}\right), & \text{se}\quad x>0
+\end{array}\right. \]
+
+
+\item Calcule os limites abaixo. Use limites notáveis, se necessário.
+
+\begin{enumerate}
+\item (1,0 ponto) \quad $\lim\limits_{x\to -5 }\dfrac{\sin(x+5)}{x^2+6x+5}$
+\item (1,0 ponto) \quad $\lim\limits_{x\to \infty} \dfrac{\sqrt{9x^2-7}}{3x+e}$
+\item (1,0 ponto) \quad $\lim\limits_{x\to 0} \dfrac{e^{2x}-1}{e^{3x}-1} $
+\item (1,0 ponto) \quad $\lim\limits_{x\to 3} \dfrac{\ln(x)-\ln(3)}{x-3}  $
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+
+\begin{enumerate}
+\item \textit{Encontre o domínio da função
+\[
+f(x)= \sqrt{\dfrac{\ln(x+1)}{|2x-3|}}
+\]
+}
+
+Uma das condições para que a fórmula que define $f(x)$ faça sentido, é que o valor de $x$ não anule o denominador $|2x-3|$. Tal anulamento aconteceria no seguinte caso:
+\[
+|2x-3| = 0 \quad\Leftrightarrow\quad
+  2x-3 = 0 \quad\Leftrightarrow\quad
+    2x = 3 \quad\Leftrightarrow\quad
+     x = \frac{3}{2}.
+\]
+Então a condição é que $x \neq \frac{3}{2}$. Além disso, como a função $\ln$ só pode ser aplicada a números reais positivos, é preciso que $x + 1 >0$, ou seja, que $x > -1$. Também é necessário que a expressão colocada dentro da raiz quadrada seja maior ou igual a zero, e como $|2x-3|$ nunca é negativo, basta saber quais valores de $x$ tornam $\ln(x + 1)$ não negativo:
+\[
+\ln(x + 1) \geq 0 \quad \Leftrightarrow \quad
+     x + 1 \geq 1 \quad \Leftrightarrow \quad
+         x \geq 0.
+\]
+Assim, $x \in \mathbb{R}$ pertence ao domínio $D_{f}$ se, e somente se, satisfaz as três condições a seguir:
+\[
+x \neq \frac{3}{2}, \quad
+x > -1 \quad\text{ e }\quad
+x \geq 0.
+\]
+Simbolicamente, podemos descrever o domínio de qualquer uma das seguintes formas:
+\[
+D_{f} = \left\{ x \in \mathbb{R} \suchthat x \geq 0 \text{ e } x \neq \frac{3}{2} \right\}
+      = \left[0,\frac{3}{2}\right) \cup \left(\frac{3}{2}, \infty \right)
+      = [0, \infty) \setminus \left\{ \frac{3}{2} \right\}
+\]
+\item \textit{ Considere as funções $f(x)=\dfrac{3x^4+x^2-4}{x^2-1}$ e $g(x)=\text{sen}\left(\dfrac{1}{x-1}\right)$. Responda:
+\begin{enumerate}
+\item Descreva o domínio de cada uma das funções.
+\item Calcule $\lim\limits_{x \to 1} g(x) \cdot \left( 3 - \sqrt{f(x) + 2} \right)$.
+\end{enumerate}
+}
+
+\begin{enumerate}
+\item O domínio $D_{f}$ consiste dos números reais que não anulam o denominador, isto é,
+\[
+D_{f} = \left\{x \in \mathbb{R} \suchthat x^2 \neq 1\right\}
+      = \left\{x \in \mathbb{R} \suchthat x \neq \pm 1\right\}
+      = (-\infty, -1) \cup (-1, 1) \cup (1, +\infty)
+\]
+Já o domínio $D_{g}$ é formado por todos os números reais $x$ que não anulam o denominador $x-1$, isto é,
+\[
+D_{g} = \left\{x \in \mathbb{R} \suchthat x \neq 1\right\}
+      = (-\infty, 1) \cup (1, +\infty)
+\]
+
+\item Em primeiro lugar, observe que
+\[
+  \lim\limits_{x\to 1}f(x)
+= \lim\limits_{x\to 1} \dfrac{3x^4+x^2-4}{x^2-1}
+= \lim\limits_{x\to 1} \dfrac{(x^2-1)(3x^2+4)}{x^2-1}
+= \lim\limits_{x\to 1} 3x^2 + 4
+= 3 \cdot 1^2 + 4
+= 7
+\]
+Sabendo que $t = f(x) \to 7$ quando $x \to 1$, conclui-se que
+\[
+  \lim\limits_{x \to 1} 3 - \sqrt{f(x) + 2}
+= \lim\limits_{t \to 7} 3 - \sqrt{t + 2}
+= 3 - \sqrt{7 + 2}
+= 0.
+\]
+Finalmente, como os valores da função seno estão entre -1 e 1, a função $g(x) = \text{sen}( 1/(x - 1) )$ é limitada e $-1 \leq g(x) \leq 1$. Multiplicando estas desigualdades por $\left(3 - \sqrt{f(x) + 2}\right)$, resulta que:
+\[
+    -\left(3 - \sqrt{f(x) + 2}\right)
+\leq g(x) \cdot \left(3-\sqrt{f(x)+2}\right)
+\leq 3 - \sqrt{f(x)+2}.
+\]
+Aqui, tanto a expressão mais à esquerda quanto a expressão mais à direita tendem a zero quando $x \to 0$. Logo, pelo teorema do confronto, o limite da função intermediária também é zero, ou seja,
+\[
+\lim\limits_{x\to 1}
+    \cancelto{\text{limitada}}{g(x)}
+    \qquad \cdot \qquad
+    \cancelto{0}{\left(3 - \sqrt{f(x) + 2} \right)} = 0.
+\]
+
+\textbf{Nota:} O limite de $f(x)$ também poderia ser calculado sem fatorar o polinômio, bastando definir $u = x^2 - 1$. Assim, $x^2 = u+1$ e $u \to 0$ quando $x \to 1$ e o cálculo seria:
+\begin{align*}
+  \lim\limits_{x\to 1} f(x)
+& = \lim\limits_{x\to 1} \dfrac{3x^4+x^2-4}{x^2-1} \\
+& = \lim\limits_{u\to 0} \dfrac{3(u+1)^2+(u+1)-4}{u} \\
+& = \lim\limits_{u\to 0} \dfrac{3u^2 + 6u + 3 + u + 1 - 4}{u} \\
+& = \lim\limits_{u\to 0} \dfrac{3u^2 + 7u}{u}
+  = \lim\limits_{u\to 0} 3u + 7
+  = 7.
+\end{align*}
+\end{enumerate}
+
+\item \textit{Estude a continuidade da função $f$, apresentada abaixo, no ponto $x=0$:
+\[f(x)=\left\{\begin{array}{ll}
+\dfrac{\tan(x)-\text{sen}(x)}{x}, & \text{se}\quad x<0\\
+0, & \text{se}\quad x=0 \\
+x \cos\left(\dfrac{1}{x}\right), & \text{se}\quad x>0
+\end{array}\right. \]
+}
+Para que a função $f(x)$ seja contínua em $x=0$, é preciso que os limites laterais coincidam com o valor de $f(0) = 0$. Temos:
+\begin{align*}
+  \lim\limits_{x \to 0^-}\frac{\tan(x)-\text{sen}(x)}{x}
+& = \lim\limits_{x \to 0^-}\frac{\tan(x)}{x}
+   -\lim\limits_{x \to 0^-}\frac{\text{sen}(x)}{x}.
+\end{align*}
+Aqui, $\lim\limits_{x \to 0^-}\frac{\text{sen}(x)}{x} = 1$ (limite notável). Além disso, como $\tan(x) = \frac{\text{sen}(x)}{\cos(x)}$, tem-se:
+\[
+    \lim\limits_{x \to 0^-}\frac{\tan(x)}{x}
+= \lim\limits_{x \to 0^-}\frac{ \frac{\text{sen}(x)}{\cos(x)} }{x}
+= \lim\limits_{x \to 0^-}\frac{\text{sen}(x)}{x}
+                     \cdot \frac{1}{\cos(x)}
+= 1 \cdot \lim\limits_{x \to 0^-} \frac{1}{\cos(x)}
+= 1
+\]
+Logo, $\lim\limits_{x \to 0^-}\frac{\tan(x)-\text{sen}(x)}{x} = 1 - 1 = 0$
+
+Por outro lado, para determinar $\lim\limits_{x \to 0+} x \cos\left(\dfrac{1}{x}\right)$ basta observar que o cosseno é uma função limitada (só assume valores entre $-1$ e $1$) e que ao multiplicar tal função por $x$, que tende a zero (pela direita), o produto também tenderá a zero (pelo teorema do confronto). Assim,
+\[
+ \lim\limits_{x \to 0+} x \cos\left(\dfrac{1}{x}\right)
+= \lim\limits_{x \to 0+}
+ \cancelto{0}{x}
+ \quad \cdot \quad
+ \cancelto{\text{limitada}}{\cos\left(\dfrac{1}{x}\right)}
+= 0
+\]
+Portanto, $\lim\limits_{x \to 0^-} f(x) = f(0) = \lim\limits_{x \to 0^+} f(x)$ e conclui-se que $f(x)$ é contínua em $x=0$.
+
+\item \textit{Calcule os limites abaixo. Use limites notáveis, se necessário.}
+\begin{enumerate}
+\item
+\begin{align*}
+  \lim\limits_{x\to -5 }\dfrac{\sin(x+5)}{x^2 + 6x + 5}
+& = \lim\limits_{x\to -5 }\dfrac{\sin(x+5)}{(x+5)(x+1)}
+  = \lim\limits_{x\to -5 } \dfrac{\sin(x+5)}{x+5}
+  \cdot
+  \lim\limits_{x\to -5 } \frac{1}{x+1} \\
+& = \lim\limits_{u\to 0} \dfrac{\sin(u)}{u}
+  \cdot
+  \frac{1}{-5+1} = 1
+  \cdot
+  \frac{1}{-4} = -\frac{1}{4}
+\end{align*}
+\item
+\[
+  \lim\limits_{x\to \infty} \frac{\sqrt{9x^2-7}}{3x+e}
+= \lim\limits_{x\to \infty} \frac{\sqrt{x^2(9-\frac{7}{x^2})}}{x(3 + \frac{e}{x})}
+= \lim\limits_{x\to \infty} \cancelto{1}{\frac{|x|}{x}}\frac{\sqrt{9-\frac{7}{x^2}}}{3 + \frac{e}{x}}
+= \lim\limits_{x\to \infty} \frac{\sqrt{9-\cancelto{0}{\frac{7}{x^2}}}}{3 + \cancelto{0}{\frac{e}{x}}}
+= \lim\limits_{x\to \infty} \frac{\sqrt{9}}{3}
+= 1
+\]
+
+\item
+\[
+    \lim\limits_{x\to 0} \frac{e^{2x}-1}{e^{3x}-1}
+  = \lim\limits_{x\to 0} \frac{\frac{e^{2x}-1}{x}}{\frac{e^{3x}-1}{x}}
+  = \frac{\lim\limits_{x\to 0} 2\frac{e^{2x}-1}{2x}}
+         {\lim\limits_{x\to 0} 3\frac{e^{3x}-1}{3x}}
+  = \frac{2\lim\limits_{x\to 0} \frac{e^{2x}-1}{2x}}
+         {3\lim\limits_{x\to 0} \frac{e^{3x}-1}{3x}}
+  = \frac{2}{3} \frac{\lim\limits_{u\to 0} \frac{e^{u}-1}{u}}
+                     {\lim\limits_{t\to 0} \frac{e^{t}-1}{t}}
+  = \frac{2}{3} \frac{\ln(e)}
+                     {\ln(e)}
+  = \frac{2}{3}
+\]
+\item Se $u = x-3$, então
+\[
+  \lim\limits_{x\to 3} \frac{\ln(x)-\ln(3)}{x-3}
+= \lim\limits_{u\to 0} \frac{1}{u}\left(\ln(u+3)-\ln(3)\right)
+= \lim\limits_{u\to 0} \frac{1}{u} \ln\left(\frac{u+3}{3}\right)
+= \lim\limits_{u\to 0} \ln\left(1+\frac{u}{3}\right)^{\frac{1}{u}}
+\]
+Definindo $t=\frac{u}{3}$ tem-se $u=3t$ e consequentemente:
+\begin{align*}
+  \lim\limits_{u\to 0} \ln\left(1+\frac{u}{3}\right)^{\frac{1}{u}}
+& = \lim\limits_{u\to 0} \ln\left(1+t\right)^{\frac{1}{3t}}
+  = \lim\limits_{u\to 0} \ln\left[\left(1+t\right)^{\frac{1}{t}}\right]^{\frac{1}{3}}
+  = \lim\limits_{u\to 0} \frac{1}{3}\ln\left[\left(1+t\right)^{\frac{1}{t}}\right] \\
+& = \frac{1}{3}\ln\cancelto{e}{\left(\lim\limits_{u\to 0} \left(1+t\right)^{\frac{1}{t}}\right)}
+  = \frac{1}{3}\ln(e)
+  = \frac{1}{3}
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+\end{document}

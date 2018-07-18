@@ -1,0 +1,252 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+% TODO: Consider using exsheets
+% http://linorg.usp.br/CTAN/macros/latex/contrib/exsheets/exsheets_en.pdf
+%
+% http://ctan.org/tex-archive/macros/latex/contrib/exercise/
+% Options: answerdelayed,lastexercise,noanswer
+\usepackage[answerdelayed,lastexercise]{exercise}
+
+\addto\captionsbrazil{%
+\def\listexercisename{Lista de exerc\'icios}%
+\def\ExerciseName{Exerc\'icio}%
+\def\AnswerName{Solu\c{c}\~ao do exerc\'icio}%
+\def\ExerciseListName{Ex.}%
+\def\AnswerListName{Solu\c{c}\~ao}%
+\def\ExePartName{Parte}%
+\def\ArticleOf{de\ }%
+}
+
+\renewcommand{\ExerciseHeaderTitle}{(\ExerciseTitle)\ }
+\renewcommand{\ExerciseListHeader}{%\ExerciseHeaderDifficulty%
+\textbf{%\ExerciseListName\
+\ExerciseHeaderNB.\ %
+%\ --- \
+\ExerciseHeaderTitle}%
+%\ExerciseHeaderOrigin
+\ignorespaces}
+\renewcommand{\AnswerListHeader}{\textbf{\ExerciseHeaderNB.\ (\AnswerListName)\ }}
+
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\cotg{\operatorname{cotg}}
+\newcommand*\cosec{\operatorname{cossec}}
+\newcommand*\dom[1]{\operatorname{Dom}\left(#1\right)}
+\newcommand*\im[1]{\operatorname{Im}\left(#1\right)}
+
+\newcommand*\R{\mathbb{R}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi) }
+
+\newcommand*\tipo{Prova I}
+\newcommand*\turma{TADS121-01U}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{25/09/2017}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca} \\
+\textbf{\tipo\ (\disciplina / \turma)} \\
+Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional}}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \underline{\hspace{9,7cm}} Data: \underline{\data}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Escolha apenas 5 das 7 questões para serem corrigidas (totalizando 10,0 pontos).
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+%\section*{Questões}
+\begin{ExerciseList}
+\Exercise[title={2,0}] Sejam $f(x) = \sqrt{x}$, $g(x) = 2 - |3 - x|$ e $h(x) = |x|$.
+\begin{enumerate}
+\item Faça um esboço dos gráficos de $g$ e $h$.
+\item Obtenha o domínio de $f \circ g$.
+\end{enumerate}
+\Answer
+\begin{enumerate}
+\item Uma vez esboçado o gráfico de $h$, cuja fórmula é mais simples, pode-se construir o de $g$ transladando-o 3 unidades para a direita, refletindo o resultado em relação ao eixo $x$ e transladando duas unidades para cima:
+\begin{center}
+\includegraphics[width=10cm]{img/prova-1-tads-graph-g-h}
+\end{center}
+
+\item Como $(f \circ g) (x) = f(g(x)) = \sqrt{ 2 - |3 - x| }$ e $\sqrt{u}$ só está definida para $u \geq 0$, os únicos valores de $x \in \R$ que estão no domínio de $f \circ g$ são aqueles para os quais $2 - |3 - x| \geq 0$. Tais valores podem ser determinados assim:
+\[
+2 - |3 - x| \geq 0
+\Leftrightarrow
+|3 - x| \leq 2
+\Leftrightarrow
+-2 \leq 3 - x \leq 2
+\Leftrightarrow
+-5 \leq - x \leq -1
+\Leftrightarrow
+5 \geq x \geq 1
+\]
+Portanto, $\dom{ f\circ g } = [1, 5]$.
+\end{enumerate}
+
+\Exercise[title={2,0}] Seja $q$ uma função definida pela regra $q(x) = 3 + \dfrac{x^3-1}{x^3+1}$.
+\begin{enumerate}
+\item Obtenha a função inversa de $q$, deixando explícita a fórmula para $q^{-1}(x)$.
+\item Obtenha o domínio e a imagem de $q$ e de $q^{-1}$.
+\end{enumerate}
+\Answer
+\begin{enumerate}
+\item Tem-se:
+\begin{align*}
+y = q(x) = 3 + \dfrac{x^3-1}{x^3+1}
+& \Leftrightarrow
+y-3 = \dfrac{x^3-1}{x^3+1}
+\Leftrightarrow
+(y-3)(x^3+1) = x^3-1\\
+& \Leftrightarrow
+yx^3+y-3x^3-3 = x^3-1
+\Leftrightarrow
+yx^3-4x^3 = 2-y\\
+& \Leftrightarrow
+(y-4)x^3= 2-y
+\Leftrightarrow
+x^3= \frac{2-y}{y-4}
+\Leftrightarrow
+x= \sqrt[3]{ \frac{2-y}{y-4} }
+\end{align*}
+Portanto, usando $x$ para a variável independente, como é de costume, tem-se $q^{-1}(x) = \sqrt[3]{ \frac{2-x}{x-4} }$.
+\item Com base no item anterior, $q^{-1}(x)$ está bem definida desde que o denominador $x-4$ não seja nulo, isto é, para todo $x \neq 4$. Logo $\im{q} = \dom{q^{-1}} = \R \setminus \{ 4 \}$. Analogamente, $q(x)$ está definida para todo $x$ que não anule o denominador $x^3+1$, isto é, para $x \neq -1$. Assim, $\im{q^{-1}} =\dom{q} = \R \setminus \{ -1 \}$.
+\end{enumerate}
+
+\Exercise[title={2,0}] Seja $p(x) = x^2 - 6x$. Determine o valor (ou valores) de $a \in \R$ para que a função definida por $t(x) = p(x + a)$ seja uma função par.
+\Answer Uma função $t$ é par caso $t(-x) = t(x), \forall x \in \R$. Então:
+\begin{align*}
+t(x) = t(-x)
+\Leftrightarrow
+p(x+a) & = p(-x+a)\\
+\Leftrightarrow
+(x+a)^2 - 6(x+a) & = (-x+a)^2 - 6(-x+a)\\
+\Leftrightarrow
+x^2 + 2ax + a^2 - 6x - 6a & = x^2 - 2ax + a^2 + 6x - 6a \\
+\Leftrightarrow
+2ax - 6x & = - 2ax + 6x
+\Leftrightarrow
+4ax = 12x
+\Leftrightarrow
+4a = 12, \text{ para todo } x \neq 0.
+\end{align*}
+Assim, é preciso que $a = 12/4 = 3$ para que $t$ seja uma função par.
+
+\Exercise[title={2,0}] Utilize a \textit{definição} de limite para verificar que $\displaystyle \lim_{x \to 1} \dfrac{(x+1)(x^2 + x - 2)}{x^2 - 1} = 3$.
+\Answer Para que seja verdade que  $\displaystyle \lim_{x \to 1} \dfrac{(x+1)(x^2 + x - 2)}{x^2 - 1} = 3$, é preciso que para cada $\varepsilon > 0$ exista algum $\delta > 0$ tal que $\left|\dfrac{(x+1)(x^2 + x - 2)}{x^2 - 1} - 3\right| < \varepsilon$ sempre que $0 < |x-1| < \delta$. Considerando que
+\begin{align*}
+\dfrac{(x+1)(x^2 + x - 2)}{x^2 - 1} - 3
+& = \dfrac{(x+1)(x^2 + x - 2)}{(x+1)(x-1)} - 3
+  = \dfrac{x^2 + x - 2}{x-1} - 3
+  = \dfrac{x^2 + x - 2 - 3x + 3}{x-1} \\
+& = \dfrac{x^2 -2x +1}{x-1}
+  = \dfrac{(x-1)^2}{x-1}
+  = x-1,
+\end{align*}
+conclui-se que é possível obter $|x-1| < \varepsilon$ quando $0 < |x-1| < \delta$ bastando escolher $\delta = \varepsilon$.
+
+\Exercise[title={2,0}] Calcule, se existir, $\displaystyle\lim_{x \to 0} \cosec(x) - \cotg(x)$.
+\Answer Tem-se:
+\begin{align*}
+\lim_{x \to 0} \cosec(x) - \cotg(x)
+& = \lim_{x \to 0} \frac{1}{\sen(x)} - \frac{\cos(x)}{\sen(x)}
+  = \displaystyle\lim_{x \to 0} \frac{1-\cos(x)}{\sen(x)}
+    \cdot
+    \frac{(1+\cos(x))}{(1+\cos(x))} \\
+& = \lim_{x \to 0} \frac{1-\cos^2(x)}{\sen(x)(1+\cos(x))}
+  = \lim_{x \to 0} \frac{\sen^2(x)}{\sen(x)(1+\cos(x))} \\
+& = \lim_{x \to 0} \frac{\sen(x)}{1+\cos(x)}
+  = \lim_{x \to 0} \frac{0}{1+1} = 0
+\end{align*}
+
+\Exercise[title={2,0}] Calcule, se existir,
+$\displaystyle\lim_{x \to +\infty}
+       \frac{(e^{1/x})^2-1}
+            {e^{1/x}-1}$.
+\Answer Tem-se:
+\begin{align*}
+  \lim_{x \to +\infty} \frac{(e^{1/x})^2-1}{e^{1/x}-1}
+= \lim_{u \to 0^+} \frac{(e^u)^2-1}{e^u-1}
+= \lim_{v \to 1} \frac{v^2-1}{v-1}
+= \lim_{v \to 1} \frac{(v-1)(v+1)}{v-1}
+= \lim_{v \to 1} v+1
+= 2
+\end{align*}
+\Exercise[title={2,0}] Verifique se há algum $k\in \R$ para o qual a função a seguir seja continua em $x = 4$:
+\[
+f(x) =
+\begin{cases}
+\dfrac{x - 4}{x^2 - 4x}, & \text{se } x < 4 \\
+k, & \text{se } x = 4 \\
+\dfrac{\sqrt{x} - 2}{x - 4}, & \text{se } x > 4
+\end{cases}
+\]
+\Answer Para que $f$ seja contínua em $x = 4$, é preciso que exista $\lim_{x \to 4} f(x)$ e que ele coincida com $f(4) = k$. A existência do limite estará garantida se os limites laterais forem iguais:
+\[
+\lim_{x \to 4^-} \dfrac{x - 4}{x^2 - 4x}
+= \lim_{x \to 4^-} \dfrac{x - 4}{x(x - 4)}
+= \lim_{x \to 4^-} \dfrac{1}{x}
+= 1 / 4
+\]
+e
+\[
+\lim_{x \to 4^+} \dfrac{\sqrt{x} - 2}{x - 4}
+= \lim_{x \to 4^+} \dfrac{(\sqrt{x} - 2)(\sqrt{x} + 2)}{(x - 4)(\sqrt{x} + 2)}
+= \lim_{x \to 4^+} \dfrac{x - 4}{(x - 4)(\sqrt{x} + 2)}
+= \lim_{x \to 4^+} \dfrac{1}{\sqrt{x} + 2}
+= 1 / 4
+\]
+Logo, $f$ será contínua se $k = 1/4$.
+\end{ExerciseList}
+
+\begin{center}
+BOA PROVA!
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas}
+\shipoutAnswer
+\end{document}

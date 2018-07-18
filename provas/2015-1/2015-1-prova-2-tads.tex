@@ -1,0 +1,254 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand{\fixme}{{\color{red}(...)}}
+
+\newcommand*\tipo{PROVA II}
+\newcommand*\turma{TURMA B}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{07/05/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics{udesc_joinville_cabecalho.pdf}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina}
+& \textbf{\tipo}
+& \textbf{\data}
+& \textbf{\turma}
+\end{tabular}\vspace{-0.3cm}
+\noindent\rule{17cm}{0.01cm}
+\end{center}
+
+\noindent Nome do aluno: \rule{14cm}{0.01cm}
+
+\section*{Instruções}
+
+\begin{enumerate}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Escolha \textsc{\textbf{uma}} questão para \textsc{\textbf{não}} fazer (ela não será corrigida): \rule{3cm}{0.01cm}
+\end{enumerate}
+
+\section*{Questões}
+\begin{enumerate}
+\item (2,0 pontos) Calcule $f^\prime(x)$, utilizando a definição de derivada, nos seguintes casos:
+\begin{enumerate}
+\begin{multicols}{2}
+\item $f(x) = \frac{2x}{x-5}$
+\item $f(x) = \sqrt{x+4}$
+\end{multicols}
+\end{enumerate}
+
+\item (2,0 pontos) Obtenha as derivadas das seguintes funções (utilize as regras de derivação):
+\begin{multicols}{3}
+\begin{enumerate}
+\item $g(x) = \operatorname{sen}{ ( 2 \cos( e^{3x} ) ) }$
+\item $p(x) = \frac{\sec({x})}{x^6 + x^2}$
+\item $h(x) = \tan(x) \cdot \ln(3x^4)$
+\end{enumerate}
+\end{multicols}
+
+\item (2,0 pontos) Calcule $f^{\prime\prime\prime}(x)$ e $f^{\prime\prime\prime}(2)$, sabendo que $f(x) = x \ln( 2015x ) - 16x$.
+
+\item (2,0 pontos) Qual é a reta que tangencia o gráfico de $p(x) = \cos(3x) + \sqrt{x + 4}$ no ponto em que $x = 0$?
+
+\item (2,0 pontos) Considere a curva formada pelos pontos $(x,y)$ do plano que satisfazem a equação $x^6 - 4x y + y^6 = 64$. Sabendo que $y = f(x)$ é dado implicitamente pela equação anterior, encontre a derivada de $y$ em relação a $x$ e também o valor de $f^\prime(0)$.
+
+\item (2,0 pontos) Um objeto é lançado a $20m/s$ de uma plataforma que fica a $60 m$ do chão, de modo que a sua altura após $t$ segundos de queda é dada por $s(t) = -5t^2 + 20t + 60$, sendo $s$ medida em metros. Quanto tempo o objeto leva para atingir o chão? Qual a sua velocidade no instante do impacto?
+\end{enumerate}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+
+\begin{enumerate}
+\item \textit{ Calcule $f^\prime(x)$, utilizando a definição de derivada, nos seguintes casos:
+}
+\begin{enumerate}
+\item $f(x) = \frac{2x}{x-5}$. Por definição, $f^\prime(x) = \lim\limits_{h \to 0} \frac{f(x+h) - f(x)}{h}$, e no caso de $f(x) = \frac{2x}{x-5}$ temos:
+\begin{align*}
+  \frac{f(x+h) - f(x)}{h}
+& = \frac{\frac{2(x+h)}{x+h-5} - \frac{2x}{x-5}}{h} \\
+& = \frac{2(x+h)(x-5) - 2x(x+h-5)}{h(x+h-5)(x-5)} \\
+& = \frac{2x^2 - 10x + 2xh -10h - 2x^2 - 2xh + 10x}{h(x+h-5)(x-5)} \\
+& = \frac{-10h}{h(x+h-5)(x-5)},
+\end{align*}
+para $h \not=0$. Então
+\[
+f^\prime(x)
+= \lim\limits_{h \to 0} \frac{-10h}{h(x+h-5)(x-5)}
+= \lim\limits_{h \to 0} \frac{-10}{(x+h-5)(x-5)}
+= \frac{-10}{(x-5)^2}
+= \frac{-10}{x^2-10x + 25}.
+\]
+
+\item $f(x) = \sqrt{x+4}$. Como
+\begin{align*}
+  \frac{f(x+h) - f(x)}{h}
+& = \frac{\sqrt{x+h+4} - \sqrt{x+4}}{h} \\
+& = \frac{\sqrt{x+h+4} - \sqrt{x+4}}{h} \cdot
+    \frac{\sqrt{x+h+4} + \sqrt{x+4}}
+         {\sqrt{x+h+4} + \sqrt{x+4}} \\
+& = \frac{(x+h+4) - (x+4)}
+         {h(\sqrt{x+h+4} + \sqrt{x+4})} \\
+& = \frac{h}
+         {h(\sqrt{x+h+4} + \sqrt{x+4})}
+\end{align*}
+para $h \not=0$, tem-se
+\[
+f^\prime(x)
+= \lim\limits_{h \to 0}
+  \frac{1}
+       {\sqrt{x+h+4} + \sqrt{x+4}}
+= \frac{1}
+       {2 \sqrt{x+4}}.
+\]
+\end{enumerate}
+
+\item \textit{ Obtenha as derivadas das seguintes funções (utilize as regras de derivação):}
+\begin{enumerate}
+\item $g(x) = \operatorname{sen}{ ( 2 \cos( e^{3x} ) ) }$
+Aplicando a regra da cadeia algumas vezes, obtém-se:
+\begin{align*}
+  g^\prime(x)
+& = \cos{ ( 2 \cos( e^{3x} ) ) } \cdot ( 2 \cos( e^{3x} ) )^\prime \\
+& = 2 \cos{ ( 2 \cos( e^{3x} ) ) } \cdot ( \cos( e^{3x} ) )^\prime \\
+& = 2 \cos{ ( 2 \cos( e^{3x} ) ) } \cdot ( -\operatorname{sen}( e^{3x} ) ) \cdot ( e^{3x} )^\prime \\
+& = -2 \cos{ ( 2 \cos( e^{3x} ) ) } \cdot \operatorname{sen}( e^{3x} ) \cdot e^{3x} \cdot (3x)^\prime \\
+& = -6 \cos{ ( 2 \cos( e^{3x} ) ) } \cdot \operatorname{sen}( e^{3x} ) \cdot e^{3x}
+\end{align*}
+
+\item $p(x) = \frac{\sec(x)}{x^6 + x^2}$
+
+Pela regra para a derivação de um quociente de funções, tem-se:
+\begin{align*}
+  p^\prime(x)
+& = \frac{(\sec(x))^\prime \cdot (x^6 + x^2) - \sec(x) \cdot (x^6 + x^2)^\prime }{(x^6 + x^2)^2}.\\
+& = \frac{\tan(x)\sec(x) (x^6 + x^2) - \sec(x) (6x^5 + 2x) }{(x^6 + x^2)^2}.
+\end{align*}
+
+\item $h(x) = \tan(x) \cdot \ln(3x^4)$
+\begin{align*}
+  h^\prime(x)
+& = ( \tan(x) )^\prime \ln(3x^4) + \tan(x) ( \ln(3x^4) )^\prime \\
+& = \sec^2(x) \ln(3x^4) + \tan(x) \left( \frac{1}{3x^4} \cdot (3x^4)^\prime \right) \\
+& = \sec^2(x) \ln(3x^4) + \tan(x) \left( \frac{1}{3x^4} \cdot (12x^3) \right) \\
+& = \sec^2(x) \ln(3x^4) + \frac{4 \tan(x)}{x}
+\end{align*}
+\end{enumerate}
+
+
+\item \textit{ Calcule $f^{\prime\prime\prime}(x)$ e $f^{\prime\prime\prime}(2)$, sabendo que $f(x) = x \ln( 2015x ) - 16x$. } Temos
+\begin{align*}
+  f^\prime(x)
+& = \left[x^\prime \cdot \ln( 2015x ) + x \cdot (\ln( 2015x ))^\prime \right] - (16x)^\prime \\
+& = \left[1 \cdot \ln( 2015x ) + x\left( \frac{1}{2015x} \cdot (2015x)^\prime \right)\right] - 16 \\
+& = \left[\ln( 2015x ) + x\left( \frac{1}{2015x} \cdot 2015 \right)\right] - 16 \\
+& = \ln( 2015x ) - 15
+\end{align*}
+e então
+\[
+f^{\prime\prime}(x)
+= (\ln( 2015x ) - 15)^\prime
+= ( \ln( 2015x ) )^\prime - 0
+= \frac{1}{2015x} \cdot (2015x)^\prime
+= \frac{1}{2015x} \cdot 2015
+= \frac{1}{x}.
+\]
+Assim,
+\[
+f^{\prime\prime\prime}(x)
+= \left( \frac{1}{x} \right)^\prime
+= (x^{-1})^\prime
+= -1x^{-2}
+= \frac{-1}{x^2},
+\]
+e em particular $f^{\prime\prime\prime}(2) = \frac{-1}{2^2} = \frac{-1}{4}$.
+ 
+\item \textit{ Qual é a reta que tangencia o gráfico de $p(x) = \cos(3x) + \sqrt{x + 4}$ no ponto em que $x = 0$? }
+
+Primeiramente, é preciso conhecer a derivada da função $p(x)$, pois o seu valor em $x=0$ será o coeficiente angular da reta tangente ao gráfico. Temos:
+\[
+p^\prime(x)
+= -\operatorname{sen}(3x) \cdot (3x)^\prime + ( \sqrt{x + 4} )^\prime
+= -3 \operatorname{sen}(3x) + \frac{1}{2\sqrt{x + 4}}.
+\]
+Então $p^\prime(0)
+= -3 \operatorname{sen}(0) + \frac{1}{2\sqrt{0 + 4}}
+= 0 + \frac{1}{2 \cdot 2}
+= \frac{1}{4}.$
+Como $p(0) = 3$, e a equação da reta procurada é $y = p(0) + p^\prime(0) (x - 0)$, conclui-se que a reta é $y = \frac{x}{4} + 3$.
+
+\item \textit{ Considere a curva formada pelos pontos $(x,y)$ do plano que satisfazem a equação $x^6 - 4x y + y^6 = 64$. Sabendo que $y = f(x)$ é dado implicitamente pela equação anterior, encontre a derivada de $y$ em relação a $x$ e também o valor de $f^\prime(0)$. }
+
+Derivando ambos os membros da equação em relação a $x$ obtém-se o seguinte (pela regra da cadeia):
+\begin{align*}
+(x^6)^\prime - (4x y)^\prime + (y^6)^\prime & = 64^\prime \\
+6x^5 - (4 \cdot y + 4x \cdot y^\prime ) + 6y^5 \cdot y^\prime & = 0.
+\end{align*}
+Então, agrupando os termos em que aparece $y^\prime$ no primeiro membro, e passando os demais para o segundo membro:
+\[
+-4xy^\prime + 6y^5 \cdot y^\prime
+= -6x^5 + 4 y,
+\]
+ou seja,
+\[
+(-4x + 6y^5)y^\prime
+= -6x^5 + 4 y.
+\]
+e portanto $y^\prime = \frac{-6x^5 + 4 y}{-4x + 6y^5}
+= \frac{-3x^5 + 2 y}{-2x + 3y^5}$. Assim, para calcular $y^\prime = f^\prime(0)$ precisamos saber $y = f(0)$. Mas da equação inicial resulta que $0^6 - 4 \cdot 0 y + y^6 = 64$, isto, é $y^6 = 64$. Logo, $y = \pm \sqrt[6]{64} = \pm 2$. No caso em que $y=2$, obtemos:
+\[
+f^\prime(0)
+= \frac{-6 \cdot 0^5 + 4 \cdot 2}{-4 \cdot 0 + 6\cdot 2^5}
+= \frac{4 \cdot 2}{6\cdot 2^5}
+= \frac{1}{24}
+\]
+e de forma análoga, para $y=-2$:
+\[
+f^\prime(0)
+= \frac{-6 \cdot 0^5 + 4 \cdot (- 2)}{-4 \cdot 0 + 6\cdot (- 2)^5}
+= \frac{4 \cdot (- 2)}{6\cdot (- 2)^5}
+= \frac{1}{24}.
+\]
+
+\item \textit{ Um objeto é lançado a $20m/s$ de uma plataforma que fica a $60 m$ do chão, de modo que a sua altura após $t$ segundos de queda é dada por $s(t) = -5t^2 + 20t + 60$, sendo $s$ medida em metros. Quanto tempo o objeto leva para atingir o chão? Qual a sua velocidade no instante do impacto? }
+
+Quando o objeto atingir o chão, a sua altura será igual a zero. Então, teremos $-5t^2 + 20t + 60 = 0$, ou seja, $-t^2 + 4t + 12 = 0$. Essa equação do segundo grau tem duas raízes, $t=-2$ e $t=6$, mas como estamos interessados nos instantes posteriores ao lançamento, não será utilizado o instante de tempo negativo (anterior ao lançamento).
+
+A velocidade do objeto no instante do impacto corresponde à derivada de $s(t)$ em $t=6$, isto é, $s^\prime(6)$. Como $s^\prime(t) = -10 t + 20$, conclui-se que $s^\prime(6) = -60 + 20 = -40$. Portanto, o objeto atinge o chão com uma velocidade de $-40m/s$. Este sinal negativo indica que no instante $t=6$ o sentido em que o objeto se locomove é oposto ao sentido em que ele foi lançado, isto é, no início de sua trajetória ele vai para cima, muda de sentido e então desce até o chão.
+\end{enumerate}
+
+\end{document}

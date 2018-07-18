@@ -1,0 +1,335 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand{\fixme}{{\color{red}(...)}}
+
+\newcommand*\sen[1]{\operatorname{sen}{#1}}
+\newcommand*\abs[1]{\left|#1\right|}
+
+\newcommand*\tipo{PROVA I}
+\newcommand*\turma{ELE141-01U}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{16/09/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (\turma)}
+& \textbf{\tipo}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Escolha \textsc{\textbf{uma}} das 6 questões para \textsc{\textbf{não}} fazer (ela não será corrigida): \framebox(30,10){}
+
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item Seja $g: D \to \mathbb{R}$ a função dada por $g(x) = x\sqrt{x^2} + \ln{\abs{x + 1}} - \ln{\abs{x - 1}}$. Explique:
+\begin{enumerate}
+\item (0,5) Qual é o domínio $D$ em que $g$ está definida?
+\item (0,5) A função $g$ é par, ímpar ou nenhuma das duas coisas?
+\item (0,5) A função $g$ é contínua nos pontos em que está definida? Por quê?
+\item (0,5) Quanto é $\lim\limits_{x\to1^+} g(x)$?
+\end{enumerate}
+
+\item Seja $f(x) = \dfrac{x^2 - x - 2}{3x - 6}$ e considere $\varepsilon > 0$.
+\begin{enumerate}
+\item (1,5) Obtenha $\delta > 0$ (em função de $\varepsilon$) tal que ``se $0 < \abs{x - 2} < \delta$ então $\abs{f(x) - 1} < \varepsilon$''.
+\item (0,5) Interprete isso em termos de limites.
+\end{enumerate}
+
+\item (2,0) Determine um intervalo $[n, n+1]$ contendo (pelo menos) uma solução positiva da equação $x^5 - 200x = 100$. O que garante que há realmente uma solução no intervalo encontrado?
+
+
+\item Seja $f: \mathbb{R} \to \mathbb{R}$ a função definida por
+\[
+f(x) =
+\left\{\begin{array}{ll}
+\dfrac{\sqrt{6-x}-2}{\sqrt{3-x}-1}, & \text{se}\quad x < 2 \\
+1/2, & \text{se}\quad x = 2 \\
+\dfrac{\sen{(x-2)}}{\sen{(x-2)} + x-2}, & \text{se}\quad x>2.
+\end{array}\right.
+\]
+\begin{enumerate}
+\item (1,5) Calcule, se existirem, $\lim\limits_{x\to 2^-} f(x)$ e $\lim\limits_{x\to 2^+} f(x)$.
+\item (0,5) Explique se $f$ é contínua em $x = 2$.
+\end{enumerate}
+
+\item Determine, se existirem:
+\begin{multicols}{2}
+\begin{enumerate}
+\item (1,0) $\lim\limits_{x\to 1} \dfrac{\ln(x)}{x-1}$
+\item (1,0) $\lim\limits_{x\to +\infty} \dfrac{\sen(x^2)}{\sqrt{x}}$
+\end{enumerate}
+\end{multicols}
+
+\item Calcule, se existirem:
+\begin{enumerate}
+\item (1,0) $\lim\limits_{x\to 0} \dfrac{e^{3x}-1}{e^{7x}-1}$
+\item (1,0) $\lim\limits_{x\to +\infty} x(\sqrt{x^2 + \pi} - x)$
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+
+\begin{enumerate}
+\item \textit{Seja $g: D \to \mathbb{R}$ a função dada por $g(x) = x\sqrt{x^2} + \ln{\abs{x + 1}} - \ln{\abs{x - 1}}$. Explique:}
+\begin{enumerate}
+\item \textit{Qual é o domínio $D$ em que $g$ está definida?}
+\begin{align*}
+D
+& = \operatorname{Dom}(g) \\
+& = \left\{ x \in \mathbb{R} | x^2 \geq 0 \text{ e } \abs{x+1} > 0 \text{ e } \abs{x-1} > 0 \right\} \\
+& = \left\{ x \in \mathbb{R} | \abs{x+1} \neq 0 \text{ e } \abs{x-1} \neq 0 \right\} \\
+& = \left\{ x \in \mathbb{R} | x+1 \neq 0 \text{ e } x-1 \neq 0 \right\} \\
+& = \left\{ x \in \mathbb{R} | x \neq -1 \text{ e } x\neq 1 \right\} \\
+& = \mathbb{R} \setminus \{-1, 1 \} \\
+& = (-\infty, -1) \cup ( -1, 1) \cup ( 1, +\infty)
+\end{align*}
+
+\item \textit{A função $g$ é par, ímpar ou nenhuma das duas coisas?}
+
+Tem-se
+\begin{align*}
+g(-x)
+& = (-x)\sqrt{(-x)^2} + \ln{\abs{(-x) + 1}} - \ln{\abs{(-x) - 1}} \\
+& = -x \sqrt{x^2} + \ln{\abs{-(x - 1)}} - \ln{\abs{-(x+1)}} \\
+& = -x \sqrt{x^2} + \ln{\abs{(x - 1)}} - \ln{\abs{(x+1)}} \\
+& = -( x \sqrt{x^2} - \ln{\abs{(x - 1)}} + \ln{\abs{(x+1)}} ) \\
+& = -g(x).
+\end{align*}
+Isso significa que $g$ é uma função ímpar.
+
+Os cálculos também poderiam ser feitos depois de escrever que $g(x) = x\abs{x} + \ln{\frac{ \abs{x + 1} }{ \abs{x - 1} } }$.
+
+\item \textit{A função $g$ é contínua nos pontos em que está definida? Por quê?}
+
+Uma vez que raízes quadradas, polinômios e logaritmos são funções contínuas, e que a soma, subtração, multiplicação e composição de funções contínuas resulta em funções contínuas, pode-se concluir que a função $g$ também é contínua (pois é uma soma/composição de funções contínuas).
+
+
+\item \textit{Quanto é $\lim\limits_{x\to1^+} g(x)$?}
+
+Levando em conta que
+\[
+\lim\limits_{x\to1^+} x\sqrt{x^2} + \ln{\abs{x + 1}}
+= 1 \sqrt{1^2} + \ln{\abs{1 + 1}}
+= 1 + \ln{2} \in \mathbb{R}
+\]
+e que
+\[
+\lim\limits_{x\to1^+} - \ln{\abs{x - 1}}
+= \lim\limits_{u\to 0^+} - \ln{\abs{u}}
+= \lim\limits_{u\to 0^+} - \ln{u}
+= +\infty,
+\]
+conclui-se que
+\[
+\lim\limits_{x\to1^+} g(x) = + \infty.
+\]
+
+\end{enumerate}
+
+\item \textit{Seja $f(x) = \dfrac{x^2 - x - 2}{3x - 6}$ e considere $\varepsilon > 0$.}
+\begin{enumerate}
+\item \textit{Obtenha $\delta > 0$ (em função de $\varepsilon$) tal que ``se $0 < \abs{x - 2} < \delta$ então $\abs{f(x) - 1} < \varepsilon$''.}
+
+Observe que
+\begin{align*}
+\abs{f(x) - 1} < \varepsilon
+& \Leftrightarrow \abs{ \frac{x^2 - x - 2}{3x - 6} - 1} < \varepsilon
+  \Leftrightarrow \abs{\frac{(x^2 - x - 2) - (3x - 6)}{3x - 6}} < \varepsilon \\
+& \Leftrightarrow \abs{\frac{x^2 - 4x + 4}{3(x - 2)}} < \varepsilon
+  \Leftrightarrow \abs{\frac{(x - 2)^2}{x - 2}} < 3\varepsilon
+  \Leftrightarrow \abs{x - 2} < 3 \varepsilon.
+\end{align*}
+Portanto, para um $\varepsilon>0$ dado, basta escolher qualquer $\delta \leq 3\varepsilon$ e será verdade que ``se $0 < \abs{x - 2} < \delta$ então $\abs{f(x) - 1} < \varepsilon$''.
+
+\item \textit{Interprete isso em termos de limites.}
+
+O significado da propriedade anterior é que a função $f(x)$ se aproxima de $1$ quando $x$ tende a $2$, isto é, $\lim\limits_{x\to2} f(x) = 1$.
+
+\end{enumerate}
+
+\item \textit{Determine um intervalo $[n, n+1]$ contendo (pelo menos) uma solução positiva da equação $x^5 - 200x = 100$. O que garante que há realmente uma solução no intervalo encontrado?}
+
+Seja $f(x) = x^5 - 200x$. Atribuindo alguns valores à variável $x$ (positivos, já que o enunciado não pede soluções negativas), observa-se que
+\begin{align*}
+f(1) & = 1^5 - 200 \cdot 1 = 1 - 200 = -199 < 100 \\
+f(2) & = 2^5 - 200 \cdot 2 = 32 - 400 = -368 < 100 \\
+\bf{ f(3) } & = 3^5 - 200 \cdot 3 = 243 - 600 =-357 \bf{ < 100 }\\
+\bf{ f(4) } & = 4^5 - 200 \cdot 4 = 1024 - 800 =224 \bf{ > 100 }
+\end{align*}
+Como $f$ é uma função contínua (é um polinômio) e $f(3) < 100 < f(4)$, o teorema do valor intermediário garante que existe algum $c \in (3,4)$ tal que $f(c) = c^5 - 200 \cdot c = 100$, isto é, $c$ é uma solução da equação indicada.
+
+Um raciocínio similar poderia ser feito com a função contínua $g(x) = x^5 - 200x - 100$, à qual seria aplicado o Teorema de Bolzano.
+
+\item \textit{Seja $f: \mathbb{R} \to \mathbb{R}$ a função definida por}
+\[
+f(x) =
+\left\{\begin{array}{ll}
+\dfrac{\sqrt{6-x}-2}{\sqrt{3-x}-1}, & \text{se}\quad x < 2 \\
+1/2, & \text{se}\quad x = 2 \\
+\dfrac{\sen{(x-2)}}{\sen{(x-2)} + x-2}, & \text{se}\quad x > 2.
+\end{array}\right.
+\]
+\begin{enumerate}
+\item \textit{Calcule, se existirem, $\lim\limits_{x\to 2^-} f(x)$ e $\lim\limits_{x\to 2^+} f(x)$.}
+Para o primeiro limite, temos:
+\begin{align*}
+\lim\limits_{x\to 2^-} f(x)
+& = \lim\limits_{x\to 2^-} \frac{\sqrt{6-x}-2}{\sqrt{3-x}-1}
+  = \lim\limits_{x\to 2^-} \frac{(\sqrt{6-x}-2)(\sqrt{6-x}+2)}{(\sqrt{3-x}-1)(\sqrt{6-x}+2)} \\
+& = \lim\limits_{x\to 2^-} \frac{((6-x)-4)}{(\sqrt{3-x}-1)(\sqrt{6-x}+2)}
+                           \frac{(\sqrt{3-x}+1)}{(\sqrt{3-x}+1)} \\
+& = \lim\limits_{x\to 2^-} \frac{(2-x)(\sqrt{3-x}+1)}{((3-x)-1)(\sqrt{6-x}+2)}
+  = \lim\limits_{x\to 2^-} \frac{(2-x)(\sqrt{3-x}+1)}{(2-x)(\sqrt{6-x}+2)} \\
+& = \lim\limits_{x\to 2^-} \frac{\sqrt{3-x}+1}{\sqrt{6-x}+2}
+  = \frac{\sqrt{3-2}+1}{\sqrt{6-2}+2}
+  = \frac{\sqrt{1}+1}{\sqrt{4}+2}
+  = \frac{1}{2}
+\end{align*}
+
+Para o segundo, temos
+\begin{align*}
+\lim\limits_{x\to 2^+} f(x)
+& = \lim\limits_{x\to 2^+} \frac{\sen{(x-2)}}{\sen{(x-2)} + x-2}
+  = \lim\limits_{u\to 0^+} \frac{\sen{u}}{\sen{u} + u}
+  = \lim\limits_{u\to 0^+} \frac{\frac{\sen{u}}{u}}{\frac{\sen{u}}{u} + \frac{u}{u}}
+  = \frac{1}{1 + 1}
+  = \frac{1}{2}. \\
+\end{align*}
+
+\item \textit{Explique se $f$ é contínua em $x = 2$.}
+
+Uma vez que os limites laterais $\lim\limits_{x\to 2^-} f(x)$ e $\lim\limits_{x\to 2^+} f(x)$ existem e são iguais a $1/2$, resulta que o limite bilateral $\lim\limits_{x\to 2} f(x)$ também existe e é igual a $1/2$. Além disso, como $\lim\limits_{x\to 2} f(x) = 1/2 = f(2)$, conclui-se que $f$ é uma função contínua em $x=2$.
+
+\end{enumerate}
+
+\item \textit{Determine, se existirem:}
+\begin{enumerate}
+\item
+\begin{align*}
+\lim\limits_{x\to 1} \frac{\ln(x)}{x-1}
+& = \lim\limits_{u\to 0} \frac{\ln(1+u)}{u}
+  = \lim\limits_{u\to 0} \frac{1}{u} \ln(1+u)
+  = \lim\limits_{u\to 0} \ln\left((1+u)^\frac{1}{u}\right)\\
+& = \ln \left( \lim\limits_{u\to 0} (1+u)^\frac{1}{u}\right)
+  = \ln(e)
+  = 1.
+\end{align*}
+
+Solução alternativa, considerando $v = \ln(x)$ e $x=e^v$:
+
+\[
+\lim\limits_{x\to 1} \frac{\ln(x)}{x-1}
+  = \lim\limits_{v\to 0} \frac{v}{e^v-1}
+  = \lim\limits_{v\to 0} \left( \frac{e^v-1}{v} \right)^{-1}
+  = \left( \lim\limits_{v\to 0} \frac{e^v-1}{v} \right)^{-1}
+  = (\ln(e))^{-1}
+  = 1.
+\]
+
+
+\item $\lim\limits_{x\to +\infty} \dfrac{\sen(x^2)}{\sqrt{x}} = \lim\limits_{x\to +\infty} \dfrac{1}{\sqrt{x}} \cdot \sen(x^2) = 0$, pois $\lim\limits_{x\to +\infty} \dfrac{1}{\sqrt{x}} = 0$ e $-1 \leq \sen(x^2) \leq 1$, isto é, a função limitada $\sen(x^2)$ está sendo multiplicada por uma que tende a zero, o que implica que o produto também tende a zero.
+
+\end{enumerate}
+
+\item \textit{Calcule, se existirem:}
+\begin{enumerate}
+\item
+\[
+\lim\limits_{x\to 0} \frac{e^{3x}-1}{e^{7x}-1}
+  = \lim\limits_{x\to 0} \frac{3x \cdot \frac{e^{3x}-1}{3x}}{7x \cdot \frac{e^{7x}-1}{7x}}
+  = \frac{3}{7}\lim\limits_{x\to 0} \frac{\frac{e^{3x}-1}{3x}}{\frac{e^{7x}-1}{7x}}
+  = \frac{3}{7}\frac{\lim\limits_{x\to 0} \frac{e^{3x}-1}{3x}}{\lim\limits_{x\to 0} \frac{e^{7x}-1}{7x}}
+  = \frac{3}{7}\frac{\lim\limits_{u\to 0} \frac{e^{u}-1}{u}}{\lim\limits_{v\to 0} \frac{e^{v}-1}{v}}
+  = \frac{3}{7} \cdot \frac{1}{1}
+  = \frac{3}{7}\\
+\]
+
+Solução alternativa:
+\[
+\lim\limits_{x\to 0} \frac{e^{3x}-1}{e^{7x}-1}
+  = \lim\limits_{x\to 0} \frac{(e^3)^x-1}{(e^7)^x-1}
+  = \lim\limits_{x\to 0} \frac{\frac{(e^3)^x-1}{x}}{\frac{(e^7)^x-1}{x}}
+  = \frac{\ln(e^3)}{\ln(e^7)}
+  = \frac{3 \ln(e)}{7\ln(e)}
+  = \frac{3}{7}.
+\]
+
+Outra solução, considerando $u=e^x$:
+\begin{align*}
+\lim\limits_{x\to 0} \frac{e^{3x}-1}{e^{7x}-1}
+& = \lim\limits_{x\to 0} \frac{(e^x)^3-1}{(e^x)^7-1}
+  = \lim\limits_{u\to 1} \frac{u^3-1}{u^7-1} \\
+& = \lim\limits_{u\to 1} \frac{(u-1)(u^2 + u + 1)}{(u-1)(u^6 + u^5 + u^4 + u^3 + u^2 + u + 1)} \\
+& = \lim\limits_{u\to 1} \frac{(u^2 + u + 1)}{(u^6 + u^5 + u^4 + u^3 + u^2 + u + 1)} \\
+& = \frac{(1^2 + 1 + 1)}{(1^6 + 1^5 + 1^4 + 1^3 + 1^2 + 1 + 1)}
+  = \frac{3}{7}.
+\end{align*}
+
+\item
+\begin{align*}
+\lim\limits_{x\to +\infty} x(\sqrt{x^2 + \pi} - x)
+& = \lim\limits_{x\to +\infty} x(\sqrt{x^2 + \pi} - x) \cdot \frac{\sqrt{x^2 + \pi} + x}{\sqrt{x^2 + \pi} + x} \\
+& = \lim\limits_{x\to +\infty} \frac{x((x^2 + \pi) - x^2)}{\sqrt{x^2 + \pi} + x}
+  = \lim\limits_{x\to +\infty} \frac{\pi x}{|x|\sqrt{1 + \pi/x^2} + x} \\
+& = \lim\limits_{x\to +\infty} \frac{\pi x}{x (\sqrt{1 + \pi/x^2} + 1)}
+  = \frac{\pi}{\sqrt{1 + 0} + 1}
+  = \frac{\pi}{2}
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+\end{document}

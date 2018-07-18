@@ -1,0 +1,292 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+\usepackage{cancel}
+
+% TODO: Consider using exsheets
+% http://linorg.usp.br/CTAN/macros/latex/contrib/exsheets/exsheets_en.pdf
+%
+% http://ctan.org/tex-archive/macros/latex/contrib/exercise/
+% Options: answerdelayed,lastexercise,noanswer
+\usepackage[answerdelayed,lastexercise]{exercise}
+
+\addto\captionsbrazil{%
+\def\listexercisename{Lista de exerc\'icios}%
+\def\ExerciseName{Exerc\'icio}%
+\def\AnswerName{Solu\c{c}\~ao do exerc\'icio}%
+\def\ExerciseListName{Ex.}%
+\def\AnswerListName{Solu\c{c}\~ao}%
+\def\ExePartName{Parte}%
+\def\ArticleOf{de\ }%
+}
+
+\renewcommand{\ExerciseHeaderTitle}{(\ExerciseTitle)\ }
+\renewcommand{\ExerciseListHeader}{%\ExerciseHeaderDifficulty%
+\textbf{%\ExerciseListName\
+\ExerciseHeaderNB.\ %
+%\ --- \
+\ExerciseHeaderTitle}%
+%\ExerciseHeaderOrigin
+\ignorespaces}
+\renewcommand{\AnswerListHeader}{\textbf{\ExerciseHeaderNB.\ (\AnswerListName)\ }}
+
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\cotg{\operatorname{cotg}}
+\newcommand*\cotgh{\operatorname{cotgh}}
+\newcommand*\dom[1]{\operatorname{Dom}\left(#1\right)}
+
+\newcommand*\R{\mathbb{R}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi) }
+
+\newcommand*\tipo{Prova I}
+\newcommand*\turma{TADS121-01C}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{09/09/2016}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca} \\
+\textbf{\tipo\ (\disciplina / \turma)} \\
+Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \underline{\hspace{9,7cm}} Data: \underline{\data}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+\begin{ExerciseList}
+\Exercise[title={2,5}] Sejam $p$ e $q$ as funções definidas pelas regras $p(x) = \dfrac{1}{5+x}$ e $q(x) = \dfrac{15}{1-x^2}$ (nos pontos $x \in \R$ em que estas expressões fazem sentido).
+\begin{enumerate}
+\item \textbf{(0,5)} Obtenha o domínio das funções $p$ e $q$.
+\item \textbf{(0,5)} Levando em conta o item anterior, qual é o domínio da função composta $p \circ q$?
+\item \textbf{(0,5)} Verifique se $p\circ q$ é par ou ímpar, ou se não tem nenhum destes tipos de simetrias.
+\item \textbf{(1,0)} Para cada ponto $a > 0$ que não pertencer ao domínio de $p\circ q$, calcule (se existirem):
+\[
+\lim_{x \to a^-} (p\circ q)(x)
+\quad \text{e} \quad
+\lim_{x \to a^+} (p\circ q)(x).
+\]
+\end{enumerate}
+\Answer
+\begin{enumerate}
+\item As regras de $p$ e $q$ só não fazem sentido se os denominadores forem zero, ou seja, se $5+x = 0$, no caso de $p$, e se $1-x^2 = 0$, no caso de $q$. Então $\dom{p} = \R \setminus \{ -5\}$ e $\dom{q} = \R \setminus \{ -1, +1 \}$.
+\item Para que $x \in \dom{p \circ q}$ é preciso que $x \in \dom{q}$ e que além disso $q(x) \in \dom{p}$. Em outras palavras, deve ocorrer que $x \neq \pm 1$ e que $q(x) \neq -5$. Mas para $x \neq \pm 1$, tem-se
+\[
+\dfrac{15}{1-x^2} = -5
+\Leftrightarrow 15 = -5( 1-x^2 )
+\Leftrightarrow -3 = 1-x^2
+\Leftrightarrow x^2 = 4
+\Leftrightarrow x = \pm 2.
+\]
+Portanto,
+\[
+\dom{p \circ q} = \R \setminus \{-2, -1, 1, 2\} = (-\infty, -2) \cup (-2,-1) \cup (-1,1) \cup (1,2) \cup (2, +\infty).
+\]
+\item Para $x \in \dom{p \circ q}$ tem-se
+\[
+(p \circ q) (x)
+= p(q(x))
+= \dfrac{1}{5+q(x)}
+= \dfrac{1}{5+\dfrac{15}{1-x^2}}
+= \dfrac{1}{\dfrac{20-5x^2}{1-x^2}}
+= \dfrac{1-x^2}{20-5x^2}.
+\]
+Então
+\[
+(p \circ q) (-x)
+= \dfrac{1-(-x)^2}{20-5(-x)^2}
+= \dfrac{1-x^2}{20-5x^2}
+= (p \circ q) (x),
+\]
+ou seja, $p \circ q$ é uma função par.
+\item Pelo que foi obtido anteriormente, os únicos valores de $a>0$ que não pertencem ao domínio de $p \circ q$ são $a = 1$ e $a = 2$. Como $(p \circ q)(x) = \dfrac{1-x^2}{20-5x^2} = \dfrac{(1-x)(1+x)}{5(2+x)(2-x)}$, tem-se:
+\[
+\lim_{x \to 1^-} \dfrac{(1-x)(1+x)}{5(2+x)(2-x)}
+= \dfrac{(1-1)(1+1)}{5(2+1)(2-1)}
+= 0
+=
+\lim_{x \to 1^+} \dfrac{(1-x)(1+x)}{5(2+x)(2-x)}.
+\]
+Já em $a=2$, ocorre o seguinte:
+\[
+\lim_{x \to 2^-} \dfrac{(1-x)(1+x)}{5(2+x)(2-x)}
+= \lim_{x \to 2^-} \cancelto{\frac{-3}{20}}{ \dfrac{(1-x)(1+x)}{5(2+x)} }
+\quad
+\cdot \cancelto{ +\infty }{\frac{1}{2-x}}
+= - \infty
+\]
+e
+\[
+\lim_{x \to 2^+} \dfrac{(1-x)(1+x)}{5(2+x)(2-x)}
+= \lim_{x \to 2^+} \cancelto{\frac{-3}{20}}{ \dfrac{(1-x)(1+x)}{5(2+x)} }
+\quad
+\cdot \cancelto{ -\infty }{\frac{1}{2-x}}
+= +\infty.
+\]
+\end{enumerate}
+
+\Exercise[title={2,5}] Sejam $f(x) = \dfrac{2x^2-x-1}{x-1}$ e $\displaystyle L = \lim_{x \to 1} f(x)$.
+\begin{enumerate}
+\item \textbf{(1,0)} Calcule o valor de $L$.
+\item \textbf{(1,5)} Verifique que para o valor de $L$ obtido, pode-se encontrar para cada $\varepsilon > 0$ algum valor de $\delta > 0$ tal que
+$|f(x) - L| < \varepsilon$ sempre que $0 < |x-1| < \delta$.
+\end{enumerate}
+\Answer
+\begin{enumerate}
+\item Se $x \neq 1$, então $\dfrac{2x^2-x-1}{x-1} = \dfrac{(2x+1)(x-1)}{x-1} = 2x+1$. Portanto:
+\[
+L = \lim_{x \to 1} f(x) = \lim_{x \to 1} = \lim_{x \to 1} 2x+1 = 3.
+\]
+
+\textbf{Solução alternativa}:
+\[
+L = \lim_{x \to 1} \dfrac{2x^2-x-1}{x-1}
+  = \lim_{u \to 0} \dfrac{2(u+1)^2-(u+1)-1}{u}
+  = \lim_{u \to 0} \dfrac{2u^2 + 3u}{u}
+  = \lim_{u \to 0} 2u+3 = 3.
+\]
+
+\item Pelo item anterior, tem-se:
+\[
+|f(x) - L| < \varepsilon
+\Leftrightarrow \left|(2x+1) - 3 \right| < \varepsilon
+\Leftrightarrow |2x-2| < \varepsilon
+\Leftrightarrow 2|x-1| < \varepsilon
+\Leftrightarrow |x-1| < \frac{\varepsilon}{2}.
+\]
+Logo, dado $\varepsilon > 0$, basta considerar $\delta = \frac{ \varepsilon}{2}$, e ele terá a propriedade desejada.
+
+\end{enumerate}
+
+\Exercise[title={2,0}] Determine os valores de $a$ e $b$ para que a função a seguir seja contínua em 0:
+\[
+g(x) =
+\begin{cases}
+a + \frac{ \tan(x) }{ x },\ & \text{se}\ x > 0,\\
+b,\ &\text{se}\ x = 0\\
+\frac{ \sen(3x) }{ \sen(x) },\ &\text{se}\ x < 0
+\end{cases}
+\]
+\Answer Para que $g$ seja contínua no ponto indicado, é preciso que $\lim_{x \to 0} g(x) = g(0)$, e para que este limite exista, é necessário que os limites laterais coincidam. Mas
+\begin{align*}
+  \lim_{x \to 0^-} g(x)
+& = \lim_{x \to 0^-} \frac{ \sen(3x) }{ \sen(x) }
+= \lim_{x \to 0^-} \frac{ \frac{ \sen(3x) }{x} }{ \frac{ \sen(x) }{x} }
+= \frac{ \lim_{x \to 0^-} \frac{ \sen(3x) }{x} }
+       { \lim_{x \to 0^-} \frac{ \sen( x) }{x} }\\
+&= \frac{ \lim_{x \to 0^-} 3 \frac{ \sen(3x) }{3x} }
+       { \lim_{x \to 0^-} \frac{ \sen( x) }{x} }
+= \frac{ 3 \lim_{u \to 0^-} \frac{ \sen(u) }{u} }
+       { \lim_{x \to 0^-} \frac{ \sen( x) }{x} }
+= 3.
+\end{align*}
+Logo, é preciso que $b = g(0) = 3$. Por outro lado,
+\begin{align*}
+    \lim_{x \to 0^+} g(x)
+& = \lim_{x \to 0^+} a + \frac{ \tan(x) }{ x }
+  = a + \lim_{x \to 0^+} \frac{ \frac{ \sen(x) }{ \cos{x} } }{ x }\\
+& = a + \lim_{x \to 0^+} \frac{ \sen(x) }{ x \cos{x} }
+  = a + \lim_{x \to 0^+} \frac{ \sen(x) }{ x }\frac{1}{ \cos{x} }
+  = a + 1.
+\end{align*}
+Portanto, para que o limite exista também é necessário que $a+1 = 3$, ou seja, $a=2$.
+
+\Exercise[title={3,0}] Calcule 2 dos seguintes limites, se existirem (ou explique porque não existem):
+\begin{enumerate}
+\item (1,5) $\lim\limits_{x\to 0} 2x \cotg(5x)$
+\item (1,5) $\lim\limits_{x\to 1/3} \dfrac{\ln(x) - \ln(1/3)}{x-1/3}$
+\item (1,5) $\lim\limits_{x\to +\infty} \cotgh(x)$, sendo $\cotgh(x) = \dfrac{e^x+e^{-x}}{e^x-e^{-x}}$
+\end{enumerate}
+\Answer
+\begin{enumerate}
+\item
+\begin{align*}
+  \lim\limits_{x\to 0} 2x \cotg(5x)
+&= \lim\limits_{x\to 0} 2x \frac{ \cos(5x) }{ \sen(5x) }
+= \lim\limits_{u\to 0} 2\frac{u}{5} \frac{ \cos(u) }{ \sen(u) }
+= \frac{2}{5} \lim\limits_{u\to 0} \frac{ u }{ \sen(u) }\cos(u)\\
+&= \frac{2}{5} \lim\limits_{u\to 0} \frac{ 1 }{  \frac{ \sen(u) }{ u } }\cos(u)
+= \frac{2}{5}.
+\end{align*}
+
+\item
+\begin{align*}
+  \lim\limits_{x\to 1/3} \dfrac{\ln(x) - \ln(1/3)}{x-1/3}
+& = \lim\limits_{u\to 0} \dfrac{ \ln( u + 1/3 ) - \ln(1/3) }{u}
+= \lim\limits_{u\to 0} \dfrac{ \ln\left( \frac{ u + 1/3 }{ 1/3 } \right)}{u}
+= \lim\limits_{u\to 0} \frac{1}{u} \ln\left( 3u + 1 \right) \\
+& = \lim\limits_{u\to 0}  \ln\left( 3u + 1 \right)^{\frac{1}{u}}
+ = \ln\left( \lim\limits_{u\to 0} \left( 3u + 1 \right)^{\frac{1}{u}} \right)
+ = \ln\left( \lim\limits_{t\to 0} \left( 1 + t \right)^{\frac{3}{t}} \right)\\
+& = \ln\left( \lim\limits_{t\to 0} \left[ \left( 1 + t \right)^{\frac{1}{t}} \right]^3 \right)
+  = \ln\left( \left[ \lim\limits_{t\to 0} \left( 1 + t \right)^{\frac{1}{t}} \right]^3 \right)
+  = \ln(e^3)
+  = 3.
+\end{align*}
+
+\item
+\begin{align*}
+\lim\limits_{x\to +\infty} \cotgh(x)
+& = \lim\limits_{x\to +\infty} \dfrac{e^x+e^{-x}}{e^x-e^{-x}}
+= \lim\limits_{x\to +\infty} \dfrac{e^x+\frac{1}{e^x}}{e^x-\frac{1}{e^x}}
+= \lim\limits_{w\to +\infty} \dfrac{w+\frac{1}{w}}{w-\frac{1}{w}}
+= \dfrac{\lim\limits_{w\to +\infty}  w+\frac{1}{w}}{\lim\limits_{w\to +\infty}  w-\frac{1}{w}}
+= \frac{1}{1}
+= 1.
+\end{align*}
+
+\end{enumerate}
+\end{ExerciseList}
+
+\begin{center}
+BOA PROVA!
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas}
+\shipoutAnswer
+\end{document}

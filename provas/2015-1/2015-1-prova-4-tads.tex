@@ -1,0 +1,87 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand{\fixme}{{\color{red}(...)}}
+
+\newcommand*\tipo{PROVA IV}
+\newcommand*\turma{TURMA B}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{26/06/2015}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics{udesc_joinville_cabecalho.pdf}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina}
+& \textbf{\tipo}
+& \textbf{\data}
+& \textbf{\turma}
+\end{tabular}\vspace{-0.3cm}
+\noindent\rule{17cm}{0.01cm}
+\end{center}
+
+\noindent Nome do aluno: \rule{14cm}{0.01cm}
+
+%\section*{Instruções}
+{\footnotesize
+\begin{enumerate}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\end{enumerate}
+}
+\noindent\rule{17cm}{0.01cm}
+%\section*{Questões}
+\begin{enumerate}
+\item Escolha e resolva 5 das 7 integrais abaixo (cada uma valerá 2,0 pontos):
+\begin{enumerate}
+\item $\displaystyle\int \frac{2x^3-x-1}{2x^2-2x-4} \diff x$
+\item $\displaystyle\int \operatorname{sen}^8(x) \cos^3(x) \diff x$
+\item $\displaystyle\int \dfrac{1}{(4x+9)^4} \diff x$
+\item $\displaystyle\int e^{4x} \cos(x) \diff x$
+\item $\displaystyle\int x \sqrt{9x^2 + 1} \diff x$
+\item $\displaystyle\int \frac{ \sqrt{16-x^2} }{x^2} \diff x$
+\item $\displaystyle\int \sec^3(x) \diff x$
+\end{enumerate}
+\end{enumerate}
+
+%\newpage
+%\restoregeometry
+%\section*{Respostas e observações}
+%
+%\begin{enumerate}
+%\item \fixme
+%\end{enumerate}
+
+\end{document}

@@ -1,0 +1,231 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\senh{\operatorname{senh}}
+
+\newcommand*\tipo{PROVA II}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{16/10/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (turma: \rule{4cm}{0.01cm})}
+& \textbf{\tipo}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Resolva (integralmente) apenas os itens de que precisar para somar 10,0 pontos.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item (0,5) Dê exemplos de funções $f, g: \mathbb{R} \to \mathbb{R}$ tais que $\left[f( g(x) )\right]^\prime \neq f^\prime(x)g^\prime(x)$. Faça as contas para mostrar que realmente são diferentes.
+
+\item (1,0) Seja $f(x) = \dfrac{10^{2x}}{\ln(10)}$. Determine uma fórmula para $f^{(n)}$, a derivada de ordem $n$ de $f$.
+
+\item (0,5) Calcule a derivada de $y = \senh(x)\cosh(x) + \sen(\cos(\ln(\pi + 1)))$.
+
+\item (2,0) Uma escada de $250cm$ de comprimento está apoiada em um muro vertical. Se a extremidade inferior da escada se afasta do muro na razão de $3cm/s$, então com que rapidez está descendo a extremidade superior no instante em que o pé da escada está a $70cm$ do muro?
+
+\item (1,5) Mostre que se
+$y = f(x) = e^x \sen(x)$
+então vale
+$y^{\prime \prime} - 2y^\prime +2y = 0$,
+sendo $y^\prime$ e $y^{\prime\prime}$, respectivamente, as derivadas de primeira e segunda ordem da função indicada.
+
+\item (1,5) Utilize uma aproximação linear para estimar o valor de $\sqrt{26}$.
+
+\item (2,5) Seja $y=f(x)$ dada implicitamente pela equação $e^{(y^2 \cdot x)}=x-y$. Calcule $f^\prime(0)$.
+
+\item (2,5) Determine a equação da reta normal ao gráfico de $f(x) = \tan(x)$ em $x=\pi/4$.
+
+\end{enumerate}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+
+\begin{enumerate}
+\item \textit{ Dê exemplos de funções $f, g: \mathbb{R} \to \mathbb{R}$ tais que $\left[f( g(x) )\right]^\prime \neq f^\prime(x)g^\prime(x)$. Faça as contas para mostrar que realmente são diferentes.}
+
+
+Há inúmeras funções para as quais isso ocorre. Por exemplo:
+\begin{itemize}
+\item Se $f(x) = x^2$ e $g(x) = 3x$, então:
+\[
+\left[f(g(x))\right]^\prime
+= \left[(3x)^2\right]^\prime
+= \left[9x^2\right]^\prime
+= 18x
+\neq 6x
+= 2x \cdot 3
+= (x^2)^\prime \cdot (3x)^\prime
+= f^\prime(x)g^\prime(x).
+\]
+\item Se $f(x) = \sen(x)$ e $g(x) = e^x$, então:
+\[
+\left[f(g(x))\right]^\prime
+= \left[\sen(e^x)\right]^\prime
+= \cos(e^x)e^x
+\neq \cos(x) \cdot e^x
+= (\sen(x))^\prime \cdot (e^x)^\prime
+= f^\prime(x)g^\prime(x).
+\]
+\end{itemize}
+
+\item \textit{ Seja $f(x) = \dfrac{10^{2x}}{\ln(10)}$. Determine uma fórmula para $f^{(n)}$, a derivada de ordem $n$ de $f$.}
+
+Como $\left[ 10^{2x} \right]^\prime = \left[ 10^{2x} \cdot \ln(10) \cdot 2 \right] = 2\ln(10) \cdot 10^{2x}$, tem-se
+\[
+f^\prime(x)
+= \dfrac{ 2\ln(10) \cdot 10^{2x} }{\ln(10)}
+= 2 \cdot 10^{2x}
+\]
+\[
+f^{(2)}(x)
+= 2 \cdot \left[ 10^{2x} \right]^\prime
+= 2 \cdot \left[ 2\ln(10) \cdot 10^{2x} \right]
+= 2^2 \ln(10) \cdot 10^{2x}
+\]
+\[
+f^{(3)}(x)
+= 2^2 \ln(10) \cdot \left[ 10^{2x} \right]^\prime
+= 2^2 \ln(10) \cdot \left[ 2\ln(10) \cdot 10^{2x} \right]
+= 2^3 \ln(10)^2 \cdot 10^{2x}
+\]
+
+Pode-se concluir que a derivada de ordem $n$ será $f^{(n)}(x)= 2^n \ln(10)^{n-1} \cdot 10^{2x}$.
+
+
+\item \textit{ Calcule a derivada de $y = \senh(x)\cosh(x) + \sen(\cos(\ln(\pi + 1)))$. }
+
+Como $\sen(\cos(\ln(\pi + 1)))$ é apenas uma constante, a sua derivada é zero. Então:
+\[
+y^\prime
+= (\senh(x)\cosh(x))^\prime + 0
+= (\senh(x))^\prime\cosh(x) + \senh(x) (\cosh(x))^\prime
+%= \cosh(x) \cosh(x) + \senh(x) \senh(x)
+= \cosh^2(x) + \senh^2(x).
+\]
+
+\item \textit{ Uma escada de $250cm$ de comprimento está apoiada em um muro vertical. Se a extremidade inferior da escada se afasta do muro na razão de $3cm/s$, então com que rapidez está descendo a extremidade superior no instante em que o pé da escada está a $70cm$ do muro? }
+
+Se $x$ é a distância (em centímetros) entre o muro e o pé da escada, e $y$ a distância (em centímetros) entre o chão e o topo da escada, então $x^2+y^2=250^2$. Derivando ambos os membros da igualdade em relação a $t$ obtem-se $2x \cdot x^\prime + 2y \cdot y^\prime = 0$, que equivale a $y^\prime = -\frac{2x}{2y} \cdot x^\prime = -\frac{x}{y} \cdot x^\prime$.
+
+Quando $x = 70cm$, tem-se $70^2+y^2=250^2$ e portanto $y=\sqrt{ 250^2 - 70^2 } = 10 \sqrt{ 25^2 - 7^2} = 10 \cdot 24 = 240 cm$. Consequentemente, $y^\prime = -\frac{70}{240} \cdot 3 = -7/8 = -0,875 cm/s$.
+
+\item \textit{ Mostre que se
+$y = f(x) = e^x \sen(x)$
+então vale
+$y^{\prime \prime} - 2y^\prime +2y = 0$,
+sendo $y^\prime$ e $y^{\prime\prime}$, respectivamente, as derivadas de primeira e segunda ordem da função indicada. }
+
+Tem-se
+\[
+y^\prime
+= (e^x \sen(x))^\prime
+= e^x \sen(x) + e^x \cos(x)
+= e^x \left[ \sen(x) + \cos(x) \right]
+\]
+\[
+y^{\prime\prime}
+= (e^x \left[ \sen(x) + \cos(x) \right] )^\prime
+= e^x\left[ \sen(x) + \cos(x) \right] + e^x ( \cos(x) - \sen(x) )
+= 2 e^x \cos(x)
+\]
+Consequentemente,
+\[
+y^{\prime \prime} - 2y^\prime +2y
+= 2 e^x \cos(x)
+- 2 \left( e^x \left[ \sen(x) + \cos(x) \right] \right)
++ 2 \left( e^x \sen(x) \right)
+= 0.
+\]
+
+\item \textit{ Utilize uma aproximação linear para estimar o valor de $\sqrt{26}$. }
+
+
+Seja $f(x) = \sqrt{x}$, $x_0 = 25$ e $\Delta x = 1$. Então e $f^\prime = \dfrac{1}{2\sqrt{x}}$ e tem-se:
+
+\begin{align*}
+\sqrt{26} = \sqrt{25 + 1}
+= f(x_0+\Delta x)
+& \approx f(x_0) + f^{\prime}(x_0)\Delta x \\
+& = \sqrt{25} + \frac{1}{2\sqrt{25}} \cdot 1
+= 5 + \frac{1}{10}
+= 5 + 0,1
+= 5,1.
+\end{align*}
+
+
+\item \textit{ Seja $y=f(x)$ dada implicitamente pela equação $e^{(y^2 \cdot x)}=x-y$. Calcule $f^\prime(0)$. }
+
+Derivando ambos os membros da equação em relação a $x$, resulta que
+\[
+e^{(y^2 \cdot x)}(2y y^\prime x + y^2)=1-y^\prime.
+\]
+Em particular, se $x=0$ tem-se $e^{(y^2 \cdot 0)}(2y y^\prime \cdot 0 + y^2)=1-y^\prime$, isto é, $y^2=1-y^\prime$. Além disso, o valor de $y$ correspondente pode ser obtido levando em conta que $e^{(y^2 \cdot 0)}=0-y$, ou seja, $y=-1$. Assim, $(-1)^2=1-y^\prime$ implica que $y^\prime = 0$.
+
+\item \textit{ Determine a equação da reta normal ao gráfico de $f(x) = \tan(x)$ em $x=\pi/4$. }
+
+Tendo em mente que $\tan(\pi/4) = 1$, que $f^\prime(x) = (\tan(x))^\prime = \sec^2(x)$, e que
+\[
+\sec^2(\pi/4)
+= \frac{1}{\cos^2(\pi/4)}
+= \frac{1}{ \left(\frac{ \sqrt{2} }{2}\right)^2 }
+= \frac{1}{ \left(\frac{ 2 }{4}\right) }
+= 2,
+\]
+conclui-se que a equação da reta tangente é $y - 1 = 2(x-\pi/4)$, ou seja, $y = 2x + (1-\pi/2)$.
+\end{enumerate}
+\end{document}

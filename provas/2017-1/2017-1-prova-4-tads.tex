@@ -1,0 +1,132 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+% TODO: Consider using exsheets
+% http://linorg.usp.br/CTAN/macros/latex/contrib/exsheets/exsheets_en.pdf
+%
+% http://ctan.org/tex-archive/macros/latex/contrib/exercise/
+% Options: answerdelayed,lastexercise,noanswer
+\usepackage[answerdelayed,lastexercise]{exercise}
+
+\addto\captionsbrazil{%
+\def\listexercisename{Lista de exerc\'icios}%
+\def\ExerciseName{Exerc\'icio}%
+\def\AnswerName{Solu\c{c}\~ao do exerc\'icio}%
+\def\ExerciseListName{Ex.}%
+\def\AnswerListName{Solu\c{c}\~ao}%
+\def\ExePartName{Parte}%
+\def\ArticleOf{de\ }%
+}
+
+\renewcommand{\ExerciseHeaderTitle}{(\ExerciseTitle)\ }
+\renewcommand{\ExerciseListHeader}{%\ExerciseHeaderDifficulty%
+\textbf{%\ExerciseListName\
+\ExerciseHeaderNB.\ %
+%\ --- \
+\ExerciseHeaderTitle}%
+%\ExerciseHeaderOrigin
+\ignorespaces}
+\renewcommand{\AnswerListHeader}{\textbf{\ExerciseHeaderNB.\ (\AnswerListName)\ }}
+
+\newcommand{\fixme}{{\color{red}(...)}}
+
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\tg{\operatorname{tg}}
+\newcommand*\R{\mathbb{R}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi) }
+
+\newcommand*\tipo{Prova IV}
+\newcommand*\turma{TADS121-01C}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{12/06/2017}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca} \\
+\textbf{\tipo\ (\disciplina / \turma)} \\
+Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional}}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \underline{\hspace{9,7cm}} Data: \underline{\data}
+
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Resolva (integralmente) apenas as questões de que precisar para somar 10,0 pontos.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+\begin{ExerciseList}
+\Exercise[title={2,0}] Seja $y = f(x)$ uma função derivável definida implicitamente por $\tg(\pi y) + x(x - 2) = 0$. Obtenha a(s) reta(s) tangente(s) ao gráfico de $f$ no(s) ponto(s) em que a ordenada $y = 0$.
+\Answer \fixme
+
+\Exercise[title={2,0}] Um avião passou por você a uma altura de $10 km$ e uma velocidade constante de $910\ km/h$. Quão rápido a distância entre você e o avião estará aumentando quando ele passar sobre um parque que fica exatamente a $24 km$ de onde você o observa? Assuma que o avião se desloca em linha reta, a uma altura constante e com uma velocidade constante.
+\Answer \fixme
+
+\Exercise[title={2,0}] Qual é o mínimo de material necessário para confeccionar uma caixa em forma de paralelepípedo com base quadrada, cujo volume seja de $8$ litros ($8000 cm^3$)?
+\Answer \fixme
+
+\Exercise[title={2,0}] Analize se $f(x) = \dfrac{\ln(x^4) + x^3 + 4}{x^2}$ possui assíntotas oblíquas e se possui assíntotas verticais. Quando for o caso, exiba as equações de tais assíntotas.
+
+\Exercise[title={4,0}] Seja $f(x) = \dfrac{3 - x^2}{3 + x^2}$. Utilize as ferramentas do cálculo diferencial para:
+\begin{enumerate}
+\item (0,4) Obter as derivadas de primeira e segunda ordem da função $f$.
+\item (0,6) Obter $\lim_{x \to \pm\infty} f(x)$.
+\item (1,0) Obter todos os intervalos $(a,b)$ em que a função:
+\begin{enumerate}
+\item É \textbf{crescente} e \textbf{decrescente}, respectivamente.
+\item Tem \textbf{concavidade para cima} e \textbf{para baixo}, respectivamente.
+\end{enumerate}
+\item (1,0) Identificar no domínio da função, se existirem, todos os pontos \textbf{críticos}, de \textbf{máximo} e de \textbf{mínimo} (locais e globais) e de \textbf{inflexão}. Justifique suas conclusões com base nas informações que obteve nos itens (a), (b) e (c).
+\item (1,0) Esboçar o \textbf{gráfico} da função, usando (corretamente) os dados anteriores.
+\end{enumerate}
+\Answer \fixme
+\end{ExerciseList}
+
+\begin{center}
+BOA PROVA!
+\end{center}
+
+%\newpage
+%\restoregeometry
+%\section*{Respostas}
+%\shipoutAnswer
+\end{document}

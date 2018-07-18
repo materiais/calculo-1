@@ -1,0 +1,308 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\tg{\operatorname{tg}}
+\newcommand*\arcsen{\operatorname{arcsen}}
+\newcommand*\dom[1]{\operatorname{Dom}\left(#1\right)}
+
+\newcommand*\R{\mathbb{R}}
+
+\newcommand*\prova{Prova III}
+\newcommand*\turma{TADS121-01C}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{04/06/2016}
+
+\author{\eu}
+\title{\prova - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (\turma)}
+& \textbf{\prova}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item (4,0) Escolha \textbf{dois} dos limites a seguir, e calcule-os (use a regra de L'Hôpital se necessário).
+\begin{multicols}{3}
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to1^-} \frac{\pi/2 - \arcsin(x)}{\sqrt{1-x}}$
+\item $\displaystyle\lim_{x\to 0} \frac{\tg(\pi x)}{\ln{(x^2+3x+1)}}$
+\item $\displaystyle\lim_{x\to +\infty} (4x)^{(2016/x)}$
+\end{enumerate}
+\end{multicols}
+
+
+\item (3,0) Escolha \textbf{uma} das funções $\displaystyle f(x) = \frac{4x^3}{x^2+3}$ ou $\displaystyle g(x) = \frac{x^2}{3x^2-12}$ e utilize as ferramentas do cálculo diferencial para responder aos seguintes itens:
+\begin{enumerate}
+\item (0,2) Obter as derivadas de primeira e segunda ordem da função escolhida.
+\item (1,0) Obter todos os intervalos $(a,b)$ em que a função:
+\begin{enumerate}
+\item É \textbf{crescente} e \textbf{decrescente}, respectivamente.
+\item Tem \textbf{concavidade para cima} e \textbf{para baixo}, respectivamente.
+\end{enumerate}
+\item (0,6) Obter todas as \textbf{assíntotas} existentes (horizontais, oblíquas e verticais).
+\item (0,6) Identificar, quando existirem (explicando suas afirmações) todos os pontos \textbf{críticos}, de \textbf{máximo} e de \textbf{mínimo} (locais e globais) e de \textbf{inflexão}.
+\item (0,6) Esboçar o \textbf{gráfico} da função, usando (corretamente) os dados anteriores.
+\end{enumerate}
+
+\item (1,0) Dentre todos os retângulos de área $81 cm^2$, há algum com perímetro mínimo? E com perímetro máximo? Justifique.
+
+\item (2,0) Faça um esboço do gráfico de $f$, assumindo que $f: [A, G] \to \R$ seja uma função contínua cujo gráfico passa por $D=(0,0)$, e cuja derivada tem o seguinte gráfico:
+\includegraphics[width=6.5cm]{img/prova-3-tads-derivada-malha} $\quad$
+\includegraphics[width=6.5cm]{img/prova-3-tads-derivada.pdf}
+\end{enumerate}
+
+\begin{center}
+BOA PROVA!!!
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Observe que $\lim_{x\to1^-} \sqrt{1-x} = \sqrt{1-1} = 0$ e que, como $\sen(\pi/2) = 1$, tem-se $\lim_{x\to1^-} \pi/2 - \arcsen(x) = \pi/2 - \pi/2 = 0$. Assim, o limite $\displaystyle\lim_{x\to1^-} \frac{\pi/2 - \arcsen(x)}{\sqrt{1-x}}$ pode ser calculado com o auxílio da regra de L'Hôpital, pois
+\begin{align*}
+& \lim_{x\to1^-} \frac{(\pi/2 - \arcsen(x))^\prime}{(\sqrt{1-x}))^\prime}
+= \lim_{x\to1^-} \frac{0 - \frac{1}{\sqrt{1-x^2}}}{\frac{-1}{2\sqrt{1-x}}}
+= \lim_{x\to1^-} \frac{\frac{-1}{\sqrt{1-x^2}}}{\frac{-1}{2\sqrt{1-x}}}
+= \lim_{x\to1^-} \frac{2\sqrt{1-x}}{\sqrt{1-x^2}} \\
+& = \lim_{x\to1^-} \frac{2\sqrt{1-x}}{\sqrt{1+x}\sqrt{1-x}}
+= \lim_{x\to1^-} \frac{2}{\sqrt{1+x}}
+= \frac{2}{\sqrt{1+1}}
+= \frac{2}{\sqrt{2}}
+= \sqrt{2}.
+\end{align*}
+Portanto, $\displaystyle\lim_{x\to1^-} \frac{\pi/2 - \arcsen(x)}{\sqrt{1-x}} = \sqrt{2}$.
+\item Note que $\lim_{x\to 0} \tg(\pi x) = \tg(0) = 0$, $\lim_{x\to 0} \ln{(x^2+3x+1)} = \ln(1) = 0$ e que além disso,
+\begin{align*}
+& \lim_{x\to 0} \frac{( \tg(\pi x) )^\prime}{ ( \ln{(x^2+3x+1)} )^\prime}
+= \lim_{x\to 0} \frac{ \sec^2(\pi x) \cdot \pi}{ \frac{2x+3}{x^2+3x+1} }
+= \frac{ \sec^2(0) \cdot \pi}{ \frac{2 \cdot 0 +3}{0^2+3 \cdot 0 +1} }
+= \frac{ \frac{1}{\cos^2(0)} \cdot \pi}{ \frac{3}{1} }
+= \frac{ \pi }{ 3 }.
+\end{align*}
+
+Logo, pela regra de L'Hôpital, conclui-se que $\displaystyle\lim_{x\to 0} \frac{\tg(\pi x)}{\ln{(x^2+3x+1)}} = \frac{ \pi }{ 3 }$.
+
+\item Pelas propriedades da função exponencial, tem-se
+\[
+\lim_{x\to +\infty} (4x)^{(2016/x)}
+= \lim_{x\to +\infty} e^{ \ln \left( (4x)^{(2016/x)} \right) }
+= \lim_{x\to +\infty} e^{ \frac{ 2016 }{x} \ln(4x) }
+= \lim_{x\to +\infty} e^{ 2016 \frac{ \ln(4x) }{x} }.
+\]
+Como $\lim_{x\to +\infty} \ln(4x) = +\infty = \lim_{x\to +\infty} x$ e
+\[
+\lim_{x\to +\infty} \frac{ ( \ln(4x) )^\prime }{ x^\prime }
+= \lim_{x\to +\infty} \frac{ \frac{1}{4x} \cdot 4 }{ 1 }
+= \lim_{x\to +\infty} \frac{1}{x}
+= 0,
+\]
+pode-se aplicar a regra de L'Hôpital para concluir que $\lim_{x\to +\infty} \frac{ \ln(4x) }{ x } = 0$. Assim,
+\[
+\lim_{x\to +\infty} (4x)^{(2016/x)}
+= \lim_{x\to +\infty} e^{ 2016 \frac{ \ln(4x) }{x} }
+= \lim_{u \to 0} e^{ 2016 \cdot u }
+= e^{ 2016 \cdot 0 }
+= e^0
+= 1.
+\]
+
+
+\end{enumerate}
+\item
+\begin{itemize}
+\item
+\begin{enumerate}
+\item Para a função $f(x) = \frac{4x^3}{x^2+3} = 4\frac{x^3}{x^2+3}$ tem-se
+\[
+f^\prime(x)
+= 4\frac{3x^2(x^2+3)-x^3(2x)}{(x^2+3)^2}
+= 4\frac{3x^4+9x^2-2x^4}{(x^2+3)^2}
+= 4\frac{x^4 + 9x^2}{(x^2+3)^2}
+%= 4x^2\frac{x^2 + 9}{(x^2+3)^2}.
+\]
+e
+\begin{align*}
+f^{\prime\prime}(x)
+& = 4\frac{(4x^3+18x)(x^2+3)^2-(x^4+9x^2)(2(x^2+3)2x)}{(x^2+3)^4} \\
+& = 4\frac{(4x^3+18x)(x^2+3)-(x^4+9x^2)(4x)}{(x^2+3)^3}\\
+& = 4\frac{(4x^5+18x^3 + 12x^3+54x)-(4x^5+36x^3)}{(x^2+3)^3}\\
+& = 4\frac{-6x^3 + 54x}{(x^2+3)^3}
+  = 4\frac{6x (-x^2 + 9)}{(x^2+3)^3}
+  = 24x \frac{9-x^2}{(x^2+3)^3}.
+\end{align*}
+
+\item Tem-se $f^\prime(x) = 4\frac{x^4 + 9x^2}{(x^2+3)^2} = 4x^2\frac{x^2 + 9}{(x^2+3)^2} \geq 0$, $\forall x \in \dom{f} = \R$, pois o quadrado de um número real nunca é negativo. Assim, conclui-se que a função $f$ é crescente em todo o seu domínio (e que não é decrescente em nenhum intervalo).
+
+Além disso, $f^{\prime\prime}(x) = 24x \frac{9-x^2}{(x^2+3)^3}$ tem sinal positivo se $24x$ e $9-x^2$ tiverem o mesmo sinal, ou seja, nos seguintes casos:
+\begin{enumerate}
+\item $24x>0$ e $9-x^2>0$, o que equivale a $x>0$ e $x^2 < 9$, ou seja, $x \in (0,3)$.
+\item $24x<0$ e $9-x^2<0$, o que equivale a $x<0$ e $x^2 > 9$, ou seja, $x \in (-\infty,-3)$.
+\end{enumerate}
+Isto significa que $f$ tem concavidade para cima em $(-\infty,-3) \cup (0,3)$ e concavidade para baixo em $(-3,0) \cup (3, +\infty)$.
+
+\item Para todo $a \in \R$ tem-se $\lim_{x\to a} f(x) = \lim_{x\to a} \frac{4x^3}{x^2+3} = \frac{4a^3}{a^2+3}$, ou seja, $f(x)$ não possui assíntotas verticais.
+
+Em relação às assíntotas oblíquas, tem-se
+\[
+a = \lim_{x\to \pm\infty} \frac{f(x)}{x}
+= \lim_{x\to \pm\infty} \frac{\frac{4x^3}{x^2+3}}{x}
+= \lim_{x\to \pm\infty} \frac{4x^3}{x^3+3x}
+= \lim_{x\to \pm\infty} \frac{x^3}{x^3} \cdot \frac{4}{1+\frac{3}{x^2}}
+= 4
+\]
+(o mesmo resultado poderia ser obtido usando a regra de L'Hôpital) e, além disso,
+\begin{align*}
+b = \lim_{x\to \pm\infty} f(x) - 4x
+& = \lim_{x\to \pm\infty} \frac{4x^3}{x^2+3} - 4x
+  = \lim_{x\to \pm\infty} \frac{4x^3 - 4x(x^2+3)}{x^2+3} \\
+& = \lim_{x\to \pm\infty} \frac{-12x}{x^2+3}
+  = \lim_{x\to \pm\infty} \frac{x}{x} \cdot \frac{-12}{x+\frac{3}{x}}
+  = 0
+\end{align*}
+Consequentemente, a reta $y = 4x + 0$ é a (única) assíntota de $f(x)$.
+
+\item Como $f$ é derivável em todo $x \in \dom{f}$, um ponto $x \in \dom{f}$ só será ponto crítico se $f^\prime(x) = 4x^2\frac{x^2 + 9}{(x^2+3)^2} = 0$. Isto implica que $x = 0$ é o único ponto crítico de $f$ (pois $x^2+9 \neq 0$). Mas este ponto não é ponto de máximo nem de mínimo, já que a função $f$ é sempre crescente. Consequentemente, $f$ não possui nenhum ponto de máximo nem de mínimo.
+
+Por outro lado, $f$ possui três pontos de inflexão, pois a segunda derivada de $f$ muda de sinal (isto é, $f$ muda de concavidade) em $x = -3$, em $x=0$ e em $x = 3$, que são pontos do domínio de $f$.
+\item \text{}\\
+\includegraphics[width=14cm]{img/prova-3-tads-2a-racional}
+
+\end{enumerate}
+\newpage
+\item
+\begin{enumerate}
+\item Para a função $g(x) = \frac{x^2}{3x^2-12} = \frac{x^2}{3(x^2-4)} = \frac{1}{3} \cdot \frac{x^2}{x^2-4}$ tem-se:
+\[
+g^\prime(x)
+= \frac{1}{3} \cdot \frac{2x(x^2-4) - x^2(2x)}{(x^2-4)^2}
+%= \frac{1}{3} \cdot \frac{2x^3-8x - 2x^3}{(x^2-4)^2}
+= \frac{1}{3} \cdot \frac{-8x}{(x^2-4)^2}
+= -\frac{8}{3} \cdot \frac{x}{(x^2-4)^2}.
+\]
+e
+\begin{align*}
+g^{\prime\prime}(x)
+& = -\frac{8}{3} \cdot \frac{1(x^2-4)^2-x ( 2(x^2-4) (2x) )}{(x^2-4)^4}
+  = -\frac{8}{3} \cdot \frac{(x^2-4)-x \cdot 2\cdot 2x}{(x^2-4)^3}\\
+& = -\frac{8}{3} \cdot \frac{-4 - 3x^2}{(x^2-4)^3}
+  = \frac{8}{3} \cdot \frac{3x^2 + 4}{(x^2-4)^3}.
+\end{align*}
+
+\item Como o denominador de $g^\prime(x) = -\frac{8}{3} \cdot \frac{x}{(x^2-4)^2}$ nunca é negativo, tem-se se $g^\prime(x) > 0$ se, e somente se, $x \in \dom{g}$ é tal que $x < 0$. Mas $\dom{g} = \R \setminus \{ -2, 2\}$, então $g$ é crescente em $(-\infty, -2) \cup (-2, 0)$ e decrescente em $(0,2) \cup (2, +\infty)$.
+
+Além disso, o numerador de $g^{\prime\prime}(x) = \frac{8}{3} \cdot \frac{3x^2 + 4}{(x^2-4)^3}$ nunca é negativo, então $g^{\prime\prime}(x)$ terá sinal positivo sempre que $(x^2-4)^3$ for positivo, ou seja, quando $x^2-4 > 0$. Mas isto ocorre para
+$x \in (-\infty, -2) \cup (2, +\infty)$, então $g$ tem concavidade para cima em $x \in (-\infty, -2) \cup (2, +\infty)$ e concavidade para baixo em $(-2,2)$.
+
+\item Para todo $a \in \R \setminus\{ -2, +2 \}$ tem-se $\lim_{x\to a} g(x) = \lim_{x\to a} \frac{x^2}{3x^2-12} = \frac{a^2}{3a^2-12}$. No entanto, nestes dois pontos tem-se:
+\begin{enumerate}
+\item $\lim_{x\to 2^+} \frac{x^2}{3x^2-12}
+= +\infty
+= \lim_{x\to -2^-} \frac{x^2}{3x^2-12}$
+\item $\lim_{x\to 2^-} \frac{x^2}{3x^2-12}
+= -\infty
+= \lim_{x\to -2^+} \frac{x^2}{3x^2-12}$
+\end{enumerate}
+Logo, $g(x)$ possui duas assíntotas verticais, cujas equações são $x = -2$ e $x = 2$.
+Em relação às assíntotas oblíquas, tem-se
+\[
+a = \lim_{x\to \pm\infty} \frac{g(x)}{x}
+= \lim_{x\to \pm\infty} \frac{ \frac{x^2}{3x^2-12} }{x}
+= \lim_{x\to \pm\infty} \frac{x}{3x^2-12}
+= \lim_{x\to \pm\infty} \frac{x}{x} \cdot \frac{1}{3x-12/x}
+= 0.
+\]
+(a regra de L'Hôpital produziria o mesmo resultado) e, além disso,
+\begin{align*}
+b = \lim_{x\to \pm\infty} g(x) - 0x
+& = \lim_{x\to \pm\infty} \frac{x^2}{3x^2-12}
+  = \lim_{x\to \pm\infty} \frac{x^2}{x^2} \cdot \frac{1}{3-12/x^2}
+  = \frac{1}{3}.
+\end{align*}
+Consequentemente, a reta $y = \frac{1}{3}$ é a (única) assíntota oblíqua de $g(x)$ (que na verdade é horizontal).
+
+\item Pelos itens anteriores, $g^\prime(x) = 0$ se, e somente se, $x = 0$. Este ponto crítico é o único ponto de máximo local pois $g$ é crescente em $(-2, 0)$ e decrescente em $(0, 2)$. Ele não é um máximo global pois $\lim_{x\to 2^+} g(x) = +\infty$. Como $g$ só muda de concavidade nos pontos $x = -2$ e $x = 2$ que não pertencem ao domínio de $g$, não há pontos de inflexão no gráfico de $g$.
+
+\item \text{}\\
+\includegraphics[width=14cm]{img/prova-3-tads-2b-racional}
+\end{enumerate}
+\end{itemize}
+\item Em um retângulo cujos lados medem $x$ e $y$, o perímetro, que é a soma dos comprimentos dos lados, é dado por $P = 2x + 2y = 2(x + y)$ e a área é $A = x \cdot y$. Assim, se um retângulo tem área $81cm^2$, vale a relação $y = 81/x$ e pode-se expressar o perímetro em função do comprimento $x$ como $P(x) = 2\left(x + \frac{81}{x}\right)$.
+
+Como $x$ representa o comprimento de um dos lados de um retângulo, consideram-se apenas os valores de $x > 0$, isto é, $\dom{P} = (0, +\infty)$. Neste conjunto, a função $P(x)$ é derivável, e portanto se ela assumir um valor máximo ou um valor mínimo em $x=a$, deverá ocorrer que $P^\prime(a) = 0$. Mas $P^\prime(x) = 2\left(1-\frac{81}{x^2}\right) = 2\frac{x^2 - 81}{x^2}$, então o ponto $a$ precisa satisfazer $2\frac{a^2 - 81}{a^2} = 0$, ou seja, $a^2 - 81 = 0$ e portanto $a = 9$ (pois $a > 0$).
+
+Para saber se $a=9$ é um ponto de máximo ou de mínimo, é suficiente descobrir o sinal de $P^{\prime\prime}(9)$. Como $P^{\prime\prime}(x) = 2\left(0 - (-2)\frac{81}{x^3}\right) = 4 \cdot \frac{81}{x^3}$, tem-se $P^{\prime\prime}(9) = 4 \cdot \frac{81}{9^3} > 0$ e conclui-se que $a=9$ é um ponto de mínimo, ou seja, o retângulo de área $81cm^2$ que tem o menor perímetro é aquele com $x = 9cm$ e $y = 81/9 = 9cm$, isto é, um quadrado com lados medindo $9cm$.
+
+Não há um retângulo de perímetro máximo pois $\lim_{x \to 0^+} 2\left(x + \frac{81}{x}\right) = +\infty$.
+
+\item A análise do gráfico de $f^\prime(x)$ permite que sejam tiradas as seguintes conclusões sobre $f$:
+\begin{itemize}
+\item $f$ é crescente em $(A,B)$, $(D,E)$ e $(E,G)$, pois $f^\prime(x) > 0$ para $x$ nestes intervalos.
+\item $f$ é decrescente em $(B,D)$, pois $f^\prime(x) < 0$ para $x$ neste intervalo.
+\item $f^\prime$ se anula nos pontos $B$, $E$ e $G$, e não está definida em $D$, então estes são os pontos críticos de $f$.
+\item O ponto $B$ é um ponto de máximo de $f$, pois ela é crescente antes de $B$ e decrescente depois de $B$. O ponto $G$ também é um ponto de máximo, pois é um extremo do intervalo onde $f$ está definida, e ela é crescente em $(F,G)$. O ponto $D$ é um ponto de mínimo pois $f$ é decrescente em $(C,D)$ e crescente em $(D,E)$.
+\item $f$ tem concavidade para cima em $(C,D)$ e $(E,F)$ pois $f^\prime$ é crescente nestes intervalos.
+\item $f$ tem concavidade para baixo em $(A,B)$, $(B,C)$, $(D,E)$ e $(F,G)$ pois $f^\prime$ é decrescente nestes intervalos.
+\item $f$ tem pontos de inflexão em $C$, $D$, $E$ e $F$, pois $f$ muda de concavidade nestes pontos.
+\end{itemize}
+Levando tudo isso em consideração, um possível esboço para o gráfico de $f$ seria o seguinte:
+
+\includegraphics[width=15cm]{img/prova-3-tads-4-primitiva}
+
+\end{enumerate}
+\end{document}

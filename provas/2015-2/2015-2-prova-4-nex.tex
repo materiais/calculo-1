@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\cosec{\operatorname{cossec}}
+
+\newcommand*\tipo{PROVA IV}
+\newcommand*\turma{NEX152-D}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{07/12/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (\turma)}
+& \textbf{\tipo}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+
+\item Calcule apenas 5 das 6 integrais a seguir:
+
+\begin{enumerate}
+\item (2,0) $\displaystyle \int \frac{-3x-1}{2x^2-2x} \diff x$
+\item (2,0) $\displaystyle \int 3^x(\sec^2(3^x)-\cosec^2(3^x)) \diff x$
+\item (2,0) $\displaystyle \int \sen^7(x) \cos^3(x)\diff x$
+\item (2,0) $\displaystyle \int x^5 e^{-x^2} \diff x$
+\item (2,0) $\displaystyle \int \frac{-\pi}{\sqrt{6 - 3x^2}} \diff x$
+\item (2,0) $\displaystyle \int 2^{(x+1)} (x+1)^2 \diff x$
+\end{enumerate}
+\end{enumerate}
+
+\begin{center}
+BOA PROVA!!!
+\end{center}
+\begin{center}
+(E BOAS FÉRIAS ;-)
+\end{center}
+
+%\newpage
+%\restoregeometry
+%\section*{Respostas e observações}
+\end{document}

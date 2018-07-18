@@ -1,0 +1,238 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\tg{\operatorname{tg}}
+\newcommand*\abs[1]{\left|#1\right|}
+
+\newcommand*\R{\mathbb{R}}
+
+\newcommand*\tipo{PROVA IV}
+\newcommand*\turma{ELE141-01U}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{07/12/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (\turma)}
+& \textbf{\tipo}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+
+\item Calcule apenas 5 das 6 integrais a seguir:
+
+\begin{enumerate}
+\item (2,0) $\displaystyle \int x^3 \cos(x) \diff x$
+\item (2,0) $\displaystyle \int \frac{10 x+14}{x^2+x-20} \diff x$
+\item (2,0) $\displaystyle \int \cos(3x)\left[ \cos(2x)+2\sen(x)) \right] \diff x$
+\item (2,0) $\displaystyle \int \frac{ \ln(\ln(\ln(x))) }{ x \ln(x) } \diff x$
+\item (2,0) $\displaystyle \int \frac{5x-1}{x^2+5} \diff x$
+\item (2,0) $\displaystyle \int \tg^6(x) \sec^4(x)\diff x$
+\end{enumerate}
+\end{enumerate}
+
+\begin{center}
+BOA PROVA!!!
+\end{center}
+\begin{center}
+(E BOAS FÉRIAS ;-)
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+
+\begin{enumerate}
+
+\item \textit{Calcule apenas 5 das 6 integrais a seguir:}
+
+\begin{enumerate}
+\item $\displaystyle \int x^3 \cos(x) \diff x$
+
+Considerando $u = x^3$ e $\diff v = \cos(x) \diff x$, tem-se $\diff u=3x^2 \diff x$ e $v = \sen(x)$ e
+\begin{align*}
+\int x^3 \cos(x) \diff x
+= x^3 \sen(x) - \int 3x^2 \sen(x) \diff x
+\end{align*}
+
+Tomando $a = 3x^2$ e $\diff b = \sen(x) \diff x$, tem-se $\diff a=6x \diff x$ e $b = -\cos(x)$, de modo que
+\begin{align*}
+\int x^3 \cos(x) \diff x
+& = x^3 \sen(x) - \left( - 3x^2 \cos(x) - \int -6x \cos(x) \diff x \right) \\
+& = x^3 \sen(x) + 3x^2 \cos(x) - \int 6x \cos(x) \diff x
+\end{align*}
+
+Agora, sendo $p = 6x$ e $\diff q = \cos(x) \diff x$, tem-se $\diff p=6 \diff x$ e $q = \sen(x)$, e então
+\begin{align*}
+\int x^3 \cos(x) \diff x
+& = x^3 \sen(x) + 3x^2 \cos(x) - \left( 6x \sen(x) - \int 6\sen(x) \diff x \right) \\
+& = x^3 \sen(x) + 3x^2 \cos(x) - 6x \sen(x) - 6 \cos(x) + c \\
+& = (x^3 - 6x) \sen(x) + (3x^2 - 6) \cos(x) + c.
+\end{align*}
+
+\item $\displaystyle \int \frac{10 x+14}{x^2+x-20} \diff x$
+
+Observando que $x^2 + x - 20 = (x-4)(x+5)$, a decomposição em frações parciais da função a ser integrada é obtida por
+\[
+\frac{10 x + 14}{(x-4)(x+5)}
+= \frac{A}{x-4} + \frac{B}{x+5}
+= \frac{A(x+5) + B(x-4)}{(x-4)(x+5)}
+= \frac{(A+B)x +(5A-4B)}{(x-4)(x+5)}.
+\]
+Comparando os numeradores, resulta que $A$ e $B$ devem ser soluções do sistema
+\[
+\begin{cases}
+A + B = 10 \\
+5A - 4B = 14
+\end{cases}
+\]
+Multiplicando a primeira equação por $4$ e somando com a segunda, resulta que $9A = 54$, ou seja, $A=6$. Consequentemente, $B = 10-6 = 4$. Então
+\begin{align*}
+\int \frac{10 x+14}{x^2+x-20} \diff x
+& = \int \frac{6}{x-4} + \frac{4}{x+5} \diff x
+  = 6 \int \frac{1}{x-4} \diff x + 4 \int \frac{1}{x+5} \diff x \\
+& = 6 \ln\abs{ x-4 } + 4 \ln\abs{x+5} + c
+  = \ln\abs{ (x-4)^6 (x+5)^4} + c.
+\end{align*}
+
+\item $\displaystyle \int \cos(3x)\left[ \cos(2x)+2\sen(x)) \right] \diff x$
+
+Levando em conta que
+\[
+\begin{cases}
+\cos(3x)\cos(2x) = \frac{1}{2} \left[ \cos(3x-2x) +\cos(3x+2x) \right]
+                 = \frac{1}{2} \left[ \cos(x)+\cos(5x) \right] \\
+\cos(3x)\sen(x) = \frac{1}{2} \left[ \sen(x-3x) +\sen(x+3x) \right]
+                = \frac{1}{2} \left[ \sen(-2x)+\sen(4x) \right]
+\end{cases}
+\]
+tem-se
+\begin{align*}
+&\int \cos(3x)\left[ \cos(2x)+2\sen(x)) \right] \diff x \\
+& = \int \cos(3x)\cos(2x) \diff x + 2 \int \cos(3x)\sen(x)) \diff x \\
+& = \int \frac{1}{2} \left[ \cos(x)+\cos(5x) \right] \diff x
++ 2 \int \frac{1}{2} \left[ \sen(-2x)+\sen(4x) \right] \diff x \\
+& = \frac{1}{2}\left[ \sen(x) + \frac{\cos(5x)}{5} \right] +
+    \left[ \frac{ -\cos(-2x)}{-2} - \frac{\cos(4x)}{4} \right] + c \\
+& = \frac{\sen(x)}{2} + \frac{\cos(5x)}{10} +
+ \frac{ \cos(2x)}{2} - \frac{\cos(4x)}{4} + c.
+\end{align*}
+
+\item $\displaystyle \int \frac{ \ln(\ln(\ln(x))) }{ x \ln(x) } \diff x$
+
+Definindo $w = \ln(\ln(x))$, tem-se $\diff w = \frac{1}{x \ln(x)} \diff x$ e portanto
+\[
+  \int \frac{ \ln(\ln(\ln(x))) }{ x \ln(x) } \diff x
+= \int \ln(\ln(\ln(x))) \frac{1}{ x \ln(x) } \diff x
+= \int \ln( w ) \diff w
+= \int \ln( w ) \cdot 1 \diff w.
+\]
+Integrando por partes, com $u = \ln(w)$ e $dv = 1 \diff w$, tem-se $\diff u = \frac{1}{w} \diff w$, $v = w$ e
+\[
+  \int \ln( w ) \cdot 1 \diff w
+= w \ln(w) - \int w \frac{1}{w} \diff w
+= w \ln(w) - w + c
+= w \cdot [ \ln(w) - 1 ] + c
+\]
+Assim,
+\[
+  \int \frac{ \ln(\ln(\ln(x))) }{ x \ln(x) } \diff x
+= w ( \ln(w) - 1) + c
+= \ln(\ln(x)) \cdot [ \ln( \ln(\ln(x)) ) - 1 ] + c
+\]
+
+\item $\displaystyle \int \frac{5x-1}{x^2+5} \diff x$
+
+\begin{align*}
+  \int \frac{5x-1}{x^2+5} \diff x
+& = 5\int \frac{x}{x^2+5} \diff x
+   - \int \frac{1}{x^2+5} \diff x \\
+& = \frac{5}{2} \int \frac{2x}{x^2+5} \diff x
+   -\frac{1}{5} \int \frac{1}{\left( \frac{x}{\sqrt{5}}\right)^2 + 1} \diff x
+\end{align*}
+
+Fazendo $u = x^2+5$ e $v = \frac{x}{\sqrt{5}}$, resulta que $\diff u = 2x \diff x$, $\diff v = \frac{1}{\sqrt{5}} \diff x$ e então
+\begin{align*}
+  \int \frac{5x-1}{x^2+5} \diff x
+= \frac{5}{2} \int \frac{1}{u} \diff u
+ -\frac{\sqrt{5}}{5} \int \frac{1}{v^2 + 1} \diff v \\
+= \frac{5}{2} \ln \abs{u}
+ -\frac{\sqrt{5}}{5} \arctan(v) + c \\
+= \frac{5}{2} \ln \abs{x^2+5}
+ -\frac{\sqrt{5}}{5} \arctan\left(\frac{x}{\sqrt{5}}\right) + c.
+\end{align*}
+
+\item $\displaystyle \int \tg^6(x) \sec^4(x)\diff x$
+Usando o fato de que $\sec^2(x) = \tg^2(x) + 1$, tem-se
+\[
+  \int \tg^6(x) \sec^4(x)\diff x
+= \int \tg^6(x) (\tg^2(x) + 1) \sec^2(x)\diff x
+= \int (\tg^8(x) + \tg^6(x) ) \sec^2(x)\diff x
+\]
+Tomando $u = tg(x)$, tem-se $\diff u = \sec^2(x) \diff x$ e
+\[
+  \int \tg^6(x) \sec^4(x)\diff x
+= \int (u^8 + u^6 ) \diff u
+= \frac{u^9}{9} + \frac{u^7}{7} + c
+= \frac{\tg^9(x)}{9} + \frac{\tg^7(x)}{7} + c.
+\]
+
+
+\end{enumerate}
+\end{enumerate}
+\end{document}

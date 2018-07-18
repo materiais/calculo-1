@@ -1,0 +1,229 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+% TODO: Consider using exsheets
+% http://linorg.usp.br/CTAN/macros/latex/contrib/exsheets/exsheets_en.pdf
+%
+% http://ctan.org/tex-archive/macros/latex/contrib/exercise/
+% Options: answerdelayed,lastexercise,noanswer
+\usepackage[answerdelayed,lastexercise]{exercise}
+
+\addto\captionsbrazil{%
+\def\listexercisename{Lista de exerc\'icios}%
+\def\ExerciseName{Exerc\'icio}%
+\def\AnswerName{Solu\c{c}\~ao do exerc\'icio}%
+\def\ExerciseListName{Ex.}%
+\def\AnswerListName{Solu\c{c}\~ao}%
+\def\ExePartName{Parte}%
+\def\ArticleOf{de\ }%
+}
+
+\renewcommand{\ExerciseHeaderTitle}{(\ExerciseTitle)\ }
+\renewcommand{\ExerciseListHeader}{%\ExerciseHeaderDifficulty%
+\textbf{%\ExerciseListName\
+\ExerciseHeaderNB.\ %
+%\ --- \
+\ExerciseHeaderTitle}%
+%\ExerciseHeaderOrigin
+\ignorespaces}
+\renewcommand{\AnswerListHeader}{\textbf{\ExerciseHeaderNB.\ (\AnswerListName)\ }}
+
+\newcommand*\sen{\operatorname{sen}}
+
+\newcommand*\R{\mathbb{R}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi) }
+
+\newcommand*\tipo{Prova II}
+\newcommand*\turma{TADS121-01U}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{07/05/2018}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca} \\
+\textbf{\tipo\ (\disciplina / \turma)} \\
+Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional}}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \underline{\hspace{9,7cm}} Data: \underline{\data}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Resolva (integralmente) apenas os itens de que precisar para somar 10,0 pontos.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+%\section*{Questões}
+\begin{ExerciseList}
+\Exercise[title={2,5}] Seja $f: [-1, \infty) \to \R$ a função dada por $f(x) = \sqrt{x+1}$.
+\begin{enumerate}
+\item Calcule $f^\prime(0)$ usando a definição, isto é, por meio de um limite.
+\item Utilize as regras de derivação para verificar que a resposta anterior está correta.
+\item Obtenha a reta tangente a $f$ no ponto $P = (0, f(0))$.
+\end{enumerate}
+
+\Answer
+\begin{enumerate}
+\item
+\begin{align*}
+f^\prime(0)
+& = \lim_{x \to 0} \frac{\sqrt{x+1} -\sqrt{0+1}}{x-0}
+= \lim_{x \to 0} \frac{\sqrt{x+1} - 1}{x}
+= \lim_{x \to 0} \frac{\sqrt{x+1} - 1}{x} \cdot \frac{\sqrt{x+1} + 1}{\sqrt{x+1} + 1} \\
+& = \lim_{x \to 0} \frac{(x+1) - 1}{x (\sqrt{x+1} + 1)}
+= \lim_{x \to 0} \frac{1}{\sqrt{x+1} + 1}
+= \frac{1}{\sqrt{0+1} + 1}
+= \frac{1}{2}.
+\end{align*}
+\item Como $f(x) = \sqrt{x+1}$, tem-se $f^\prime(x) = \frac{1}{2\sqrt{x+1}} \cdot (x+1)^\prime = \frac{1}{2\sqrt{x+1}}$, para todo $x > -1$. Em particular, em $x = 0$ tem-se $f^\prime(0) = \frac{1}{2 \sqrt{0+1}} = \frac{1}{2}$, que é o mesmo resultado obtido acima.
+\item Em $P = (0, f(0))$, a reta tangente ao gráfico de $f$ é definida pela equação $y - f(0) = f^\prime(0) (x-0)$. Como $f(0) = 1$ e $f^\prime(0) = \frac{1}{2}$, a equação é $y - 1 = \frac{1}{2}x$, ou seja, $y = \frac{x}{2} + 1$.
+\end{enumerate}
+
+\Exercise[title={2,5}] Verifique se a função $g:\R \to \R$ é derivável em $x = 1$, considerando que
+\[
+g(x) =
+\begin{cases}
+-4x + 1, & \text{se } x < 1,\\
+x^2-6x+2, & \text{caso contrário}.
+\end{cases}
+\]
+\Answer Para que $g$ seja derivável em $x=1$, deve existir o limite (bilateral) $g^\prime(1) = \lim_{h \to 0} \frac{g(1+h)-g(1)}{h}$. Como $g$ é definida por regras distintas à esquerda e à direita de $x = 1$, é preciso considerar os limites laterais separadamente:
+\begin{align*}
+g^\prime_-(1)
+&
+= \lim_{h \to 0^-} \frac{g(1+h)-g(1)}{h}
+= \lim_{h \to 0^-} \frac{-4(1+h)+1-(1^2-6\cdot 1+2)}{h}\\
+&
+= \lim_{h \to 0^-} \frac{-4h}{h}
+= \lim_{h \to 0^-} -4 = -4
+\end{align*}
+e
+\begin{align*}
+g^\prime_+(1)
+&
+= \lim_{h \to 0^+} \frac{g(1+h)-g(1)}{h}
+= \lim_{h \to 0^+} \frac{((1+h)^2-6\cdot(1+h)+2)-(1^2-6\cdot 1+2)}{h}\\
+&
+= \lim_{h \to 0^+} \frac{(1+2h+h^2-6-6h+2)-(-3)}{h}
+= \lim_{h \to 0^+} \frac{h^2-4h}{h}
+= \lim_{h \to 0^+} h-4
+= 0-4 = -4.
+\end{align*}
+Como os limites laterais coincidem, o limite bilateral também existe e a função $g$ é derivável.
+
+\Exercise[title={2,5}] Considerando que $y = f(x) = \sen(x) \cdot e^{2x}$, verifique se é verdade que $y^{\prime\prime}+5y = 4y^{\prime}$.
+\Answer Considerando que $\sen^\prime(x) = \cos(x)$, $(e^{2x})^\prime = 2 e^{2x}$ e $\cos^\prime(x) = \sen(x)$, tem-se:
+\[
+y^\prime
+= \cos(x) \cdot e^{2x} + \sen(x) \cdot 2 e^{2x}
+= e^{2x} (\cos(x) + 2\sen(x))
+\]
+e
+\[
+y^{\prime\prime}
+= 2 e^{2x} (\cos(x) + 2\sen(x))
++ e^{2x} (-\sen(x) + 2\cos(x))
+= e^{2x} (4\cos(x) + 3\sen(x)).
+\]
+Consequentemente,
+\begin{align*}
+y^{\prime\prime}+5y
+& = e^{2x} (4\cos(x) + 3\sen(x))
++ 5 \cdot (\sen(x) \cdot e^{2x})\\
+& = 4 e^{2x} \cos(x) + 8 e^{2x} \sen(x)
+  = 4 [ e^{2x} (\cos(x) + 2 \sen(x) )]
+  = 4 y^\prime,
+\end{align*}
+ou seja, é verdade que $y^{\prime\prime}+5y = 4y^{\prime}$.
+\vfill
+
+\Exercise[title={2,5}] Uma função é definida implicitamente pela equação $y^2-x = \dfrac{x}{y}$. Obtenha a equação da reta que tangencia o gráfico desta função no ponto $Q = (8,-2)$.
+\Answer Derivando ambos os membros da equação em relação a $x$, obtém-se:
+\[
+2 y y^\prime - 1 = \dfrac{1 y - x y^\prime}{y^2}
+\Rightarrow
+2 y^3 y^\prime - y^2 = y - x y^\prime
+\Rightarrow
+(2 y^3 + x ) y^\prime = y^2 + y
+\Rightarrow
+y^\prime = \frac{ y^2 + y }{ 2 y^3 + x }.
+\]
+Assim, no ponto $Q = (x,y) = (8,-2)$, tem-se $y^\prime = \frac{(-2)^2 + (-2)}{2(-2)^3 + 8} = \frac{2}{-8} = \frac{-1}{4}$ e a reta tangente é dada pela equação $y -(-2) = - \frac{1}{4}(x-8)$, ou seja, $y = -\frac{x}{4}$.
+
+
+\Exercise[title={2,5}] Ao baixar algumas ferramentas de desenvolvimento a partir da internet, um programador percebeu que a velocidade de download estava diminuindo com o passar do tempo. Era como se a quantidade $q$ de megabytes (MB) de dados que haviam sido baixados após $t$ horas fosse dada pela função $q(t) =\dfrac{3000t}{t + 6}$. O programador, conhecedor de seus direitos, sabia que o seu provedor de internet era obrigado a garantir pelo menos 40\% da velocidade contratada, e pelos seus cálculos, no pior caso deveria ser capaz de baixar seus arquivos com uma taxa de download de pelo menos $180$ MB/h. Supondo que $q(t)$ forneça valores corretos a cada instante, depois de quanto tempo de download a velocidade ficaria menor do que o permitido?
+\Answer A velocidade de download após $t$ horas é dada pela derivada da função $q(t)$:
+\[
+q^\prime(t)
+= \frac{3000\cdot (t+6)-3000t \cdot 1}{(t+6)^2}
+= \frac{18000}{(t+6)^2}.
+\]
+Assim, para descobrir quando a velocidade é menor do que $180$ MB/h, basta observar que
+\[
+q^\prime(t) < 180
+\Leftrightarrow
+\frac{18000}{(t+6)^2} < 180
+\Leftrightarrow
+\frac{18000}{180} < (t+6)^2
+\Leftrightarrow
+100 < (t+6)^2
+\Leftrightarrow
+10 < |t+6|.
+\]
+Neste caso, há duas possibilidades:
+\begin{enumerate}
+\item $t+6 > 10$, e portanto $t>4$; ou
+\item $t+6 < -10$, e então $t < -16$
+\end{enumerate}
+No contexto do problema, $t$ deve ser positivo, pois representa o tempo desde o início do download. Portanto, a velocidade é menor do que o permitido após $4$ horas de download.
+\end{ExerciseList}
+
+\begin{center}
+BOA PROVA!
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas}
+\shipoutAnswer
+\end{document}

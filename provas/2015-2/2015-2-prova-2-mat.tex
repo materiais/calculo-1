@@ -1,0 +1,233 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\sen{\operatorname{sen}}
+
+\newcommand*\tipo{PROVA II}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{16/10/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (turma: \rule{4cm}{0.01cm})}
+& \textbf{\tipo}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Resolva (integralmente) apenas os itens de que precisar para somar 10,0 pontos.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item (0,5) Dê exemplos de funções deriváveis $f, g: \mathbb{R} \to \mathbb{R}$ tais que $\left[\frac{f(x)}{g(x)} \right]^\prime \neq \frac{f^\prime(x) }{ g^\prime(x) }$. Faça as contas para mostrar que realmente são diferentes.
+
+\item (1,0) Verifique que se $f$, $g$ e $h$ são deriváveis então
+\[
+\frac{ \diff{} }{\diff{x}}\left[f(x) g(x) h(x) \right]
+=
+  \frac{ \diff{f(x)} }{\diff{x}} g(x) h(x)
++ f(x) \frac{\diff{g(x)} }{\diff{x}} h(x)
++ f(x) g(x) \frac{\diff{h(x)} }{\diff{x}}.
+\]
+\item (0,5) Calcule $h^\prime(0)$, sendo $h: \mathbb{R} \to \mathbb{R}$ definida por $h(x) = \sen(x) \cos(x) e^x$.
+
+\item (1,5) Mostre que se $y = f(x) = \pi e^{-2x} + 4e^{3x}$ então vale $y^{\prime \prime} - y^\prime = 6 y$, sendo $y^\prime$ e $y^{\prime\prime}$, respectivamente, as derivadas de primeira e segunda ordem da função indicada.
+
+\item (1,5) Utilize uma aproximação linear para estimar o valor de $\sqrt[3]{8,02}$.
+
+\item (2,0) Ao esvaziar uma bola de futebol, o seu volume (em $cm^3$) após $t$ segundos é dado por $V(t) = 400 \pi (10 - t)$. Com que velocidade ($cm/s$) o raio diminui quando ele mede $5cm$?
+
+\item (2,5) Determine a equação da reta tangente ao gráfico de $f(x) = \dfrac{4}{x + 1}$ em $x = 1$.
+
+\item (2,5) Em que pontos $(x,y)$ da curva $ x^\frac{2}{3} + y^\frac{2}{3} = 8$ a reta tangente é paralela à reta $y = x + 4$?
+
+\end{enumerate}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+
+
+\begin{enumerate}
+\item \textit{Dê exemplos de funções deriváveis $f, g: \mathbb{R} \to \mathbb{R}$ tais que $\left[\frac{f(x)}{g(x)} \right]^\prime \neq \frac{f^\prime(x) }{ g^\prime(x) }$. Faça as contas para mostrar que realmente são diferentes.}
+Há inúmeros casos em que isso acontece. Por exemplo,
+\begin{enumerate}
+\item Se $f(x) = 1$ e $g(x) = x$ então
+\[
+\left[\frac{f(x)}{g(x)} \right]^\prime
+= \left[\frac{1}{x} \right]^\prime
+= \frac{-1}{x^2}
+\neq 0
+= \frac{0 }{ 1 }
+= \frac{f^\prime(x) }{ g^\prime(x) }
+\]
+
+\item Se $f(x) = e^x = g(x)$ então
+\[
+\left[\frac{f(x)}{g(x)} \right]^\prime
+= \left[\frac{e^{2x}}{e^x} \right]^\prime
+= \left[ e^x \right]^\prime
+= e^x
+\neq 1
+= \frac{e^x }{ e^x }
+= \frac{f^\prime(x) }{ g^\prime(x) }
+\]
+
+
+\end{enumerate}
+
+\item \textit{Verifique que se $f$, $g$ e $h$ são deriváveis então}
+\[
+\frac{ \diff{} }{\diff{x}}\left[f(x) g(x) h(x) \right]
+=
+  \frac{ \diff{f(x)} }{\diff{x}} g(x) h(x)
++ f(x) \frac{\diff{g(x)} }{\diff{x}} h(x)
++ f(x) g(x) \frac{\diff{h(x)} }{\diff{x}}.
+\]
+
+Basta observar que $f(x) g(x) h(x)$ é o produto da função $f(x) g(x)$ com a função $h(x)$, e aplicar a regra do produto como de costume:
+\begin{align*}
+\frac{ \diff{} }{\diff{x}}\left[f(x) g(x) h(x) \right]
+& = \frac{ \diff{} }{\diff{x}}\left[(f(x) g(x)) \cdot h(x) \right] \\
+& =
+\left( \frac{ \diff{f(x)} }{\diff{x}} g(x)
++ f(x) \frac{\diff{g(x)} }{\diff{x}} \right) h(x)
++ f(x) g(x) \frac{\diff{h(x)} }{\diff{x}} \\
+& =
+  \frac{ \diff{f(x)} }{\diff{x}} g(x) h(x)
++ f(x) \frac{\diff{g(x)} }{\diff{x}} h(x)
++ f(x) g(x) \frac{\diff{h(x)} }{\diff{x}}.
+\end{align*}
+
+\item \textit{Calcule $h^\prime(0)$, sendo $h: \mathbb{R} \to \mathbb{R}$ definida por $h(x) = \sen(x) \cos(x) e^x$.}
+
+Pelo item anterior, tem-se
+\begin{align*}
+h^\prime(x)
+& = (\sen(x))^\prime \cos(x) e^x + \sen(x) (\cos(x))^\prime e^x + \sen(x) \cos(x) (e^x)^\prime \\
+& = \cos(x) \cos(x) e^x + \sen(x) (-\sen(x)) e^x + \sen(x) \cos(x) e^x \\
+& = (\cos^2(x) - \sen^2(x) + \sen(x) \cos(x)) e^x
+\end{align*}
+Em particular, $h^\prime(0) = (\cos^2(0) - \sen^2(0) + \sen(0) \cos(0)) e^0 = (1 - 0 + 0 \cdot 1) 1 = 1.$
+
+\item \textit{Mostre que se $y = f(x) = \pi e^{-2x} + 4e^{3x}$ então vale $y^{\prime \prime} - y^\prime = 6 y$, sendo $y^\prime$ e $y^{\prime\prime}$, respectivamente, as derivadas de primeira e segunda ordem da função indicada.}
+
+Observe que $y^\prime = (\pi e^{-2x} + 4e^{3x})^\prime = \pi e^{-2x} \cdot (-2) + 4 e^{3x} \cdot 3 = -2 \pi e^{-2x} + 12 e^{3x}$ e que então $y^{\prime\prime} = (-2 \pi e^{-2x} + 12 e^{3x})^\prime = 4 \pi e^{-2x} + 36 e^{3x}$. Logo,
+\[
+y^{\prime \prime} - y^\prime
+= (4 \pi e^{-2x} + 36 e^{3x})-(-2 \pi e^{-2x} + 12 e^{3x})
+= 6 \pi e^{-2x} + 24 e^{3x}
+= 6 (\pi e^{-2x} + 4 e^{3x})
+= 6 y.
+\]
+
+
+
+\item \textit{Utilize uma aproximação linear para estimar o valor de $\sqrt[3]{8,02}$.}
+
+Seja $f(x) = \sqrt[3]{x}$, $x_0 = 8$ e $\Delta x = 0,02$. Então e $f^\prime = \dfrac{1}{3\sqrt[3]{x^2}}$ e tem-se:
+\begin{align*}
+\sqrt[3]{8,02} = \sqrt[3]{8 + 0,02}
+= f(x_0+\Delta x)
+& \approx f(x_0) + f^{\prime}(x_0)\Delta x \\
+& = \sqrt[3]{8} + \frac{1}{3\sqrt[3]{8^2}}0,02
+= 2 + \frac{1}{12}0,02
+\approx 2 + 0,0016
+= 2,0016.
+\end{align*}
+
+
+
+\item \textit{Ao esvaziar uma bola de futebol, o seu volume (em $cm^3$) após $t$ segundos é dado por $V(t) = 400 \pi (10 - t)$. Com que velocidade ($cm/s$) o raio diminui quando ele mede $5cm$?}
+
+Como o volume de uma esfera de raio $r$ é $V = V(r) = \frac{4}{3} \pi r^3$, tem-se
+\[
+\frac{\diff{V}}{\diff{t}}
+= \frac{4}{3} \pi 3 r^2 \frac{\diff{r}}{\diff{t}}
+= 4 \pi r^2 \frac{\diff{r}}{\diff{t}}
+\]
+
+Mas $V(t) = 400 \pi (10 - t)$, então $\frac{\diff{V}}{\diff{t}} = 400 \pi (-1) = -400 \pi$. Disto segue que
+\[
+\frac{\diff{r}}{\diff{t}}
+= \frac{ -400 \pi }{ 4 \pi r^2 }
+= \frac{ -100 }{ r^2 }
+\]
+Em particular, para $r = 5cm$, tem-se $\frac{\diff{r}}{\diff{t}} = -100/25 = -4 cm/s$.
+
+\item \textit{Determine a equação da reta tangente ao gráfico de $f(x) = \dfrac{4}{x + 1}$ em $x = 1$.}
+
+O coeficiente angular $m$ da reta tangente em $(x, f(x))$ é dado pela derivada da função, isto é, $f'(x) = 4 \cdot \dfrac{-1}{(x + 1)^2}$. Então, para $x=1$, tem-se $m=4 \cdot (-1)/2^2 = -1$. Como $f(1) = 4/(1+1) = 2$, a reta tangente tem equação $y - 2 = (-1)(x-1)$, ou seja, $y=-x+3$.
+
+\item \textit{Em que pontos $(x,y)$ da curva $x^\frac{2}{3} + y^\frac{2}{3} = 8$ a reta tangente é paralela à reta $y = x + 4$?}
+
+A reta $y = x + 4$ tem coeficiente angular igual a $1$, então para que ela seja paralela à reta tangente à curva, é preciso que $y^\prime = \frac{\diff{y}}{\diff{x}} = 1$. Por derivação implícita, obtem-se que
+\[
+\left(x^\frac{2}{3} + y^\frac{2}{3}\right)^\prime = 8^\prime
+\Rightarrow \frac{2}{3}x^{\frac{-1}{3}} + \frac{2}{3}y^{\frac{-1}{3}}y^\prime = 0
+\]
+Então se $y^\prime = 1$, conclui-se que $\frac{2}{3}x^{\frac{-1}{3}} + \frac{2}{3}y^{\frac{-1}{3}} = 0$, ou seja, que $x^{\frac{-1}{3}} = -y^{\frac{-1}{3}}$. Disto conclui-se que $x=-y$.
+
+Substituindo na equação que define a curva, obtem-se
+\[
+x^\frac{2}{3} + x^\frac{2}{3} = 8
+\Rightarrow 2x^\frac{2}{3} = 8
+\Rightarrow x^\frac{2}{3} = 4
+\Rightarrow x^2 = 4^3 = 64
+\Rightarrow x = \pm 8.
+\]
+Logo, os pontos procurados são $P = (8,-8)$ e $Q=(-8,8)$.
+
+\end{enumerate}
+
+\end{document}

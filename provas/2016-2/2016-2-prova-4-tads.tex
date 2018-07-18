@@ -1,0 +1,263 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\senh{\operatorname{senh}}
+\newcommand*\cotg{\operatorname{cotg}}
+\newcommand*\arctg{\operatorname{arctg}}
+
+\newcommand*\prova{Prova IV}
+\newcommand*\turma{TADS121-01C}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{05/12/2016}
+
+\author{\eu}
+\title{\prova - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (\turma)}
+& \textbf{\prova}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item Calcule apenas 5 das 6 integrais a seguir, deixando explícito como obteve todas as integrais que não forem imediatas:
+\begin{enumerate}
+\item (2,0) $\displaystyle \int \frac{12 \cos(3x)}{\sec(15x)} \diff x$
+\item (2,0) $\displaystyle \int e^{2x} \cosh(3x) \diff x$
+\item (2,0) $\displaystyle \int 3x \sqrt{5x^2+8} -\cotg(x) \diff x$
+\item (2,0) $\displaystyle \int \frac{25}{(x^2+9)(x^2+4)} \diff x$
+\item (2,0) $\displaystyle \int \frac{e^{(x+3)}}{1+e^{(2x)}} \diff x$
+\item (2,0) $\displaystyle \int \frac{9 x^2 - 14 x + 2}{x^3-2x^2+x} \diff x$
+\end{enumerate}
+\end{enumerate}
+
+\begin{center}
+BOA PROVA!!!
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item \textbf{Solução 1}:
+\begin{align*}
+    \int \frac{12 \cos(3x)}{\sec(15x)} \diff x
+& = \int 12 \cos(3x) \cos(15x) \diff x
+  = \int \frac{12}{2}\left[ \cos(3x-15x) + \cos(3x+15x) \right] \diff x\\
+& = 6 \int \cos(-12x) + \cos(18x) \diff x
+  = 6 \int \cos(12x) \diff x + 6\int \cos(18x) \diff x\\
+& = 6 \frac{ \sen(12x) }{12} + 6\frac{ \sen(18x) }{18} + c
+  = \frac{ \sen(12x) }{2} + \frac{ \sen(18x) }{3} + c.
+\end{align*}
+
+\textbf{Solução 2}:
+Seja $u=\cos(3x)$,
+     $\diff u=-3\sen(3x) \diff x$,
+     $\diff v=\cos(15x) \diff x$ e
+     $v=\dfrac{\sen(15x)}{15}$. Então:
+\begin{align*}
+    \int \frac{12 \cos(3x)}{\sec(15x)} \diff x
+& = 12 \int \cos(3x) \cos(15x) \diff x \\
+& = 12 \left[ \cos(3x)\frac{\sen(15x)}{15}
+  - \int \frac{\sen(15x)}{15} (-3\sen(3x)) \diff x \right]\\
+& = \frac{4}{5}\cos(3x)\sen(15x)
+  + \frac{12}{5}\int \sen(15x) \sen(3x) \diff x.
+\end{align*}
+Sendo $U=\sen(3x)$,
+     $\diff U=3\cos(3x) \diff x$,
+     $\diff V=\sen(15x) \diff x$,
+     $V=-\dfrac{\cos(15x)}{15}$, tem-se:
+\begin{align*}
+    \frac{12}{5}\int \sen(15x) \sen(3x) \diff x
+& = \frac{12}{5} \left[ \sen(3x)\left(-\dfrac{\cos(15x)}{15}\right)
+                 - \int - \dfrac{\cos(15x)}{15} 3\cos(3x) \diff x \right]\\
+& = -\frac{4}{25} \sen(3x)\cos(15x) + \frac{12}{25}\int \cos(3x)\cos(15x) \diff x.
+\end{align*}
+Assim,
+\begin{align*}
+12 \int \cos(3x) \cos(15x) \diff x
+& = \frac{4}{5}\cos(3x)\sen(15x) - \frac{4}{25} \sen(3x)\cos(15x)\\
+& +\frac{1}{25} \left( 12\int \cos(3x)\cos(15x) \right),
+\end{align*}
+e os termos envolvendo a integral procurada podem ser agrupados no primeiro membro, levando em conta que $1-\frac{1}{25} = \frac{24}{25}$, para obter
+\[
+\frac{24}{25} \cdot 12 \int \cos(3x) \cos(15x) \diff x
+=
+\frac{4}{5}\cos(3x)\sen(15x) - \frac{4}{25} \sen(3x)\cos(15x) + c_1.
+\]
+Portanto,
+\[
+12 \int \cos(3x) \cos(15x) \diff x
+=
+\frac{5}{6}\cos(3x)\sen(15x) - \frac{1}{6} \sen(3x)\cos(15x) + c_2.
+\]
+\textbf{Observação}: Esta função é a mesma obtida na solução 1, como pode ser verificado por meio da identidade trigonométrica $\sen(a)\cos(b)=\frac{1}{2}\left[ \sen(a-b) + \sen(a+b)\right]$.
+\item \textbf{Solução 1}:
+\begin{align*}
+\int e^{2x} \cosh(3x) \diff x
+& = \int e^{2x} \left( \frac{e^{3x}+e^{-3x}}{2} \right)\diff x
+  = \int \frac{e^{5x} + e^{-x}}{2} \diff x\\
+& = \frac{1}{2}\int e^{5x} \diff x + \frac{1}{2}\int e^{-x} \diff x
+  = \frac{1}{10}\int e^{5x} \cdot 5\diff x
+  - \frac{1}{2}\int e^{-x} (-1)\diff x\\
+& = \frac{1}{10}\int e^u \diff u
+  - \frac{1}{2}\int e^{v} \diff v
+  = \frac{e^u}{10} - \frac{e^v}{2}  + c
+  = \frac{e^{5x}}{10} - \frac{e^{-x}}{2} + c.
+\end{align*}
+\textbf{Solução 2}: Tomando
+$u=e^{2x}$,
+$\diff u=2 e^{2x} \diff x$,
+$\diff v=\cosh(3x)\diff x$ e
+$v=\frac{\senh(3x)}{3}$, tem-se:
+\begin{align*}
+\int e^{2x} \cosh(3x) \diff x
+& = e^{2x} \frac{\senh(3x)}{3} - \int \frac{\senh(3x)}{3} 2 e^{2x} \diff x\\
+& = \frac{1}{3}e^{2x}\senh(3x) - \frac{2}{3}\int e^{2x} \senh(3x) \diff x.
+\end{align*}
+Agora, escolhendo
+$U=e^{2x}$,
+$\diff U=2 e^{2x} \diff x$,
+$\diff V=\senh(3x)\diff x$ e
+$V=\frac{\cosh(3x)}{3}$, resulta:
+\begin{align*}
+\\
+\int e^{2x} \cosh(3x) \diff x
+& = \frac{1}{3}e^{2x}\senh(3x) - \frac{2}{3}\left[
+e^{2x}\frac{\cosh(3x)}{3}
+-
+\int \frac{\cosh(3x)}{3} 2 e^{2x} \diff x
+\right]\\
+& = \frac{1}{3}e^{2x}\senh(3x)
+- \frac{2}{9} e^{2x}\cosh(3x)
++ \frac{4}{9} \int e^{2x} \cosh(3x) \diff x.
+\end{align*}
+Agrupando os termos que envolvem a integral procurada, tem-se:
+\begin{align*}
+\frac{5}{9} \int e^{2x} \cosh(3x) \diff x
+& = \frac{1}{3}e^{2x}\senh(3x) - \frac{2}{9} e^{2x}\cosh(3x) + c_1.
+\end{align*}
+Portanto,
+\begin{align*}
+\int e^{2x} \cosh(3x) \diff x
+= \frac{3}{5} e^{2x}\senh(3x) - \frac{2}{5} e^{2x}\cosh(3x)
+= \frac{e^{5x}}{10} + \frac{e^{-x}}{2} + c_2.
+\end{align*}
+
+\textbf{Observação}: Esta função é a mesma obtida na solução 1, como pode ser verificado por meio da definição do cosseno hiperbólico.
+
+\item Tem-se $
+\int 3x \sqrt{5x^2+8} -\cotg(x) \diff x
+= \int 3x \sqrt{5x^2+8} \diff x
+ -\int \cotg(x) \diff x
+$. A primeira integral pode ser resolvida utilizando a substituição $t = 5x^2+8$, $\diff t = 10x \diff t$:
+\begin{align*}
+\int 3x \sqrt{5x^2+8} \diff x
+& = \frac{3}{10} \int \sqrt{5x^2+8} \cdot 10x \diff x
+= \frac{3}{10} \int \sqrt{t} \diff t\\
+&= \frac{3}{10} \left( \frac{2}{3}\sqrt{t^3}\right) + k_1
+= \frac{1}{5}\sqrt{(5x^2+8)^3} + k_1.
+\end{align*}
+
+Para a segunda integral, pode-se fazer a substituição $w = \sen(x)$, $\diff w = \cos(x) \diff x$:
+\begin{align*}
+\int \cotg(x) \diff x
+&= \int \frac{\cos(x)}{\sen(x)} \diff x
+= \int \frac{1}{\sen(x)} \cos(x)\diff x
+= \int \frac{1}{w} \diff w\\
+&= \ln|w| + k_2
+= \ln|\sen(x)| + k_2.
+\end{align*}
+Portanto, $\int 3x \sqrt{5x^2+8} -\cotg(x) \diff x = \frac{1}{5}\sqrt{(5x^2+8)^3} - \ln|\sen(x)| + c$.
+
+\item Decompondo a função em frações parciais, e substituindo $u=\frac{x}{3}$, $\diff x = 3 \diff u$, $v=\frac{x}{2}$ e $\diff x = 2 \diff v$, resulta que:
+\begin{align*}
+  \int \frac{25}{(x^2+9)(x^2+4)} \diff x
+& = \int \frac{-5}{x^2+9} + \frac{5}{x^2+4} \diff x
+  = -\frac{5}{9} \int \frac{1}{\left(\frac{x}{3}\right)^2+1} \diff x
+   + \frac{5}{4} \int\frac{1}{\left(\frac{x}{2}\right)^2+1} \diff x\\
+& = -\frac{5}{9} \int \frac{1}{u^2+1} 3\diff u
+  + \frac{5}{4} \int\frac{1}{v^2+1} 2\diff v\\
+& = -\frac{5}{3} \arctg(u) + \frac{5}{2} \arctg(v)+c
+  = -\frac{5}{3} \arctg\left(\frac{x}{3}\right) + \frac{5}{2} \arctg\left(\frac{x}{2}\right)+c.
+\end{align*}
+
+\item Usando propriedades da função exponencial e substituindo $z=e^x$ e $\diff z = e^x \diff x$, tem-se:
+\begin{align*}
+  \int \frac{e^{(x+3)}}{1+e^{(2x)}} \diff x
+&= \int \frac{e^3e^x}{1+(e^x)^2} \diff x
+= e^3 \int \frac{1}{1+(e^x)^2} e^x \diff x
+= e^3 \int \frac{1}{1+z^2} \diff z\\
+&= e^3 \arctg(z)+c
+= e^3 \arctg(e^x)+c.
+\end{align*}
+
+\item Decompondo a função em frações parciais, resulta que:
+\begin{align*}
+  \int \frac{9 x^2 - 14 x + 2}{x^3-2x^2+x} \diff x
+& = \int \frac{9 x^2 - 14 x + 2}{x(x-1)^2} \diff x
+  = \int \frac{2}{x} + \frac{7}{x-1} + \frac{25}{(x-1)^2} \diff x\\
+& = 2\int \frac{1}{x} \diff x
+  + 7\int \frac{1}{x-1} \diff x
+ + 25\int \frac{1}{(x-1)^2} \diff x\\
+& = 2\ln|x| + 7\ln|x-1| - \frac{25}{x-1} + c\\
+& = \ln|x^2(x-1)^7| - \frac{25}{x-1} + c.
+\end{align*}
+
+\end{enumerate}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,317 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\abs[1]{\left|#1\right|}
+\newcommand*\dom[1]{\operatorname{Dom}\left(#1\right)}
+\newcommand*\im[1]{\operatorname{Im}\left(#1\right)}
+
+\newcommand*\R{\mathbb{R}}
+
+\newcommand*\tipo{Prova I}
+\newcommand*\turma{TADS121-01C}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{09/04/2016}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (\turma)}
+& \textbf{\tipo}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Anule uma das 6 questões (apenas 5 serão corrigidas). \textsc{\textbf{Questão anulada:}} \framebox(30,12){}
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item (2,0) Obtenha uma fórmula explícita (e simplificada) para a função $g(x) = f( f(x) )$ nos casos a seguir, e expresse o domínio e a imagem de $g(x)$ como conjuntos ou intervalos:
+\begin{multicols}{2}
+\begin{enumerate}
+\item $f(x) = \sqrt{ -18 + x^2}$
+\item $f(x) = \begin{cases}
+\frac{7}{2x},& \text{ se } x \neq 0\\
+0, & \text{ caso contrário.}
+\end{cases}$
+\end{enumerate}
+\end{multicols}
+
+\item (2,0) Explique as afirmações que são sempre \textbf{verdadeiras}, e mostre que as demais são \textbf{falsas} com contraexemplos (a argumentação lógica e as contas fazem parte da resposta):
+\begin{enumerate}
+\item (1,0) A função $r: \mathbb{R} \to \mathbb{R}$ definida por $\displaystyle r(x) = \sqrt[3]{8 - x^5}$ é bijetora
+\item (0,5) Se $\lim\limits_{x\to a} f(x) = 0$ então com certeza $\lim\limits_{x\to a} [ f(x) \cdot g(x) ] = 0$, para qualquer $g(x)$
+\item (0,5) Uma função que é par também pode ser ímpar
+\end{enumerate}
+
+\item (2,0) \textbf{Complete (e justifique suas respostas):} Sabe-se que se $p(x) = x^2 - 6x + 2$ então $\lim_{x \to 3} p(x) = -7$. Neste caso, para que os valores da função $p(x)$ fiquem a menos de $\varepsilon = 4$ unidades de distância do limite $L = -7$, é suficiente que a distância de $x$ até o ponto $a = 3$ seja menor do que $\delta = \framebox(30,15){}$ unidades de distância. E se em vez de $\varepsilon = 4$ for considerada uma distância $\varepsilon > 0$ arbitrária, basta escolher $\delta = \framebox(26,15){}$ (em função de $\varepsilon$).
+
+\item (2,0) Calcule os seguintes limites, se existirem (ou explique porque não existem):
+\begin{enumerate}
+\item (1,0) $\lim\limits_{x\to +\infty} e^{[\sen(x)-x]}$
+\item (1,0) $\lim\limits_{x\to 0} \dfrac{\tan(14x) - 9x}{x}$
+\end{enumerate}
+
+\item (2,0) Calcule os seguintes limites, se existirem (ou explique porque não existem):
+\begin{enumerate}
+\item (1,0) $\lim\limits_{x\to \pi/4} \dfrac{\tan(x-\pi/4)}{(x-\pi/4)\cos(x)}$
+\item (1,0) $\lim\limits_{x\to +\infty} \tanh(x)$, sendo $\tanh(x) = \dfrac{e^x-e^{-x}}{e^x+e^{-x}}$
+\end{enumerate}
+
+\item (2,0) Se $f(x) = \dfrac{k x^2 - k}{\abs{x-1}}$ para $x \neq 1$, e $f$ é contínua em $x=1$, quanto valem $k$ e $f(1)$?
+
+\end{enumerate}
+
+\begin{center}
+BOA PROVA!
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+\begin{enumerate}
+\item \textit{Obtenha uma fórmula explícita (e simplificada) para a função $g(x) = f( f(x) )$ nos casos a seguir, e expresse o domínio e a imagem de $g(x)$ como conjuntos ou intervalos:}
+\begin{enumerate}
+\item $f(x) = \sqrt{ -18 + x^2 }$
+
+\begin{enumerate}
+\item \begin{align*}
+g(x)
+& = f\left( f(x) \right)
+  = f\left( \sqrt{ -18 + x^2 } \right)
+  = \sqrt{ -18 + \left( \sqrt{ -18 + x^2 } \right)^2 } \\
+& = \sqrt{ -18 + ( -18 + x^2 ) }
+  = \sqrt{ -36 + x^2 }
+\end{align*}
+\item \begin{align*}
+\dom{g}
+& = \{ x \in \R \mid x \in \dom{f} \text{ e } f(x) \in \dom{f} \} \\
+& = \{ x \in \R \mid (-18 + x^2) \geq 0 \text{ e } (-36 + x^2) \geq 0 \} \\
+& = \{ x \in \R \mid x^2 \geq 18 \text{ e } x^2 \geq 36 \} \\
+& = \{ x \in \R \mid x^2 \geq 36 \} \\
+& = \{ x \in \R \mid x \leq -6 \text{ ou } x \geq 6\} = (-\infty, -6) \cup (6, +\infty)
+\end{align*}
+
+\item $y \in \im{g}$ se existir algum $x \in \dom{g}$ tal que $g(x) = y$. Mas
+\begin{align*}
+y = g(x)
+& \Leftrightarrow y = \sqrt{ -36 + x^2 } \geq 0 \\
+& \Leftrightarrow y^2 = -36 + x^2 \\
+& \Leftrightarrow y^2 + 36 = x^2 \\
+& \Leftrightarrow x = \sqrt{ y^2 + 36 },
+\end{align*}
+então todo $y \geq 0$ esta na imagem de $g$, pois $y = g( \sqrt{ y^2 + 36 } )$, isto é, $\im{g} = \{ x \in \R \mid x \geq 0 \} = [0, +\infty)$.
+\end{enumerate}
+
+
+\item $f(x) = \begin{cases}
+\frac{7}{2x},& \text{ se } x \neq 0\\
+0, & \text{ caso contrário.}
+\end{cases}$
+
+\begin{itemize}
+\item Para $x \neq 0$,
+$\displaystyle g(x) = f(f(x))
+= \frac{7}{2f(x)}
+= \frac{7}{2\frac{7}{2x}}
+= x
+$
+\item Para $x = 0$,
+$g(x) = f(f(0))
+= f(0)
+= 0
+= x$
+\end{itemize}
+
+Logo, para todo $x \in \R$, $g(x) = x$ e consequentemente $\dom{g} = \im{g} = \R$.
+
+\end{enumerate}
+
+\item \textit{Explique as afirmações que são sempre \textbf{verdadeiras}, e mostre que as demais são \textbf{falsas} com contraexemplos (a argumentação lógica e as contas fazem parte da resposta):}
+
+
+\begin{enumerate}
+\item \textit{A função $r: \mathbb{R} \to \mathbb{R}$ definida por $\displaystyle r(x) = \sqrt[3]{8 - x^5}$ é bijetora}
+
+\textbf{Verdadeiro}, pois $q$ é injetora e bijetora:
+\begin{itemize}
+\item Injetividade:
+\begin{align*}
+r(a) = r(b)
+& \Rightarrow \sqrt[3]{8 - a^5} = \sqrt[3]{8 - b^5}
+  \Rightarrow 8 - a^5 = 8 - b^5
+  \Rightarrow - a^5 = - b^5 \\
+& \Rightarrow a^5 = b^5
+  \Rightarrow a = b.
+\end{align*}
+\item Sobrejetividade:
+\[
+y = r(x)
+\Leftrightarrow y = \sqrt[3]{8 - x^5}
+\Leftrightarrow y^3 = 8 - x^5
+\Leftrightarrow x^5 = 8 - y^3
+\Leftrightarrow x = \sqrt[5]{8 - y^3}
+\]
+Consequentemente, dado qualquer $y \in \mathbb{R}$, existe $x = \sqrt[5]{8 - y^3}$ tal que
+\[
+r(x) = \sqrt[3]{8 - x^5}
+     = \sqrt[3]{8 - (\sqrt[5]{8 - y^3})^5}
+     = \sqrt[3]{8 - (8 - y^3)}
+     = \sqrt[3]{y^3}
+     = y.
+\]
+
+\end{itemize}
+
+\item \textit{Se $\lim\limits_{x\to a} f(x) = 0$ então com certeza $\lim\limits_{x\to a} [ f(x) \cdot g(x) ] = 0$, para qualquer $g(x)$}
+
+\textbf{Falso}. Por exemplo, se $f(x) = x$ e $g(x) = 1/x^3$ então $\lim\limits_{x\to 0} f(x) = 0$ mas
+\[
+\lim\limits_{x\to 0} [ f(x) \cdot g(x) ]
+= \lim\limits_{x \to 0} x \cdot \frac{1}{x^3}
+= \lim\limits_{x \to 0} \frac{1}{x^2}
+= +\infty \neq 0.
+\]
+
+\item  \textit{Uma função que é par também pode ser ímpar}
+
+\textbf{Verdadeiro}, pois a função nula é par e ímpar: de fato, se $g(x) = 0$ para todo $x$, então $g(-x) = 0 = -0 = g(x) = -g(x)$.
+
+Na verdade, somente uma função nula pode ser par e ímpar, pois se $f$ é par então para todo $x \in \operatorname{dom}{f}$ tem-se $f(-x) = f(x)$. Se, além disso, $f$ também é ímpar, resulta que $f(-x) = -f(x)$. Consequentemente, $f(x) = f(-x) = -f(x)$, ou seja, $f(x) = -f(x)$. Mas isto implica que $2 f(x) = 0$ e que portanto $f(x) = 0$.
+\end{enumerate}
+
+
+\item \textit{ Sabe-se que se $p(x) = x^2 - 6x + 2$ então $\lim_{x \to 3} p(x) = -7$. Neste caso, para que os valores da função $p(x)$ fiquem a menos de $\varepsilon = 4$ unidades de distância do limite $L = -7$, é suficiente que a distância de $x$ até o ponto $a = 3$ seja menor do que $\delta = \framebox(30,15){2}$ unidades de distância. E se em vez de $\varepsilon = 4$ for considerada uma distância $\varepsilon > 0$ arbitrária, basta escolher $\delta = \framebox(26,15){ $\sqrt{\varepsilon}$ }$ (em função de $\varepsilon$). }
+
+Para todo $x \in \R$ tem-se
+\[
+\abs{p(x) - (-7)}
+= \abs{x^2-6x+2 +7}
+= \abs{x^2-6x+9}
+= \abs{x-3}^2
+\]
+Então, dado $\varepsilon > 0$,
+\[
+\abs{p(x) - (-7)} < \varepsilon
+\Leftrightarrow
+\abs{x-3}^2 < \varepsilon
+\Leftrightarrow
+\abs{x-3} < \sqrt{ \varepsilon }
+\]
+Em particular, se $\varepsilon = 4$ pode-se escolher $\delta = \sqrt{4} = 2$ e será verdade que $\abs{p(x) - (-7)} < \varepsilon$ quando $0 < \abs{x-3} < \delta$.
+
+\item \textit{Calcule, caso existam:}
+\begin{enumerate}
+
+\item Observe que $e^{[\sen(x)-x]} = \frac{ e^{\sen(x)} }{e^x}$. Além disso, como $-1 \leq \sen(x) \leq 1$, conclui-se que $e^{-1} \leq e^{\sen(x)} \leq e^1$, ou seja, $e^{\sen(x)}$ é limitada. Assim, como $\lim\limits_{x\to +\infty} \frac{ 1 }{e^x} = 0$, tem-se:
+\[
+\lim\limits_{x\to +\infty} e^{[\sen(x)-x]}
+= \lim\limits_{x\to +\infty} \frac{ 1 }{e^x} \cdot e^{\sen(x)}
+= 0.
+\]
+
+\item $\lim\limits_{x\to 0} \dfrac{\tan(14x) - 9x}{x}$
+
+\begin{align*}
+  \lim\limits_{x\to 0} \dfrac{\tan(14x) - 9x}{x}
+& = \lim\limits_{x\to 0} \dfrac{\tan(14x)}{x} - \frac{9x}{x}
+  = \lim\limits_{x\to 0} \dfrac{\frac{\sen(14x)}{\cos(14x)}}{x} - 9
+  = \lim\limits_{x\to 0} \frac{\sen(14x)}{\cos(14x)} \dfrac{1}{x} - 9 \\
+& = \lim\limits_{x\to 0} 14 \frac{\sen(14x)}{14 x} \dfrac{1}{\cos(14x)} - 9
+  = \lim\limits_{u\to 0} 14 \frac{\sen(u)}{u} \dfrac{1}{\cos(u)} - 9 \\
+& = 14 \cdot 1 \cdot \dfrac{1}{1} - 9
+  = 5
+\end{align*}
+
+\end{enumerate}
+
+\item
+\begin{enumerate}
+\item \begin{align*}
+    \lim\limits_{x\to \pi/4} \dfrac{\tan(x-\pi/4)}{(x-\pi/4)\cos(x)}
+& = \lim\limits_{u\to 0} \frac{\tan(u)}{u}\frac{1}{\cos(u+\pi/4)}
+  = \lim\limits_{u\to 0} \frac{\sen(u)}{u \cdot \cos(u)}\frac{1}{\cos(u+\pi/4)} \\
+& = \lim\limits_{u\to 0} \frac{\sen(u)}{u}\frac{1}{\cdot \cos(u)}\frac{1}{\cos(u+\pi/4)}
+  = 1 \cdot \frac{1}{ \cos(0) } \frac{1}{\cos(0 + \pi/4)} \\
+& = \frac{1}{\cos(\pi/4)}
+  = \frac{1}{ \frac{\sqrt{2}}{2} }
+  = \frac{\sqrt{2}}{2}
+  = \sqrt{2}.
+\end{align*}
+
+\item \begin{align*}
+\lim\limits_{x\to +\infty} \tanh(x)
+& = \lim\limits_{x\to +\infty} \frac{e^x-e^{-x}}{e^x+e^{-x}}
+  = \lim\limits_{x\to +\infty} \frac{u-u^{-1}}{u+u^{-1}}
+  = \lim\limits_{u\to +\infty} \frac{u}{u} \cdot \frac{1-u^{-2}}{1+u^{-2}}
+  = \lim\limits_{u\to +\infty} \frac{1-\frac{1}{u^2}}{1+\frac{1}{u^2}} \\
+& = \frac{\lim\limits_{u\to +\infty} 1-\frac{1}{u^2}}{\lim\limits_{u\to +\infty} 1+\frac{1}{u^2}}
+  = \frac{1 - 0}{1 + 0} = 1.
+\end{align*}
+
+\end{enumerate}
+
+\item \textit{Se $f(x) = \dfrac{k x^2 - k}{\abs{x-1}}$ para $x \neq 1$, e $f$ é contínua em $x=1$, quanto valem $k$ e $f(1)$?}
+
+Para $x \neq 1$ tem-se
+\[
+f(x) = \frac{k x^2 - k}{\abs{x-1}}
+     = k \frac{x^2 - 1}{\abs{x-1}}
+     = k(x+1) \frac{(x-1)}{\abs{x-1}}
+= \begin{cases}
+k (x+1) & \text{ se } x \geq 1 \\
+-k (x+1) & \text{ se } x < 1.
+\end{cases}
+\]
+Assim, $\lim\limits_{x \to 1^+} f(x) = k (1+1) = 2k$ e $\lim\limits_{x \to 1^-} f(x) = -k (1+1) = -2k$. Como $f$ é contínua em $x=1$, deve ocorrer $f(1) = 2k = -2k$. Portanto, $4k=0$ e $k=0$. Assim, conclui-se que $f(1) = 2k = 2\cdot 0 = 0$.
+
+\end{enumerate}
+\end{document}

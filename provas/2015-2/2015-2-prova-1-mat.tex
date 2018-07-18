@@ -1,0 +1,276 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand*\sen[1]{\operatorname{sen}{#1}}
+\newcommand*\abs[1]{\left|#1\right|}
+
+\newcommand*\tipo{PROVA I}
+\newcommand*\turma{MAT102-02U}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{16/09/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina}
+& \textbf{\tipo}
+& \textbf{\data}
+& \textbf{\turma}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Escolha \textsc{\textbf{uma}} das 6 questões para \textsc{\textbf{não}} fazer (ela não será corrigida): \framebox(30,10){}
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item Seja $g: D \to \mathbb{R}$ a função dada por $g(x) = \ln{|x + 3|} + \ln{|x - 3|} + x^2\sqrt{x^2-1}$. Explique:
+\begin{enumerate}
+\item (0,5) Qual é o domínio $D$ em que $g$ está definida?
+\item (0,5) A função $g$ é par, ímpar ou nenhuma das duas coisas?
+\item (0,5) A função $g$ é contínua nos pontos em que está definida? Por quê?
+\item (0,5) Quanto é $\lim\limits_{x\to3^+} g(x)$?
+\end{enumerate}
+
+\item Seja $f(x) = \ln(x - 2)$ e considere $\varepsilon > 0$.
+\begin{enumerate}
+\item (1,5) Obtenha $\delta > 0$ (em função de $\varepsilon$) tal que ``se $0 < |x - 3| < \delta$ então $|f(x) - 0| < \varepsilon$''.
+\item (0,5) O que isso significa em termos de limites?
+\end{enumerate}
+
+\item (2,0) Determine um intervalo $[n, n+1]$ contendo (pelo menos) uma solução positiva da equação $x^5 - 10x = 300$. O que garante que há realmente uma solução no intervalo encontrado?
+
+\item (2,0) Determine se para algum valor de $k$ a função a seguir é contínua em $x = -2$:
+\[f(x)=\left\{\begin{array}{ll}
+\dfrac{\sen(x+2)}{x^2-x-6}, & \text{se}\quad x<-2\\
+k, & \text{se}\quad x = -2 \\
+\dfrac{1}{-5 + e^{-1/(x + 2)}}, & \text{se}\quad x > -2.
+\end{array}\right.
+\]
+
+\item Determine, se existirem:
+\begin{enumerate}
+\item (1,0) $\lim\limits_{x\to a} \dfrac{\sen(x)-\sen(a)}{x-a}$
+\item (1,0) $\lim\limits_{x\to +\infty} \dfrac{\cos(x^2)}{e^x}$
+\end{enumerate}
+
+\item Calcule, se existirem:
+\begin{enumerate}
+\item (1,0) $\lim\limits_{x\to 0} \dfrac{e^{6x}-1}{1-e^{3x}} $
+\item (1,0) $\lim\limits_{x\to +\infty} x(\sqrt{x^2 + 10} - x)$
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+\begin{enumerate}
+
+\item \textit{ Seja $g: D \to \mathbb{R}$ a função dada por $g(x) = \ln{|x + 3|} + \ln{|x - 3|} + x^2\sqrt{x^2-1}$. Explique:}
+\begin{enumerate}
+\item \textit{ Qual é o domínio $D$ em que $g$ está definida?}
+
+\begin{align*}
+D
+& = \operatorname{Dom}(g) \\
+& = \left\{ x \in \mathbb{R} | \abs{x + 3} > 0 \text{ e } \abs{x-3} > 0 \text{ e } x^2-1 \geq 0 \right\} \\
+& = \left\{ x \in \mathbb{R} | \abs{x + 3} \neq 0 \text{ e } \abs{x-3} \neq 0 \text{ e } x^2 \geq 1 \right\} \\
+& = \left\{ x \in \mathbb{R} | x+3 \neq 0 \text{ e } x-3 \neq 0 \text{ e } \abs{x} \geq 1 \right\} \\
+& = \left\{ x \in \mathbb{R} | x \neq -3 \text{ e } x\neq 3 \text{ e } \abs{x} \geq 1 \right\} \\
+& = \mathbb{R} \setminus \left( \{-3, 3 \} \cup (-1, 1) \right)\\
+& = (-\infty, -3) \cup ( -3, -1] \cup [ 1, 3) \cup (1, +\infty)
+\end{align*}
+
+\item \textit{ A função $g$ é par, ímpar ou nenhuma das duas coisas?}
+
+Tem-se
+\begin{align*}
+g(-x)
+& = \ln{|(-x) + 3|} + \ln{|(-x) - 3|} + (-x)^2\sqrt{(-x)^2-1} \\
+& = \ln{|-(x - 3)|} + \ln{|-(x + 3)|} + x^2\sqrt{x^2-1} \\
+& = \ln{|x - 3|} + \ln{|x + 3|} + x^2\sqrt{x^2-1} \\
+& = g(x).
+\end{align*}
+Isso significa que $g$ é uma função par.
+
+\item \textit{ A função $g$ é contínua nos pontos em que está definida? Por quê?}
+
+Uma vez que raízes quadradas, polinômios e logaritmos são funções contínuas, e que a soma, subtração, multiplicação e composição de funções contínuas resulta em funções contínuas, pode-se concluir que a função $g$ também é contínua (pois é uma soma/composição de funções contínuas).
+
+\item \textit{ Quanto é $\lim\limits_{x\to3^+} g(x)$?}
+Levando em conta que
+\[
+\lim\limits_{x\to3^+} \ln{|x + 3|} + x^2\sqrt{x^2-1}
+= \ln{|3 + 3|} + 3^2\sqrt{3^2-1}
+= \ln{6} + 9\sqrt{8} \in \mathbb{R}
+\]
+e que
+\[
+\lim\limits_{x\to3^+} \ln{\abs{x - 3}}
+= \lim\limits_{u\to 0^+} \ln{\abs{u}}
+= \lim\limits_{u\to 0^+} \ln{u}
+= -\infty,
+\]
+conclui-se que
+\[
+\lim\limits_{x\to 3^+} g(x) = - \infty.
+\]
+
+\end{enumerate}
+
+\item \textit{ Seja $f(x) = \ln(x - 2)$ e considere $\varepsilon > 0$.}
+\begin{enumerate}
+\item \textit{ Obtenha $\delta > 0$ (em função de $\varepsilon$) tal que ``se $0 < |x - 3| < \delta$ então $|f(x) - 0| < \varepsilon$''.}
+
+Observe que
+\begin{align*}
+\abs{f(x) - 0} < \varepsilon
+& \Leftrightarrow \abs{ \ln(x - 2) } < \varepsilon
+  \Leftrightarrow -\varepsilon < \ln(x - 2) < \varepsilon
+  \Leftrightarrow e^{-\varepsilon} < e^{\ln(x - 2)} < e^\varepsilon \\
+& \Leftrightarrow e^{-\varepsilon} < x - 2 < e^\varepsilon
+  \Leftrightarrow e^{-\varepsilon} -1 < x - 3 < e^\varepsilon -1.
+\end{align*}
+Portanto, para um $\varepsilon>0$ dado, basta escolher qualquer $\delta \leq \min\{ \abs{e^{-\varepsilon} -1 }, e^\varepsilon -1\}$ e será verdade que ``se $0 < \abs{x - 3} < \delta$ então $\abs{f(x) - 0} < \varepsilon$''.
+
+
+
+\item \textit{ O que isso significa em termos de limites?}
+
+O significado da propriedade anterior é que a função $f(x)$ se aproxima de zero quando $x$ tende a $3$, isto é, $\lim\limits_{x\to3} f(x) = 0$.
+
+\end{enumerate}
+
+\item \textit{ Determine um intervalo $[n, n+1]$ contendo (pelo menos) uma solução positiva da equação $x^5 - 10x = 300$. O que garante que há realmente uma solução no intervalo encontrado?}
+
+Seja $f(x) = x^5 - 10x$. Atribuindo alguns valores à variável $x$ (positivos, já que o enunciado não pede soluções negativas), observa-se que
+\begin{align*}
+f(1) & = 1^5 - 10 \cdot 1 = 1 - 10 = -9 < 300 \\
+f(2) & = 2^5 - 10 \cdot 2 = 32 - 20 = 12 < 300 \\
+\bf{ f(3) } & = 3^5 - 10 \cdot 3 = 243 - 30 = 213 \bf{ < 300 }\\
+\bf{ f(4) } & = 4^5 - 10 \cdot 4 = 1024 - 40 = 984 \bf{ > 300 }
+\end{align*}
+Como $f$ é uma função contínua (é um polinômio) e $f(3) < 300 < f(4)$, o teorema do valor intermediário garante que existe algum $c \in (3,4)$ tal que $f(c) = c^5 - 10 \cdot c = 300$, isto é, $c$ é uma solução da equação indicada.
+
+\item \textit{ Determine se para algum valor de $k$ a função a seguir é contínua em $x = -2$:}
+\[f(x)=\left\{\begin{array}{ll}
+\dfrac{\sen(x+2)}{x^2-x-6}, & \text{se}\quad x<-2\\
+k, & \text{se}\quad x = -2 \\
+\dfrac{1}{-5 + e^{-1/(x + 2)}}, & \text{se}\quad x > -2.
+\end{array}\right.
+\]
+Para $x<-2$ temos o seguinte limite:
+\begin{align*}
+\lim\limits_{x\to -2^-} f(x)
+& = \lim\limits_{x\to -2^-} \frac{\sen(x+2)}{x^2-x-6}
+  = \lim\limits_{x\to -2^-} \frac{\sen(x+2)}{(x+2)(x-3)}
+  = \lim\limits_{u\to 0^-} \frac{\sen(u)}{u}\frac{1}{(u-2)-3}
+  = \frac{-1}{5}.
+\end{align*}
+
+Para $x>-2$, temos
+\begin{align*}
+\lim\limits_{x\to -2^+} f(x)
+& = \lim\limits_{x\to -2^+} \frac{1}{-5 + e^{-1/(x + 2)}}
+  = \lim\limits_{u\to 0^+} \frac{1}{-5 + e^{-1/u}}
+  = \lim\limits_{v\to -\infty} \frac{1}{-5 + e^v}
+  = \frac{1}{-5 + 0}
+  = \frac{-1}{5}.
+\end{align*}
+
+Consequentemente, $f$ é contínua em $x=-2$ se, e somente se, $k = -1/5$, já que neste caso $\lim\limits_{x\to -2} f(x) = -1/5 = k = f(-2)$.
+
+\item \textit{ Determine, se existirem:}
+\begin{enumerate}
+\item
+\begin{align*}
+\lim\limits_{x\to a} \frac{\sen x-\sen a}{x-a}
+& = \lim\limits_{u \to 0} \frac{\sen(a+u)-\sen a}{u}\\
+& = \lim\limits_{u \to 0} \frac{\sen a \cos u +\sen u\cos a-\sen a}{u}\\
+& = \lim\limits_{u \to 0} \frac{(\cos u - 1)}{u}\sen a + \frac{\sen u}{u}\cos a\\
+& = 0 \cdot \sen a + 1 \cdot \cos a
+  = \cos a.\\
+\end{align*}
+
+\item $\lim\limits_{x\to +\infty} \dfrac{\cos(x^2)}{e^x} = \lim\limits_{x\to +\infty} \dfrac{1}{e^x} \cdot \cos(x^2) = 0$, pois $\lim\limits_{x\to +\infty} \dfrac{1}{e^x} = 0$ e $-1 \leq \cos(x^2) \leq 1$, isto é, a função limitada $\cos(x^2)$ está sendo multiplicada por uma que tende a zero, o que implica que o produto também tende a zero.
+
+\end{enumerate}
+
+\item \textit{ Calcule, se existirem:}
+\begin{enumerate}
+\item $\lim\limits_{x\to 0} \dfrac{e^{6x}-1}{1-e^{3x}}$
+
+\begin{align*}
+\lim\limits_{x\to 0} \frac{e^{6x}-1}{1-e^{3x}}
+& = \lim\limits_{x\to 0} \frac{6x \cdot \frac{e^{6x}-1}{6x}}{3x \cdot \frac{1-e^{3x}}{3x}}
+  = 2\lim\limits_{x\to 0} \frac{\frac{e^{6x}-1}{6x}}{(-1)\frac{e^{3x}-1}{3x}}
+  = (-2)\frac{\lim\limits_{x\to 0} \frac{e^{6x}-1}{6x}}{\lim\limits_{x\to 0} \frac{e^{3x}-1}{3x}} \\
+& = (-2)\frac{\lim\limits_{u\to 0} \frac{e^{u}-1}{u}}{\lim\limits_{v\to 0} \frac{e^{v}-1}{v}}
+  = (-2) \cdot \frac{1}{1}
+  = -2
+\end{align*}
+
+\item $\lim\limits_{x\to +\infty} x(\sqrt{x^2 + 10} - x)$
+
+\begin{align*}
+\lim\limits_{x\to +\infty} x(\sqrt{x^2 + 10} - x)
+& = \lim\limits_{x\to +\infty} x(\sqrt{x^2 + 10} - x) \cdot \frac{\sqrt{x^2 + 10} + x}{\sqrt{x^2 + 10} + x} \\
+& = \lim\limits_{x\to +\infty} \frac{x((x^2 + 10) - x^2)}{\sqrt{x^2 + 10} + x}
+  = \lim\limits_{x\to +\infty} \frac{10 x}{|x|\sqrt{1 + 10/x^2} + x} \\
+& = \lim\limits_{x\to +\infty} \frac{10 x}{x (\sqrt{1 + 10/x^2} + 1)}
+  = \frac{10}{\sqrt{1 + 0} + 1}
+  = 5
+\end{align*}
+
+
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

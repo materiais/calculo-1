@@ -1,0 +1,234 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{textcomp} % \degree
+\usepackage{gensymb} % \degree
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+\newcommand{\fixme}{{\color{red}(...)}}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\senh{\operatorname{senh}}
+\newcommand*\tg{\operatorname{tg}}
+\newcommand*\arctg{\operatorname{arctg}}
+
+\newcommand*\tipo{PROVA II}
+\newcommand*\turma{ELE141-01U}
+\newcommand*\disciplina{CDI0001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{16/10/2015}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca}
+\noindent\begin{tabular}{l c c r}
+  \textbf{\disciplina (\turma)}
+& \textbf{\tipo}
+& \textbf{\data}
+\end{tabular}
+\\ Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}.}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \rule{13cm}{0.01cm}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Resolva (integralmente) apenas os itens de que precisar para somar 10,0 pontos.
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+
+%\section*{Questões}
+
+\begin{enumerate}
+\item (0,5) Dê um exemplo de um par de funções $f, g: \mathbb{R} \to \mathbb{R}$ tais que $\left[f(x)g(x)\right]^\prime \neq f^\prime(x)g^\prime(x)$. Faça as contas para mostrar que realmente são diferentes.
+
+\item (1,5) Calcule $y^{\prime\prime} - 4y$, considerando que $y=f(x) = 8\cosh(-2x) + 3\senh(2x)$.
+
+\item (1,5) Utilize derivação implícita para deduzir a derivada de $y = \arctg(x)$.
+
+\item (1,0) Calcule $g^\prime(0)$, sendo $g:\mathbb{R} \to \mathbb{R}$ definida por $g(x) = (9x^2 + 1)\arctg(-3x)$.
+
+\item (1,0) Estime o valor de $\sqrt{9,18}$ utilizando uma aproximação linear.
+
+\item (2,0) Seja $f(x) = 3 \cos(x) + 2 \ln(x + 1)$. Obtenha as equações da reta normal e da reta tangente ao gráfico de $f(x)$, no ponto em que $x = 0$.
+
+\item (2,0) Um balão está subindo verticalmente a partir de um ponto no solo que fica a $500m$ de onde você está. Para observar o balão, você olha em uma direção que forma um ângulo de $\pi/4$ radianos com o chão. Qual é a velocidade de subida do balão (em $m/min$), se o ângulo está variando a uma taxa de $0,2$ radianos por minuto?
+
+\item (2,5) Considere a curva formada pelos pontos $(x,y)$ do plano que satisfazem a equação $x^6 - 4x y + y^6 = 64$. Sabendo que $y = f(x)$ é dado implicitamente pela equação anterior, encontre as retas tangentes à curva nos pontos em que $x=0$.
+\end{enumerate}
+
+\newpage
+\restoregeometry
+\section*{Respostas e observações}
+
+\begin{enumerate}
+\item \textit{Dê um exemplo de um par de funções $f, g: \mathbb{R} \to \mathbb{R}$ tais que $\left[f(x)g(x)\right]^\prime \neq f^\prime(x)g^\prime(x)$. Faça as contas para mostrar que realmente são diferentes.}
+
+Há inúmeras funções para as quais isso ocorre. Por exemplo:
+\begin{itemize}
+\item Se $f(x) = 1$ e $g(x) = x$, então:
+\[
+\left[f(x)g(x)\right]^\prime
+= \left[1 \cdot x\right]^\prime
+= x^\prime
+= 1
+\neq 0
+= 0 \cdot 1
+= 1^\prime \cdot x^\prime
+= f^\prime(x)g^\prime(x)
+\]
+\item Se $f(x) = g(x) = e^x$, então:
+\[
+\left[f(x)g(x)\right]^\prime
+= \left[e^x \cdot e^x\right]^\prime
+= \left[e^{2x}\right]^\prime
+= 2e^{2x}
+\neq e^{2x}
+= e^x \cdot e^x
+= (e^x)^\prime \cdot (e^x)^\prime
+= f^\prime(x)g^\prime(x)
+\]
+\end{itemize}
+
+\item \textit{Calcule $y^{\prime\prime} - 4y$, considerando que $y=f(x) = 8\cosh(-2x) + 3\senh(2x)$.}
+
+Como
+\begin{align*}
+y^\prime
+& = 8 \senh(-2x) \cdot(-2) + 3\cosh(2x) \cdot 2 \\
+& = -16 \senh(-2x) + 6\cosh(2x)
+\end{align*}
+e
+\begin{align*}
+y^{\prime\prime}
+& = -16 \cosh(-2x) \cdot (-2) + 6\senh(2x) \cdot 2 \\
+& = 32 \cosh(-2x) + 12\senh(2x) \\
+& = 4(8\cosh(-2x) + 3\senh(2x)) \\
+& = 4y,
+\end{align*}
+tem-se $y^{\prime\prime} - 4y = 0$.
+
+\item \textit{Utilize derivação implícita para deduzir a derivada de $y = \arctg(x)$.}
+
+Como a função $\arctg: \mathbb{R} \to (-\pi/2,\pi/2)$ é a função inversa da função $\tg: (-\pi/2,\pi/2) \to \mathbb{R}$, tem-se $y = \arctg(x)$ se, e somente se, $x = \tg(y)$. Mas
+\begin{align*}
+x = tg(x)
+& \Rightarrow \frac{\diff{x}}{\diff{x}}
+= \frac{\diff{\tg}(y)}{\diff{x}}
+= \frac{\diff{\tg}(y)}{\diff{y}} \frac{\diff{y}}{\diff{x}} \\
+& \Rightarrow 1
+= \frac{\diff{\tg}(y)}{\diff{y}} \frac{\diff{y}}{\diff{x}}
+= \sec^2(y) \frac{\diff{y}}{\diff{x}} \\
+& \Rightarrow \frac{\diff{y}}{\diff{x}}
+= \frac{1}{ \sec^2(y) }
+= \frac{1}{ \tg^2(y) + 1 }
+= \frac{1}{ x^2 + 1 }
+\end{align*}
+
+\item \textit{Calcule $g^\prime(0)$, sendo $g:\mathbb{R} \to \mathbb{R}$ definida por $g(x) = (9x^2 + 1)\arctg(-3x)$.}
+
+Resulta da regra do produto, juntamente com a regra da cadeia que para todo $x \in \mathbb{R}$ tem-se o seguinte:
+\[
+g^\prime(x) = 18x^2 \cdot \arctg(-3x) + (9x^2 + 1) \cdot \frac{1}{(-3x)^2+1} \cdot (-3)
+\]
+Em particular,
+\[
+g^\prime(0)
+= 0 \cdot \arctg(-3 \cdot 0) + (0 + 1) \cdot \frac{1}{0^2+1} \cdot (-3)
+=-3\]
+
+\item \textit{Estime o valor de $\sqrt{9,18}$ utilizando uma aproximação linear.}
+
+Seja $f(x) = \sqrt{x}$, $x_0 = 9$ e $\Delta x = 0,18$. Então e $f^\prime = \dfrac{1}{2\sqrt{x}}$ e tem-se:
+
+\begin{align*}
+\sqrt{9,18} = \sqrt{9 + 0,18}
+= f(x_0+\Delta x)
+& \approx f(x_0) + f^{\prime}(x_0)\Delta x \\
+& = \sqrt{9} + \frac{1}{2\sqrt{9}}0,18
+= 3 + \frac{1}{6}0,18
+= 3 + 0,03
+= 3,03.
+\end{align*}
+
+\item \textit{Seja $f(x) = 3 \cos(x) + 2 \ln(x + 1)$. Obtenha as equações da reta normal e da reta tangente ao gráfico de $f(x)$, no ponto em que $x = 0$.}
+
+Como $f(0)= 3 \cdot 1 + 2 \ln(0+1) ) = 3$, o ponto de tangência é $P = (0, 3)$. Além disso, como $f^\prime(x) = -3 \sen(x) + \dfrac{2}{x + 1}$, conclui-se que o coeficiente angular da reta tangente em $P$ é dado por
+\[
+f^\prime(0) = -3 \cdot 0 + \dfrac{2}{0 + 1} = 2.
+\]
+Assim, a equação da reta tangente é $y = 2x + 3$. Já a reta normal, deve ter um coeficiente angular $m$ tal que $2 \cdot m = -1$, isto é, $m = -1/2$. Assim, sua equação é $y = \frac{x}{2} + 3$.
+
+\item \textit{Um balão está subindo verticalmente a partir de um ponto no solo que fica a $500m$ de onde você está. Para observar o balão, você olha em uma direção que forma um ângulo de $\pi/4$ radianos com o chão. Qual é a velocidade de subida do balão (em $m/min$), se o ângulo está variando a uma taxa de $0,2$ radianos por minuto?}
+
+Tem-se a seguinte relação entre a altura $h = h(t)$ do balão e o ângulo $\theta = \theta(t)$ correspondente em cada instante de tempo $t$:
+\[
+\frac{ h }{ 500 } = \tg( \theta ),\ \text{isto é},\
+h = 500 \tg( \theta )
+\]
+Consequentemente a velocidade de subida do balão, que é a variação instantâne de sua altura, estará relacionada à variação instantânea do ângulo da seguinte forma:
+\[
+\frac{ \diff{ h } }{ \diff{t} }
+= 500 \frac{\diff{ (\tg( \theta )) }}{\diff{t}}
+= 500 \sec^2( \theta ) \frac{ \diff{ \theta } }{ \diff{t} }
+\]
+Deste modo, para $\theta = \pi/4$, tem-se
+\[
+\frac{ \diff{ h } }{ \diff{t} }
+= 500 \sec^2( \pi/4 ) \cdot 0,2
+= \dfrac{500}{ \cos^2( \pi/4 ) }\dfrac{2}{ 10 }
+= \dfrac{100}{ (\sqrt{2}/2)^2 }
+= \dfrac{100}{ 2/4 }
+= 200m/s.
+\]
+
+\item \textit{Considere a curva formada pelos pontos $(x,y)$ do plano que satisfazem a equação $x^6 - 4x y + y^6 = 64$. Sabendo que $y = f(x)$ é dado implicitamente pela equação anterior, encontre as retas tangentes à curva nos pontos em que $x=0$.}
+
+Para $x=0$, temos $0^6 - 4\cdot 0 \cdot y + y^6 = 64$ e portanto $y^6 = 64$, o que implica que $y = \pm 2$.
+
+As retas tangentes nos pontos $(0,2)$ e $(0,-2)$ serão obtidas assim que for conhecido o valor de $y^\prime = \dfrac{ \diff{y} }{ \diff{x} }$. Por derivação implícita, resulta que
+\begin{align*}
+6x^5 - 4( 1 y + x y^\prime) + 6y^5 y^\prime = 0
+& \Leftrightarrow -4x y^\prime + 6y^5 y^\prime = 4y - 6x^5
+\Leftrightarrow (6y^5 - 4x) y^\prime = 4y - 6x^5 \\
+& \Leftrightarrow y^\prime = \frac{ 4y - 6x^5 }{ 6y^5 - 4x }
+\end{align*}
+
+Em particular, nos pontos $(0,2)$ e $(0,-2)$, tem-se $y^\prime = \frac{ 4(\pm 2) - 6 \cdot 0^5 }{ 6(\pm 2)^5 - 4 \cdot 0 } = \frac{ 4 (\pm 2)}{6(\pm 2)^5} = \frac{ 4}{6(\pm 2)^4} = \frac{ 4}{6 \cdot 16} = \frac{1}{24}.$ Assim, as retas tangentes são $y-2 = \frac{1}{24}(x-0)$ e $y+2 = \frac{1}{24}(x-0)$, ou seja, $y = x/24+2$ e $y = x/24-2$.
+\end{enumerate}
+\end{document}
