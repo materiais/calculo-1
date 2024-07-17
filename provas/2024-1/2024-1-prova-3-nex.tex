@@ -1,0 +1,253 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{cmap} % Makes the PDF copiable. See http://tex.stackexchange.com/a/64198/25761
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\hypersetup{
+    colorlinks = true,
+    allcolors = {blue}
+}
+
+% TODO: Consider using exsheets
+% http://linorg.usp.br/CTAN/macros/latex/contrib/exsheets/exsheets_en.pdf
+%
+% http://ctan.org/tex-archive/macros/latex/contrib/exercise/
+% Options: answerdelayed,lastexercise,noanswer
+\usepackage[answerdelayed,lastexercise]{exercise}
+
+\addto\captionsbrazil{%
+\def\listexercisename{Lista de exerc\'icios}%
+\def\ExerciseName{Exerc\'icio}%
+\def\AnswerName{Solu\c{c}\~ao do exerc\'icio}%
+\def\ExerciseListName{Ex.}%
+\def\AnswerListName{Solu\c{c}\~ao}%
+\def\ExePartName{Parte}%
+\def\ArticleOf{de\ }%
+}
+
+\renewcommand{\ExerciseHeaderTitle}{(\ExerciseTitle)\ }
+\renewcommand{\ExerciseListHeader}{%\ExerciseHeaderDifficulty%
+\textbf{%\ExerciseListName\
+\ExerciseHeaderNB.\ %
+%\ --- \
+\ExerciseHeaderTitle}%
+%\ExerciseHeaderOrigin
+\ignorespaces}
+\renewcommand{\AnswerListHeader}{\textbf{\ExerciseHeaderNB.\ (\AnswerListName)\ }}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\sen{\operatorname{sen}}
+\newcommand*\R{\mathbb{R}}
+
+\renewcommand{\theenumi}{\alph{enumi}}
+\renewcommand\labelenumi{(\theenumi) }
+
+\newcommand*\tipo{Prova III}
+\newcommand*\turma{NEXM241-D}
+\newcommand*\disciplina{CDI1001}
+\newcommand*\eu{Helder G. G. de Lima}
+\newcommand*\data{08/06/2024}
+
+\author{\eu}
+\title{\tipo - \disciplina}
+\date{\data}
+
+\begin{document}
+\thispagestyle{empty}
+\newgeometry{margin=2cm,bottom=0.5cm}
+\begin{center}
+\includegraphics[width=9.0cm]{marca} \\
+\textbf{\tipo\ (\disciplina / \turma)} \\
+Prof. \eu\footnote{
+Este é um material de acesso livre distribuído sob os termos da licença \href{https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR}{Creative Commons BY-SA 4.0}}
+\end{center}
+
+\noindent Nome do(a) aluno(a): \underline{\hspace{9,7cm}} Data: \underline{\data}
+
+%\section*{Instruções}
+\begin{center}\fbox{
+\begin{minipage}{14cm}
+
+{\footnotesize
+\begin{itemize}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\item Identifique-se em todas as folhas.
+\item Mantenha o celular e os demais equipamentos eletrônicos desligados durante a prova.
+\item Justifique cada resposta com cálculos ou argumentos baseados na teoria estudada.
+\item Resolva $5$ das $6$ questões (deixe claro que questão não deverá ser corrigida).
+\end{itemize}
+}
+
+\end{minipage}
+}
+\end{center}
+
+%\section*{Questões}
+\begin{ExerciseList}
+\Exercise[title={2,0}] Seja $y = f(x) = e^{2x} \cos(x)$. Verifique que $y^{\prime\prime} = 4 y^\prime - 5 y$.
+\Answer Pela regra do produto e pela regra da cadeia, a derivada de $f$ é dada por:
+\[
+    y^\prime
+    = (e^{2x} \cos(x))^\prime
+    = (e^{2x})^\prime \cos(x) + e^{2x}(\cos(x))^\prime
+    = 2e^{2x} \cos(x) - e^{2x} \sen(x).
+\]
+Além disso, a segunda derivada de $f$ é dada por:
+\begin{align*}
+    y^{\prime\prime}
+    & = (2e^{2x} \cos(x) - e^{2x} \sen(x))^\prime \\
+    & = 2(e^{2x} \cos(x))^\prime - (e^{2x} \sen(x))^\prime \\
+    & = 2[2e^{2x} \cos(x) - e^{2x} \sen(x)]
+      - [(e^{2x})^\prime \sen(x) + e^{2x}(\sen(x))^\prime] \\
+    & = 4e^{2x} \cos(x) - 2e^{2x} \sen(x)
+    - 2e^{2x} \sen(x) - e^{2x}\cos(x) \\
+    & = 3e^{2x} \cos(x) - 4e^{2x} \sen(x).
+\end{align*}
+Portanto,
+\begin{align*}
+    4 y^\prime - 5 y
+    & = 4[2e^{2x} \cos(x) - e^{2x} \sen(x)] - 5[e^{2x} \cos(x)] \\
+    & = 8e^{2x} \cos(x) - 4e^{2x} \sen(x) - 5e^{2x} \cos(x) \\
+    & = 3e^{2x} \cos(x) - 4e^{2x} \sen(x) = y^{\prime\prime}.
+\end{align*}
+
+\Exercise[title={2,0}] Utilize uma aproximação linear para estimar o valor de $\sqrt[3]{1003}$.
+\Answer Considerando $g(x) = \sqrt[3]{x} = x^{\frac{1}{3}}$, tem-se $\sqrt[3]{1003} = g(1003)$. Além disso, como $g$ é uma função derivável em todo $x \neq 0$ e $g^\prime(x) = \frac{1}{3}x^{-\frac{2}{3}} = \dfrac{1}{3\sqrt[3]{x^2}}$, resulta que para valores de $x$ próximos de $x_0 = 1000 = 10^3$, tem-se a aproximação linear
+\[
+    g(x) \approx g(1000) + g^\prime(1000)(x - 1000).
+\]
+Então, como $g(1000) = \sqrt[3]{1000} = 10$ e $g^\prime(1000) = \dfrac{1}{3\sqrt[3]{1000^2}} = \dfrac{1}{3\sqrt[3]{(10^3)^2}} = \dfrac{1}{3\cdot 10^2} = \dfrac{1}{300}$, conclui-se que:
+\[
+    \sqrt[3]{1003}
+    \approx 10 + \dfrac{1}{300}(1003 - 1000)
+    = 10 + \dfrac{1}{300}\cdot 3
+    = 10 + \dfrac{1}{100}
+    = \dfrac{1000 + 1}{100}
+    = 10,01.
+\]
+Apenas para comparação, o valor obtido em uma calculadora seria de $\sqrt[3]{1003} \approx 10,00999$.
+
+\Exercise[title={2,0}]
+\begin{minipage}{0.6\textwidth}
+    Um tanque invertido em forma de cone possui uma altura de $4m$ e um raio na base de $2m$. Ele está sendo preenchido com água a uma taxa de $6m^3/min$. Qual é a velocidade de elevação do nível da água quando sua distância até o fundo atinge $3m$?
+\end{minipage}\hfill
+\begin{minipage}{0.3\textwidth}
+    \begin{center}
+        \includegraphics[width=5cm]{img/prova-3-nex-cone.png}
+    \end{center}
+\end{minipage}
+\Answer Para cada instante $t$ (em minutos), considere que:
+\begin{itemize}
+    \item A altura da água no tanque (em metros) é $h = h(t)$
+    \item O raio da superfície da água (em metros) é $r = r(t)$
+    \item O volume de água no tanque (em metros cúbicos) é $V = V(t)$
+\end{itemize}
+Então a taxa de preenchimento do tanque é a taxa de variação do volume em relação ao tempo, ou seja, $\frac{\diff{V}}{\diff{t}} = 6$, e o objetivo é calcular a taxa de variação da altura em relação ao tempo, isto é, $\frac{\diff{h}}{\diff{t}}$, quando a altura é $h=3$.
+
+Sabe-se que o volume $V$ de um cone circular com altura $h$ e raio da base $r$ é dado por $V = \frac{1}{3}\pi r^2 h$. Além disso, considerando as dimensões do tanque ($2 m$ de raio e $4 m$ de altura), o raio $r$ da superfície da água é sempre metade da altura $h$ correspondente, isto é, $r = h/2$. Assim, o volume de água quando sua altura é $h$ é dado por $V = \frac{1}{3}\pi {\left(\frac{h}{2}\right)}^2 h = \frac{\pi}{12} h^3.$ Derivando ambos os membros dessa equação em relação a $t$, com o auxílio da regra da cadeia, obtém-se uma relação entre a taxa de variação do volume em relação ao tempo e a taxa de variação procurada:
+\[
+    \frac{\diff{V}}{\diff{t}}
+    = \frac{\diff}{\diff{t}}\left(\frac{\pi}{12} h^3\right)
+    = \frac{\pi}{12} \frac{\diff}{\diff{t}}\left(h^3\right)
+    = \frac{\pi}{12} 3h^2 \frac{\diff{h}}{\diff{t}}
+    = \frac{\pi}{4} h^2 \frac{\diff{h}}{\diff{t}}.
+\]
+Substituindo $h=3$ e $\frac{\diff{V}}{\diff{t}} = 6$, obtém-se:
+\[
+    \frac{\diff{V}}{\diff{t}}
+    = \frac{\pi}{4} h^2 \frac{\diff{h}}{\diff{t}}
+    \Rightarrow
+    6
+    = \frac{\pi}{4} 3^2 \frac{\diff{h}}{\diff{t}}
+    \Rightarrow
+    24
+    = 9\pi \frac{\diff{h}}{\diff{t}}
+    \Rightarrow
+    \frac{\diff{h}}{\diff{t}}
+    = \frac{8}{3\pi}.
+\]
+
+Portanto, o nível da água sobe a uma taxa de $\dfrac{8}{3\pi} m^3 / min$, ou pouco menos de $1 m^3 / min$ (já que $\pi$ é um pouco maior do que $3$).
+\Exercise[title={2,0}] Determine $\displaystyle\lim_{x \to 0} \frac{x^2 + x - \sen(x)}{x^3 + 21x^2}$ utilizando, se possível, as regras de L'Hôpital.
+\Answer Por L'Hôpital,
+\[
+\lim_{x \to 0} \frac{ \cancelto{0}{x^2 + x - \sen(x)} }{ \cancelto{0}{x^3 + 21x^2}}
+\stackrel{\text{L.H.}}{=}\lim_{x \to 0} \frac{ \cancelto{0}{2x + 1 - \cos(x)} }{ \cancelto{0}{3x^2+42x} }
+\stackrel{\text{L.H.}}{=}\lim_{x \to 0} \frac{2 + \sen(x)}{ 6x + 42}
+=\frac{2 + 0}{ 0 + 42}
+=\frac{1}{21}.
+\]
+
+\Exercise[title={2,0}] Calcule $\displaystyle\lim_{x\to 0^+} \left[\sen(x)\right]^{\left[\frac{1}{\ln(x)}\right]}$ usando, se possível, as regras de L'Hôpital.
+\Answer Seja $L = \lim_{x\to 0^+} \left[\sen(x)\right]^{\left[\frac{1}{\ln(x)}\right]}$. Então, aplicando o logaritmo em ambos os membros,
+\begin{align*}
+    \ln(L)
+    & = \ln\left(\lim_{x\to 0^+} \left[\sen(x)\right]^{\left[\frac{1}{\ln(x)}\right]}\right)
+    = \lim_{x\to 0^+} \ln\left(\left[\sen(x)\right]^{\left[\frac{1}{\ln(x)}\right]}\right)\\
+    & = \lim_{x\to 0^+} \left[\frac{1}{\ln(x)}\right] \ln\left(\sen(x)\right)
+    = \lim_{x\to 0^+} \frac{\ln\left(\sen(x)\right)}{\ln(x)}.
+\end{align*}
+Por L'Hôpital,
+\begin{align*}
+    \ln(L)
+    &
+    = \lim_{x\to 0^+} \frac{(\ln\left(\sen(x)\right))^\prime}{(\ln(x))^\prime}
+    = \lim_{x\to 0^+} \frac{\left(\frac{\cos(x)}{\sen(x)}\right)}{\left(\frac{1}{x}\right)}
+    = \lim_{x\to 0^+} \frac{\cos(x)}{\sen(x)}\cdot x\\
+    &
+    = \lim_{x\to 0^+} \cos(x)\frac{x}{\sen(x)}
+    = \lim_{x\to 0^+} \frac{\cos(x)}{\frac{\sen(x)}{x}}
+    = \frac{1}{1}
+    = 1
+\end{align*}
+Portanto, como $\ln(L) = 1$, conclui-se que $L = e^1 = e$.
+
+\Exercise[title={2,0}] Para cada item abaixo, diga se é verdadeiro (V) ou falso (F).
+
+\emph{Observação 1:} Não é necessário justificar.
+
+\emph{Observação 2:} Cada item marcado errado anula a pontuação de um item marcado corretamente. Você tem a opção de deixar o item em branco e, nesse caso, você nem ganha e nem perde pontos.
+
+\begin{enumerate}
+  \item {\bf ( \ \ )} \ Se $p(x) = x^5 + x^2 - x$ então existe algum ponto $c \in (-1, 1)$ tal que $p^\prime(c) = 0$.
+  \item {\bf ( \ \ )} \ Se $g(x) = 3^x - x^2$ então existe algum ponto $c \in (0, 2)$ tal que $g^\prime(c) = 2$.
+  \item {\bf ( \ \ )} \ A função $f(x) = \cos(x)$ não tem ponto de máximo global;
+  \item {\bf ( \ \ )} \ A função $q(x) = 2x + \sen(x)$ é crescente em todos os intervalos $(a, b) \subset \R$;
+\end{enumerate}
+
+\Answer \begin{enumerate}
+  \item \textbf{Verdadeiro}: Como $p(x) = x^5 + x^2 - x$ é contínua em $[-1, 1]$ e derivável em $(-1, 1)$, e $p(-1) = 1 = p(1)$, o teorema de Rolle garante que existe algum ponto $c \in (-1, 1)$ tal que $p^\prime(c) = 0$.
+  \item \textbf{Verdadeiro}: Como $g(x) = 3^x - x^2$ é contínua em $[0, 2]$ e derivável em $(0, 2)$, o teorema do valor médio de Lagrange garante que existe algum ponto $c \in (0, 2)$ tal que
+  \[
+  g^\prime(c)
+  = \frac{g(2) - g(0)}{2 - 0}
+  = \frac{(9-4) - (1-0)}{2}
+  = \frac{5 - 1}{2}
+  = \frac{4}{2}
+  = 2.
+  \]
+  \item \textbf{Falso}: Todo ponto da forma $x = 2 \pi n$, com $n \in \mathbb{Z}$ é um ponto de máximo global de $f(x) = \cos(x)$, pois $\cos(2 \pi n) = 1$ e não ocorre $\cos(x) > 1$ em nenhum outro $x \in \R$.
+  \item \textbf{Verdadeiro}: Como $q(x) = 2x + \sen(x)$ tem derivada $q^\prime(x) = 2 + \cos(x)$ e $\cos(x) \geq -1$, para todo $x \in \R$, tem-se então $q^\prime(x) \geq 1 > 0$ e $q(x)$ é crescente em todo intervalo $(a, b) \subset \R$.
+\end{enumerate}
+\end{ExerciseList}
+
+\begin{center}
+BOA PROVA!
+\end{center}
+
+\newpage
+\restoregeometry
+\section*{Respostas}
+\shipoutAnswer
+\end{document}
